@@ -1,0 +1,28 @@
+// Mixin for media queries
+@mixin break-point($point) {
+  @if $point == large-desktop {
+    @media only screen and (max-width: 1800px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point == large-tablet {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media only screen and (max-width: 500px) {
+      @content;
+    }
+  } @else if $point == small-mobile {
+    @media only screen and (max-width: 400px) {
+      @content;
+    }
+  }
+}
