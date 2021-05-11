@@ -1,0 +1,196 @@
+@import '../../../config/mixins.scss';
+
+.login {
+  margin: auto;
+  max-width: 1400px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  @include break-point(tablet) {
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  @include break-point(desktop) {
+    margin: 0;
+  }
+
+  .left-container {
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include break-point(large-tablet) {
+      margin: 0;
+    }
+
+    .content {
+      text-align: center;
+      max-width: 35rem;
+      @include break-point(desktop) {
+        margin-left: 3rem;
+        text-align: left;
+      }
+
+      @include break-point(tablet) {
+        text-align: center;
+        margin: 0;
+      }
+
+      @include break-point(mobile) {
+        width: 90%;
+        padding: 2rem;
+      }
+    }
+
+    .hero_img {
+      width: 22rem;
+
+      @include break-point(large-tablet) {
+        width: 18rem;
+      }
+
+      @include break-point(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .right-container {
+    margin-right: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include break-point(tablet) {
+      margin: 0;
+    }
+
+    .login-container {
+      background: var(--primary-bg-color);
+      box-shadow: var(--primary-box-shadow);
+      border-radius: 2rem;
+      margin: 0.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include break-point(mobile) {
+        margin: 0;
+        width: 90%;
+      }
+
+      .heading-4 {
+        margin: 2.5rem 1rem;
+      }
+
+      .user-switch-btn {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        margin: 0 3rem;
+        width: 20rem;
+        height: 2.4rem;
+        border-radius: 0.7rem;
+        background: var(--primary-color-light);
+
+        @include break-point(mobile) {
+          width: 85%;
+        }
+
+        .switcher {
+          z-index: 1;
+          position: absolute;
+          border-radius: 0.7rem;
+          width: 50%;
+          height: 100%;
+          background: var(--primary-color);
+          transition: all 200ms ease;
+        }
+
+        .student {
+          left: 0;
+          top: 0;
+        }
+
+        .execom {
+          top: 0;
+          left: 50%;
+        }
+
+        .execom-btn,
+        .student-btn {
+          background: transparent;
+          border: none;
+          outline: none;
+          z-index: 2;
+          width: 50%;
+          height: 100%;
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: var(--secondary-font-color);
+        }
+        .active-btn {
+          color: white;
+        }
+      }
+
+      .login-form {
+        min-width: 20rem;
+        padding: 0;
+
+        @include break-point(mobile) {
+          width: 85%;
+        }
+
+        margin: 1rem 3rem;
+        .textfield {
+          margin: 2rem 0;
+        }
+        .button {
+          width: 100%;
+          margin: 3rem 0 2rem 0;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .follow-us-container {
+      width: 26rem;
+      margin: 0.5rem 1rem;
+      background: var(--primary-bg-color);
+      box-shadow: var(--primary-box-shadow);
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include break-point(tablet) {
+        display: none;
+      }
+
+      .follow-icons {
+        margin-bottom: 1rem;
+        .icon-link {
+          margin: 0 1rem;
+          .icons {
+            width: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
