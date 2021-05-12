@@ -1,15 +1,15 @@
 import React from 'react';
-
 import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import EmailInput from '../../utils/emailInput';
 import useForm from '../../../hooks/useForm';
 import PasswordInput from '../../utils/passwordInput';
 import TextInput from '../../utils/textInput';
 import useApiError from '../../../hooks/useApiError';
-import Toast from '../../utils/toast';
+import { useSetRhinoState } from '../../../config/context';
 import { login } from '../../../Services/user';
 
-const LoginForm = ({ user }) => {
+const LoginForm = ({ userType }) => {
   const { values, onChange, error, handleError } = useForm({
     email: '',
     studentPassword: '',
@@ -17,10 +17,15 @@ const LoginForm = ({ user }) => {
     execomPassword: '',
   });
 
-  const [apiError, handleApiError] = useApiError();
+  // eslint-disable-next-line no-unused-vars
+  const setUser = useSetRhinoState('user');
 
-  const signIn = async () => {
-    if (user === 'student') {
+  const { handleApiError } = useApiError();
+
+  const history = useHistory();
+
+  const handleLogin = async () => {
+    if (userType === 'student') {
       if (
         values.email !== '' &&
         values.studentPassword !== '' &&
@@ -33,13 +38,18 @@ const LoginForm = ({ user }) => {
         };
 
         try {
-          await login(user, data);
+          await login(userType, data);
+          setUser({
+            is_user_logged_in: true,
+            user_type: userType,
+          });
+          history.push(`/${userType}`);
         } catch (err) {
           handleApiError(err);
         }
       }
     }
-    if (user === 'execom') {
+    if (userType === 'execom') {
       if (
         values.designation !== '' &&
         values.execomPassword !== '' &&
@@ -52,7 +62,12 @@ const LoginForm = ({ user }) => {
         };
 
         try {
-          await login(user, data);
+          await login(userType, data);
+          setUser({
+            is_user_logged_in: true,
+            user_type: userType,
+          });
+          history.push(`/${userType}`);
         } catch (err) {
           handleApiError(err);
         }
@@ -63,7 +78,7 @@ const LoginForm = ({ user }) => {
   return (
     <>
       <form className="login-form">
-        {user === 'student' ? (
+        {userType === 'student' ? (
           <>
             <EmailInput
               label="Email"
@@ -103,10 +118,9 @@ const LoginForm = ({ user }) => {
           </>
         )}
         <div className="button">
-          <Button onClick={signIn}>Sign In</Button>
+          <Button onClick={handleLogin}>Sign In</Button>
         </div>
       </form>
-      <Toast msg={apiError} severity="error" />
     </>
   );
 };

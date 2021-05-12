@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRhinoState } from '../config/context';
 
 /**
  *
@@ -7,7 +7,7 @@ import { useState } from 'react';
  * @returns {Array} Array containing errorMsg and handleApiError function respectively.
  */
 const useApiError = () => {
-  const [apiError, setApiError] = useState('');
+  const [apiError, setApiError] = useRhinoState('apiError');
 
   const handleApiError = (err) => {
     let errMsg;
@@ -24,7 +24,7 @@ const useApiError = () => {
     }
     setApiError(errMsg);
   };
-  return [apiError, handleApiError];
+  return { apiError, handleApiError };
 };
 
 export default useApiError;

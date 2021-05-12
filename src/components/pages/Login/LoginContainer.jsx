@@ -22,7 +22,7 @@ const LoginContainer = () => {
         studentButtonClick={onStudentButtonClick}
         execomButtonClick={onExecomButtonClick}
       />
-      <LoginForm user={userType} />
+      <LoginForm userType={userType} />
     </div>
   );
 };

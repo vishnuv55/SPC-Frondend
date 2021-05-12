@@ -3,7 +3,6 @@ import { useRhinoState } from '../../config/context';
 import useApiError from '../../hooks/useApiError';
 import { isUserLoggedIn } from '../../Services/user';
 import Loading from '../common/loading';
-import Toast from '../utils/toast';
 import SideNav from './sideNav';
 
 const Layout = ({ children }) => {
@@ -11,7 +10,7 @@ const Layout = ({ children }) => {
 
   const [loading, setLoading] = useState(true);
 
-  const [apiError, handleApiError] = useApiError();
+  const { handleApiError } = useApiError();
 
   const checkLogin = async () => {
     setLoading(true);
@@ -39,7 +38,6 @@ const Layout = ({ children }) => {
     <>
       {user.is_user_logged_in && <SideNav />}
       {children}
-      <Toast msg={apiError} severity="error" />
     </>
   );
 };

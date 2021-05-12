@@ -5,20 +5,22 @@ import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter } from 'react-router-dom';
 import theme from '../config/theme';
 import Layout from './layout';
-import { RhinoProvider } from '../config/context';
+import { useRhinoValue } from '../config/context';
 import Routes from './routes';
+import Toast from './utils/toast';
 
 function App() {
+  const apiError = useRhinoValue('apiError');
+
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <RhinoProvider>
-          <Layout>
-            <Routes />
-          </Layout>
-        </RhinoProvider>
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Routes />
+        </Layout>
+        <Toast msg={apiError} severity="error" />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
