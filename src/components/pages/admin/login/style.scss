@@ -1,0 +1,75 @@
+@import '../../../../config/mixins.scss';
+
+.admin-login {
+  margin: auto;
+  max-width: 1400px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @include break-point(tablet) {
+    flex-direction: column;
+  }
+
+  @include break-point(mobile) {
+    background: var(--primary-bg-color);
+    justify-content: flex-start;
+  }
+
+  .login-image {
+    width: 24rem;
+
+    @include break-point(tablet) {
+      width: 15rem;
+    }
+
+    @include break-point(mobile) {
+      margin-top: 2rem;
+      height: 45vh;
+    }
+  }
+  .login-container {
+    border-radius: 2rem;
+    box-shadow: var(--primary-box-shadow);
+    background: var(--primary-bg-color);
+    padding: 3rem;
+
+    @include break-point(mobile) {
+      box-shadow: none;
+      padding: 2rem 0;
+      width: 80%;
+    }
+
+    .heading-3 {
+      padding-bottom: 0.5rem;
+      text-align: center;
+
+      @include break-point(mobile) {
+        padding-bottom: 1rem;
+      }
+    }
+
+    .login-form {
+      min-width: 25rem;
+
+      @include break-point(desktop) {
+        min-width: 22rem;
+      }
+
+      .textfield {
+        margin: 2rem 0;
+      }
+
+      .button {
+        width: 100%;
+        padding: 0.5rem 0 0.7rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
