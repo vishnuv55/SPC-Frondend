@@ -15,6 +15,20 @@ const theme = createMuiTheme({
       contrastText: '#fff',
     },
   },
+  overrides: {
+    MuiButton: {
+      text: {
+        borderRadius: '1rem',
+        padding: '.6rem 3rem',
+        textTransform: 'capitalize',
+        background: '#00d86b',
+        color: '#fff',
+        '&:hover': {
+          background: '#00c95d',
+        },
+      },
+    },
+  },
 });
 
 export default theme;

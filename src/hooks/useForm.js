@@ -6,16 +6,22 @@ import { useState } from 'react';
  *
  * @param {Object} initialState State object with name of each form input as keys and
  * corresponding initial state as values.
- * @return {Array} Array containing values and onChange function respectively.
+ * @return {Object} Object containing values, apiError, onChange function and handleError function.
  */
 const useForm = (initialValues) => {
   const [values, setValues] = useState(initialValues);
+
+  const [error, setError] = useState(initialValues);
 
   const onChange = (event) => {
     setValues((previousValues) => ({ ...previousValues, [event.target.name]: event.target.value }));
   };
 
-  return [values, onChange, setValues];
+  const handleError = (event, message) => {
+    setError((previousValues) => ({ ...previousValues, [event.target.name]: message }));
+  };
+
+  return { values, onChange, error, handleError };
 };
 
 export default useForm;

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import './mixins.scss';
+
+:root {
+  //color variants
+  --primary-color: #00d86b;
+  --primary-color-light: #daffec;
+
+  // Background color variants
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #effaf4;
+  --tertiary-bg-color: #f3f7f3;
+
+  // font color variants
+  --primary-font-color: #17231a;
+  --secondary-font-color: #3a433c;
+  --tertiary-font-color: #8b938a;
+
+  // box shadows
+  --primary-box-shadow: 1px 1px 60px 26px rgba(228, 242, 230, 0.38);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background: var(--secondary-bg-color);
+
+  @include break-point(desktop) {
+    font-size: 95%;
+  }
+  @include break-point(large-tablet) {
+    font-size: 91%;
+  }
+  @include break-point(tablet) {
+    font-size: 87%;
+  }
+
+  @include break-point(mobile) {
+    font-size: 83%;
+  }
+  @include break-point(small-mobile) {
+    font-size: 3vw;
+  }
+}
+
+.paragraph {
+  font-size: 1rem;
+  color: var(--secondary-font-color);
+  line-height: 1.8rem;
+}
+
+.heading-1 {
+  font-size: 3rem;
+  margin: 1.2rem;
+}
+.heading-2 {
+  font-size: 2.6rem;
+  margin: 1.2rem;
+}
+.heading-3 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+.heading-4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+.heading-5 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0.9rem;
+}
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5 {
+  color: var(--primary-font-color);
+  font-weight: 500;
+  margin-left: 0;
+  margin-right: 0;
+}
