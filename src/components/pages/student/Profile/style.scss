@@ -1,19 +1,66 @@
+@import '../../../../config/mixins.scss';
+
 .profile {
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  color: var(--secondary-font-color);
   .input-form {
     display: flex;
     width: 100%;
+
+    @include break-point(tablet) {
+      flex-direction: column;
+    }
+
     .col1,
     .col2 {
       width: 100%;
-      margin: 1.5rem 0.75rem 1.5rem 1.5rem;
+      margin: 2rem;
       padding: 2.5rem;
       border-radius: 1rem;
       box-shadow: var(--primary-box-shadow);
       background: var(--primary-bg-color);
+
+      @include break-point(tablet) {
+        width: auto;
+      }
+
+      @include break-point(mobile) {
+        margin: 1.25rem;
+      }
+
+      &:first-child {
+        margin-right: 1rem;
+
+        @include break-point(tablet) {
+          margin-right: 2rem;
+        }
+        @include break-point(mobile) {
+          margin-right: 1.25rem;
+        }
+      }
+      &:last-child {
+        margin-left: 1rem;
+
+        @include break-point(tablet) {
+          margin-left: 2rem;
+        }
+        @include break-point(mobile) {
+          margin-left: 1.25rem;
+        }
+      }
+
       .tenth-marks,
       .twelfth-marks {
         display: flex;
-        justify-content: space-between;
+
+        .input {
+          width: 50%;
+          &:first-child {
+            margin-right: 2rem;
+          }
+        }
       }
       .heading-container {
         display: flex;
@@ -21,6 +68,7 @@
         .icon {
           margin-right: 0.5rem;
           font-size: 1.5rem;
+          color: var(--primary-font-color);
         }
       }
       .education-heading {
@@ -31,10 +79,26 @@
       }
     }
     .input {
-      padding: 1rem 0;
+      padding: 1.2rem 0;
+    }
+    .gender-picker {
+      width: 100%;
+      .gender-values {
+        display: flex;
+        justify-content: space-evenly;
+      }
     }
   }
   .button-wrapper {
-    margin: 0rem 0rem 0rem 1.5rem;
+    margin-left: 2rem;
+
+    @include break-point(mobile) {
+      margin: 0;
+      width: auto;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

@@ -3,7 +3,7 @@
 .side-nav {
   background: var(--primary-bg-color);
   box-shadow: var(--primary-box-shadow);
-  width: 5rem;
+  width: 6rem;
 
   .nav-list {
     padding: 0;
@@ -27,7 +27,7 @@
       transition: all 200ms ease-in;
 
       &:first-child {
-        margin-top: 0.8rem;
+        margin-top: 1rem;
       }
 
       &:hover,

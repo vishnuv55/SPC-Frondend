@@ -12,9 +12,10 @@
   .dashboard-container {
     width: calc(100vw - 5rem);
     height: 100vh;
+    overflow: auto;
 
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 5px;
       background: var(--grey);
     }
 
@@ -25,18 +26,18 @@
 
     @include break-point(mobile) {
       width: 100vw;
-      height: 100vh;
-      overflow-y: auto;
+      // height: 100vh;
+      // overflow-y: auto;
     }
 
     .dashboard-pages {
-      width: auto;
-      height: calc(100vh - 5rem);
-      overflow-y: auto;
+      // width: auto;
+      // height: calc(100vh - 5rem);
+      // overflow-y: auto;
 
       @include break-point(mobile) {
-        height: auto;
-        margin-bottom: 4rem;
+        // height: auto;
+        margin-bottom: 5rem;
       }
     }
   }

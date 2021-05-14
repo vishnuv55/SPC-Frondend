@@ -9,15 +9,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 1.5rem 1.5rem 0 1.5rem;
+    margin: 2rem 2rem 0 2rem;
     width: auto;
-    height: 98%;
+    height: 97%;
     border-radius: 1rem;
     background-color: var(--primary-bg-color);
     box-shadow: var(--primary-box-shadow);
 
+    @include break-point(mobile) {
+      margin: 1.25rem 1.25rem 0 1.25rem;
+    }
+
     .heading-6 {
-      margin: 0 1rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 0 1.5rem;
     }
 
     .right-container {
