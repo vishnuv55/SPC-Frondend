@@ -102,7 +102,7 @@ const LoginForm = ({ userType }) => {
             <TextInput
               label="Designation"
               name="designation"
-              email={values.designation}
+              values={values.designation}
               errorMsg={error.designation}
               setErrorMsg={handleError}
               onChange={onChange}

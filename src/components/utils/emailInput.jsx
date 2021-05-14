@@ -17,7 +17,7 @@ const EmailInput = ({ label, name, email, errorMsg, setErrorMsg, onChange }) => 
   const delayedHandleError = useDebounce(handleError, 1000);
 
   return (
-    <div className="textfield">
+    <div className="textfield input">
       <TextField
         id="outlined-basic"
         label={label}

@@ -69,4 +69,106 @@ const validatePassword = (data, name, isRequired) => {
   return '';
 };
 
-export { validateString, validateEmail, validatePassword };
+/**
+ *
+ * A validator function to validate Date
+ * @param {Date} date date to be validated
+ * @param {String} [fieldName] Field name to be displayed in error message.
+ * @param {Boolean} [isRequired] Is this field required or not.
+ */
+const validateDate = (date, fieldName = 'Date', isRequired = false) => {
+  if (date !== undefined && date !== null) {
+    const dateObject = new Date(date);
+    if (!(dateObject instanceof Date) || Number.isNaN(dateObject.getTime())) {
+      return `${fieldName} must be of type Date`;
+    }
+  } else if (isRequired) {
+    return `${fieldName} field cannot be empty`;
+  }
+  return '';
+};
+
+/**
+ *
+ * Checks if the date is a valid date of birth
+ * @param {Date} dateOfBirth Date of Birth to validate
+ * @param {Number} [minimumAge] Minimum age the person should have
+ * @param {String} [fieldName] Field name to be displayed in error message.
+ * @param {Boolean} [isRequired] Is this field required or not.
+ */
+const validateDateOfBirth = (
+  dateOfBirth,
+  minimumAge = 1,
+  fieldName = 'Date of Birth',
+  isRequired = false
+) => {
+  validateDate(dateOfBirth, fieldName, isRequired);
+
+  if (dateOfBirth !== undefined && dateOfBirth !== null) {
+    const currentDate = new Date();
+    const minimumDOB = new Date();
+
+    // Converting to date object
+    const dateOfBirthObject = new Date(dateOfBirth);
+
+    minimumDOB.setFullYear(currentDate.getFullYear() - minimumAge);
+
+    if (minimumDOB.getTime() < dateOfBirthObject.getTime()) {
+      return `The person should be at least ${minimumAge} years old.`;
+    }
+  } else if (isRequired) {
+    return `${fieldName} field cannot be empty`;
+  }
+  return '';
+};
+
+/**
+ *
+ * A validator function to validate any number using length
+ * @param {Number} data Data to be validated
+ * @param {Number} lowerLimit Lower limit the data can have
+ * @param {Number} upperLimit Upper limit the data can have
+ * @param {String} fieldName Field name to be displayed in error message.
+ * @param {Boolean} [isRequired] Is this field required or not
+ */
+const validateNumber = (data, lowerLimit, upperLimit, fieldName, isRequired = false) => {
+  if (data !== undefined && data !== null) {
+    if (typeof data !== 'number') {
+      return `${fieldName} must be of type number`;
+    }
+    if (data < lowerLimit || data > upperLimit) {
+      return `Invalid ${fieldName}`;
+    }
+  } else if (isRequired) {
+    return `${fieldName} field cannot be empty`;
+  }
+  return '';
+};
+
+/**
+ *
+ * A validator function to validate Phone number
+ * @param {String | Number} phoneNumber Phone number to be validated
+ * @param {String} [fieldName] Field name to be displayed in error message.
+ * @param {Boolean} [isRequired] Is this field required or not
+ */
+const validatePhone = (phoneNumber, fieldName = 'Phone Number', isRequired = false) => {
+  if (phoneNumber !== undefined && phoneNumber !== '' && phoneNumber !== null) {
+    if (!/^\d{10}$/.test(phoneNumber)) {
+      return `Invalid ${fieldName}`;
+    }
+  } else if (isRequired) {
+    return `${fieldName} field cannot be empty`;
+  }
+  return '';
+};
+
+export {
+  validateString,
+  validateEmail,
+  validatePassword,
+  validateDateOfBirth,
+  validateDate,
+  validateNumber,
+  validatePhone,
+};
