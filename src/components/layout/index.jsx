@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+
+import './style.scss';
 import { useRhinoState } from '../../config/context';
 import useApiError from '../../hooks/useApiError';
 import { isUserLoggedIn } from '../../Services/user';
 import Loading from '../common/loading';
 import SideNav from './sideNav';
+import Header from './header';
 
 const Layout = ({ children }) => {
   const [user, setUser] = useRhinoState('user');
@@ -34,12 +37,18 @@ const Layout = ({ children }) => {
   if (loading) {
     return <Loading />;
   }
-  return (
-    <>
-      {user.is_user_logged_in && <SideNav />}
-      {children}
-    </>
-  );
+  if (user.is_user_logged_in) {
+    return (
+      <div className="dashboard-layout">
+        <SideNav />
+        <div className="dashboard-container">
+          <Header />
+          <div className="dashboard-pages">{children}</div>
+        </div>
+      </div>
+    );
+  }
+  return <>{children}</>;
 };
 
 export default Layout;

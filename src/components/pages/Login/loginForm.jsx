@@ -43,7 +43,7 @@ const LoginForm = ({ userType }) => {
             is_user_logged_in: true,
             user_type: userType,
           });
-          history.push(`/${userType}`);
+          history.push(`/${userType}/home`);
         } catch (err) {
           handleApiError(err);
         }
@@ -67,7 +67,7 @@ const LoginForm = ({ userType }) => {
             is_user_logged_in: true,
             user_type: userType,
           });
-          history.push(`/${userType}`);
+          history.push(`/${userType}/home`);
         } catch (err) {
           handleApiError(err);
         }

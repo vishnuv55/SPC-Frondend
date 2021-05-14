@@ -18,13 +18,13 @@ const Routes = () => {
       <Route exact path="/admin">
         <AdminLogin />
       </Route>
-      <ProtectedRoute exact to="/student">
+      <ProtectedRoute exact path="/student/home">
         <StudentHome />
       </ProtectedRoute>
-      <ProtectedRoute exact to="/execom">
+      <ProtectedRoute exact path="/execom/home">
         <ExecomHome />
       </ProtectedRoute>
-      <ProtectedRoute exact to="/admin/home">
+      <ProtectedRoute exact path="/admin/home">
         <AdminHome />
       </ProtectedRoute>
     </Switch>

@@ -13,8 +13,11 @@
 
   // font color variants
   --primary-font-color: #17231a;
-  --secondary-font-color: #3a433c;
+  --secondary-font-color: #4c524d;
   --tertiary-font-color: #8b938a;
+
+  --white-color: #fff;
+  --grey-color: rgb(116, 123, 119);
 
   // box shadows
   --primary-box-shadow: 1px 1px 60px 26px rgba(228, 242, 230, 0.38);
@@ -42,7 +45,7 @@ body {
     font-size: 83%;
   }
   @include break-point(small-mobile) {
-    font-size: 3vw;
+    font-size: 3.8vw;
   }
 }
 
@@ -75,14 +78,45 @@ body {
   font-weight: 500;
   margin: 0.9rem;
 }
+.heading-6 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.8rem;
+}
 
 .heading-1,
 .heading-2,
 .heading-3,
 .heading-4,
-.heading-5 {
+.heading-5,
+.heading-6 {
   color: var(--primary-font-color);
   font-weight: 500;
   margin-left: 0;
   margin-right: 0;
+}
+
+@include break-point(large-tablet) {
+  .heading-1 {
+    font-size: 2.8rem;
+  }
+  .heading-2 {
+    font-size: 2.4rem;
+  }
+
+  .heading-3 {
+    font-size: 2rem;
+  }
+}
+@include break-point(mobile) {
+  .heading-1 {
+    font-size: 2.6rem;
+  }
+  .heading-2 {
+    font-size: 2.2rem;
+  }
+
+  .heading-3 {
+    font-size: 1.8rem;
+  }
 }
