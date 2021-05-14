@@ -1,0 +1,94 @@
+@import '../../../config/mixins.scss';
+
+.header-container {
+  height: 4rem;
+  background: none;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 1.5rem 0 1.5rem;
+    width: auto;
+    height: 98%;
+    border-radius: 1rem;
+    background-color: var(--primary-bg-color);
+    box-shadow: var(--primary-box-shadow);
+
+    .heading-6 {
+      margin: 0 1rem;
+    }
+
+    .right-container {
+      .dark-mode {
+        margin-right: 1.5rem;
+        -webkit-tap-highlight-color: transparent;
+
+        @include break-point(mobile) {
+          display: none;
+        }
+
+        .switch {
+          position: relative;
+          display: block;
+          width: 5rem;
+          height: 1.8rem;
+          background: var(--tertiary-bg-color);
+          border-radius: 0.5rem;
+          cursor: pointer;
+          box-shadow: 0 30px 50px -10px #ccc;
+
+          &:before {
+            content: 'Dark';
+            background: var(--tertiary-font-color);
+            color: var(--primary-bg-color);
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translate(-5%, -50%);
+            font-size: 0.65rem;
+            width: 50%;
+            height: 90%;
+            display: grid;
+            place-items: center;
+            border-radius: 0.5rem;
+            transition: all 250ms ease;
+          }
+        }
+
+        #checkbox {
+          display: none;
+        }
+
+        #checkbox:checked ~ .switch:before {
+          left: 50%;
+          content: 'Light';
+        }
+      }
+
+      .menu {
+        display: none;
+
+        @include break-point(mobile) {
+          display: block;
+          padding: 0 1rem;
+          .menu-button {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .menu-list {
+            background: violet;
+            min-width: 5rem;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
