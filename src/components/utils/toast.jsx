@@ -2,15 +2,18 @@ import React, { useEffect, useState } from 'react';
 
 import { Alert, AlertTitle } from '@material-ui/lab';
 import Snackbar from '@material-ui/core/Snackbar';
+import { useRhinoValue } from '../../config/context';
 
-const Toast = ({ severity, msg }) => {
+const Toast = () => {
   const [open, setOpen] = useState(false);
 
+  const toastMessage = useRhinoValue('toastMessage');
+
   useEffect(() => {
-    if (msg !== '') {
+    if (toastMessage.message !== '') {
       setOpen(true);
     }
-  }, [msg]);
+  }, [toastMessage]);
 
   const handleClose = () => {
     setOpen(false);
@@ -18,9 +21,9 @@ const Toast = ({ severity, msg }) => {
 
   return (
     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert elevation={6} variant="filled" severity={severity} onClose={handleClose}>
-        <AlertTitle>Error</AlertTitle>
-        {msg}
+      <Alert elevation={6} variant="filled" severity={toastMessage.severity} onClose={handleClose}>
+        <AlertTitle>{toastMessage.severity}</AlertTitle>
+        {toastMessage.message}
       </Alert>
     </Snackbar>
   );

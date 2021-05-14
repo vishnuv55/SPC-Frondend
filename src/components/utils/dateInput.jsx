@@ -1,41 +1,48 @@
 import { TextField } from '@material-ui/core';
 import React from 'react';
-import { validatePassword } from '../../helpers/validation';
+import { validateDateOfBirth } from '../../helpers/validation';
 import useDebounce from '../../hooks/useDebounce';
 
-const PasswordInput = ({ label, name, password, errorMsg, setErrorMsg, onChange, id }) => {
+const DateInput = ({ label, name, value, onChange, errorMsg, setErrorMsg, id }) => {
   const handleChange = (e) => {
     onChange(e);
     delayedHandleError(e);
   };
-
-  // eslint-disable-next-line no-shadow
-  const handleError = (e, errorMsg) => {
-    const msg = validatePassword(e.target.value, 'Password', true);
+  const handleError = (e) => {
+    let msg;
+    switch (e.target.name) {
+      case 'dob': {
+        msg = validateDateOfBirth(e.target.value, 18, 'Date of Birth', true);
+        break;
+      }
+      default:
+        msg = '';
+    }
     setErrorMsg(e, msg);
   };
 
   const delayedHandleError = useDebounce(handleError, 1000);
-
   return (
-    <div className="textfield input">
+    <div className="input">
       <TextField
         id={id}
+        type="date"
         label={label}
         name={name}
         variant="outlined"
-        type="password"
         size="small"
         fullWidth
-        defaultValue=""
-        value={password}
+        value={value}
         onChange={handleChange}
         error={errorMsg !== ''}
         helperText={errorMsg}
         required
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
     </div>
   );
 };
 
-export default PasswordInput;
+export default DateInput;

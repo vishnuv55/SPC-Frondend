@@ -7,7 +7,7 @@ import { useRhinoState } from '../config/context';
  * @returns {Array} Array containing errorMsg and handleApiError function respectively.
  */
 const useApiError = () => {
-  const [apiError, setApiError] = useRhinoState('apiError');
+  const [toastMessage, setToastMessage] = useRhinoState('toastMessage');
 
   const handleApiError = (err) => {
     let errMsg;
@@ -22,9 +22,12 @@ const useApiError = () => {
     } else {
       errMsg = 'Oops some error occurred';
     }
-    setApiError(errMsg);
+    setToastMessage({
+      severity: 'error',
+      message: errMsg,
+    });
   };
-  return { apiError, handleApiError };
+  return { toastMessage, handleApiError };
 };
 
 export default useApiError;

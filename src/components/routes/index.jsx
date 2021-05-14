@@ -8,6 +8,7 @@ import ProtectedRoute from './protectedRoute';
 import Route from './route';
 import AdminLogin from '../pages/admin/login';
 import AdminHome from '../pages/admin/adminHome';
+import Profile from '../pages/student/Profile';
 
 const Routes = () => {
   return (
@@ -18,14 +19,17 @@ const Routes = () => {
       <Route exact path="/admin">
         <AdminLogin />
       </Route>
-      <ProtectedRoute exact to="/student">
+      <ProtectedRoute exact path="/student">
         <StudentHome />
       </ProtectedRoute>
-      <ProtectedRoute exact to="/execom">
+      <ProtectedRoute exact path="/execom">
         <ExecomHome />
       </ProtectedRoute>
-      <ProtectedRoute exact to="/admin/home">
+      <ProtectedRoute exact path="/admin/home">
         <AdminHome />
+      </ProtectedRoute>
+      <ProtectedRoute exact path="/student/profile">
+        <Profile />
       </ProtectedRoute>
     </Switch>
   );
