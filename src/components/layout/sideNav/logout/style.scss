@@ -1,0 +1,34 @@
+.logout {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logout-button {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    padding: 0.7rem;
+    color: var(--secondary-font-color);
+
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--primary-color-light);
+      color: var(--primary-font-color);
+      border-radius: 14px;
+    }
+
+    .icon {
+      font-size: 1.3rem;
+    }
+  }
+}

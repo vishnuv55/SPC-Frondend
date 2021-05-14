@@ -1,0 +1,44 @@
+@import '../../config/mixins.scss';
+
+.dashboard-layout {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  .dashboard-container {
+    width: calc(100vw - 5rem);
+    height: 100vh;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      background: var(--grey);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 8px;
+    }
+
+    @include break-point(mobile) {
+      width: 100vw;
+      // height: 100vh;
+      // overflow-y: auto;
+    }
+
+    .dashboard-pages {
+      // width: auto;
+      // height: calc(100vh - 5rem);
+      // overflow-y: auto;
+
+      @include break-point(mobile) {
+        // height: auto;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}

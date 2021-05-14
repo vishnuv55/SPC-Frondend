@@ -12,6 +12,7 @@ import { convertDateFormate } from '../../../../helpers/date';
 import { useSetRhinoState } from '../../../../config/context';
 
 const Profile = () => {
+  const setPageTitle = useSetRhinoState('pageTitle');
   const setToastMessage = useSetRhinoState('toastMessage');
   // State to store Student details
   const { handleApiError } = useApiError();
@@ -35,6 +36,7 @@ const Profile = () => {
   });
   /* eslint-disable */
   useEffect(() => {
+    setPageTitle('Update Your Profile');
     fetchStudentDetail();
   }, []);
   /* eslint-enable */

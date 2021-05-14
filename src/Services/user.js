@@ -8,4 +8,8 @@ const login = (userType, data) => {
   return api.post(`/${userType}/login`, data);
 };
 
-export { isUserLoggedIn, login };
+const logout = (userType) => {
+  return api.post(`/${userType}/logout`);
+};
+
+export { isUserLoggedIn, login, logout };
