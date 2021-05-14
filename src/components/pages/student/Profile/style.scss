@@ -1,0 +1,40 @@
+.profile {
+  .input-form {
+    display: flex;
+    width: 100%;
+    .col1,
+    .col2 {
+      width: 100%;
+      margin: 1.5rem 0.75rem 1.5rem 1.5rem;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: var(--primary-box-shadow);
+      background: var(--primary-bg-color);
+      .tenth-marks,
+      .twelfth-marks {
+        display: flex;
+        justify-content: space-between;
+      }
+      .heading-container {
+        display: flex;
+        align-items: center;
+        .icon {
+          margin-right: 0.5rem;
+          font-size: 1.5rem;
+        }
+      }
+      .education-heading {
+        padding-top: 0.5rem;
+      }
+      .guardian-heading {
+        padding-top: 1rem;
+      }
+    }
+    .input {
+      padding: 1rem 0;
+    }
+  }
+  .button-wrapper {
+    margin: 0rem 0rem 0rem 1.5rem;
+  }
+}

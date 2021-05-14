@@ -21,7 +21,7 @@ const useForm = (initialValues) => {
     setError((previousValues) => ({ ...previousValues, [event.target.name]: message }));
   };
 
-  return { values, onChange, error, handleError };
+  return { values, onChange, error, handleError, setValues };
 };
 
 export default useForm;
