@@ -8,4 +8,8 @@ const updateExecomPassword = (data) => {
   return api.post('admin/update-execom-password', data);
 };
 
-export { createStudent, updateExecomPassword };
+const updateStudentPassword = (data) => {
+  return api.post('admin/update-student-password', data);
+};
+
+export { createStudent, updateExecomPassword, updateStudentPassword };

@@ -4,6 +4,7 @@ import './style.scss';
 import { useSetRhinoState } from '../../../../config/context';
 import CreateStudent from './createStudent';
 import UpdateExecomPassword from './updateExecomPassword';
+import UpdateStudentPassword from './updateStudentPassword';
 
 const AdminHome = () => {
   const setPageTitle = useSetRhinoState('pageTitle');
@@ -14,8 +15,11 @@ const AdminHome = () => {
 
   return (
     <div className="admin-home">
-      <CreateStudent />
-      <div>
+      <div className="create-student-container">
+        <CreateStudent />
+      </div>
+      <div className="password-container">
+        <UpdateStudentPassword />
         <UpdateExecomPassword />
       </div>
     </div>

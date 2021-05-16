@@ -1,16 +1,16 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+
+import { Button } from '@material-ui/core';
 import { useSetRhinoState } from '../../../../config/context';
+import { updateStudentPassword } from '../../../../Services/admin';
 import useApiError from '../../../../hooks/useApiError';
-
 import useForm from '../../../../hooks/useForm';
-import { updateExecomPassword } from '../../../../Services/admin';
+import EmailInput from '../../../utils/emailInput';
 import PasswordInput from '../../../utils/passwordInput';
-import TextInput from '../../../utils/textInput';
 
-const UpdateExecomPassword = () => {
+const UpdateStudentPassword = () => {
   const { values, onChange, error, handleError } = useForm({
-    designation: '',
+    email: '',
     password: '',
   });
 
@@ -23,10 +23,10 @@ const UpdateExecomPassword = () => {
 
     if (!isValuesEmpty && !isError) {
       try {
-        await updateExecomPassword(values);
+        await updateStudentPassword(values);
         setToastMessage({
           severity: 'Success',
-          message: 'Execom Password successfully Updated',
+          message: 'Student Password successfully Updated',
         });
       } catch (err) {
         handleApiError(err);
@@ -41,18 +41,18 @@ const UpdateExecomPassword = () => {
 
   return (
     <div className="update-password">
-      <h5 className="heading-5">Update Execom Password</h5>
+      <h5 className="heading-5">Update Student Password</h5>
       <form>
-        <TextInput
-          label="Designation"
-          name="designation"
-          email={values.designation}
-          errorMsg={error.designation}
+        <EmailInput
+          label="Email"
+          name="email"
+          email={values.email}
+          errorMsg={error.email}
           setErrorMsg={handleError}
           onChange={onChange}
         />
         <PasswordInput
-          id="execom-password"
+          id="student-password"
           label="Password"
           name="password"
           email={values.password}
@@ -66,4 +66,4 @@ const UpdateExecomPassword = () => {
   );
 };
 
-export default UpdateExecomPassword;
+export default UpdateStudentPassword;
