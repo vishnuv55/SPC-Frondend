@@ -1,0 +1,69 @@
+@import '../../../../config/mixins.scss';
+
+.admin-home {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  @include break-point(tablet) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .create-student-container,
+  .password-container {
+    width: 100%;
+    margin: 2rem;
+
+    @include break-point(tablet) {
+      width: auto;
+    }
+
+    @include break-point(mobile) {
+      margin: 1.25rem;
+    }
+  }
+  .create-student-container {
+    margin-right: 1rem;
+
+    @include break-point(tablet) {
+      margin: 2rem 2rem 1rem 2rem;
+    }
+
+    @include break-point(mobile) {
+      margin: 1.25rem;
+    }
+
+    .create-student {
+      padding: 2.5rem;
+      border-radius: 1rem;
+      background: var(--primary-bg-color);
+
+      .input {
+        margin: 2rem 0;
+      }
+    }
+  }
+  .password-container {
+    margin-left: 1rem;
+
+    @include break-point(tablet) {
+      margin-left: 1rem 2rem 2rem 2rem;
+    }
+
+    @include break-point(mobile) {
+      margin: 1.25rem;
+    }
+
+    .update-password {
+      margin-bottom: 2rem;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      background: var(--primary-bg-color);
+
+      .input {
+        margin: 2rem 0;
+      }
+    }
+  }
+}

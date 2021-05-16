@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import './style.scss';
+import { useSetRhinoState } from '../../../../config/context';
+import CreateStudent from './createStudent';
+import UpdateExecomPassword from './updateExecomPassword';
+import UpdateStudentPassword from './updateStudentPassword';
 
 const AdminHome = () => {
+  const setPageTitle = useSetRhinoState('pageTitle');
+
+  useEffect(() => {
+    setPageTitle('Manage user accounts');
+  }, [setPageTitle]);
+
   return (
     <div className="admin-home">
-      <h2>admin home page</h2>
+      <div className="create-student-container">
+        <CreateStudent />
+      </div>
+      <div className="password-container">
+        <UpdateStudentPassword />
+        <UpdateExecomPassword />
+      </div>
     </div>
   );
 };
