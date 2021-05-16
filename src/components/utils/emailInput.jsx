@@ -19,7 +19,7 @@ const EmailInput = ({ label, name, email, errorMsg, setErrorMsg, onChange }) => 
   return (
     <div className="textfield input">
       <TextField
-        id="outlined-basic"
+        id="email"
         label={label}
         name={name}
         variant="outlined"
