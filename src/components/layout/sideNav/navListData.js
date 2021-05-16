@@ -30,7 +30,7 @@ const getNavListData = (user) => {
     {
       id: 4,
       icon: <FiLock className="icon" />,
-      name: 'change Password',
+      name: 'Password',
       url: '/student/update-password',
     },
   ];
@@ -101,7 +101,7 @@ const getNavListData = (user) => {
     {
       id: 5,
       icon: <FiLock className="icon" />,
-      name: 'change Password',
+      name: 'Password',
       url: '/execom/update-password',
     },
   ];

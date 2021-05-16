@@ -89,9 +89,10 @@ const LoginForm = ({ userType }) => {
               onChange={onChange}
             />
             <PasswordInput
+              id="studentPassword"
               label="Password"
               name="studentPassword"
-              email={values.studentPassword}
+              password={values.studentPassword}
               errorMsg={error.studentPassword}
               setErrorMsg={handleError}
               onChange={onChange}
@@ -100,17 +101,19 @@ const LoginForm = ({ userType }) => {
         ) : (
           <>
             <TextInput
+              id="designation"
               label="Designation"
               name="designation"
-              values={values.designation}
+              password={values.designation}
               errorMsg={error.designation}
               setErrorMsg={handleError}
               onChange={onChange}
             />
             <PasswordInput
+              id="execomPassword"
               label="Password"
               name="execomPassword"
-              email={values.execomPassword}
+              value={values.execomPassword}
               errorMsg={error.execomPassword}
               setErrorMsg={handleError}
               onChange={onChange}

@@ -9,6 +9,7 @@ import Route from './route';
 import AdminLogin from '../pages/admin/login';
 import AdminHome from '../pages/admin/adminHome';
 import Profile from '../pages/student/Profile';
+import ChangePassword from '../pages/ChangePassword';
 
 const Routes = () => {
   return (
@@ -30,6 +31,12 @@ const Routes = () => {
       </ProtectedRoute>
       <ProtectedRoute exact path="/student/profile">
         <Profile />
+      </ProtectedRoute>
+      <ProtectedRoute exact path="/student/update-password">
+        <ChangePassword userType="student" />
+      </ProtectedRoute>
+      <ProtectedRoute exact path="/execom/update-password">
+        <ChangePassword userType="execom" />
       </ProtectedRoute>
     </Switch>
   );

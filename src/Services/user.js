@@ -12,4 +12,8 @@ const logout = (userType) => {
   return api.post(`/${userType}/logout`);
 };
 
-export { isUserLoggedIn, login, logout };
+const changePassword = (userType, data) => {
+  return api.post(`/${userType}/change-password`, data);
+};
+
+export { isUserLoggedIn, login, logout, changePassword };

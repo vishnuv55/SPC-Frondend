@@ -1,22 +1,36 @@
-import { TextField } from '@material-ui/core';
 import React from 'react';
-import { validatePassword } from '../../helpers/validation';
+
+import { TextField } from '@material-ui/core';
+import { validateConfirmPassword, validatePassword } from '../../helpers/validation';
 import useDebounce from '../../hooks/useDebounce';
 
-const PasswordInput = ({ label, name, password, errorMsg, setErrorMsg, onChange, id }) => {
+const PasswordInput = ({
+  label,
+  name,
+  password,
+  errorMsg,
+  setErrorMsg,
+  onChange,
+  id,
+  refPassword,
+}) => {
   const handleChange = (e) => {
     onChange(e);
-    delayedHandleError(e);
+    delayedHandleError(e, refPassword);
   };
 
   // eslint-disable-next-line no-shadow
-  const handleError = (e, errorMsg) => {
-    const msg = validatePassword(e.target.value, 'Password', true);
+  const handleError = (e, refPassword) => {
+    let msg;
+    if (e.target.name === 'confirmPassword') {
+      msg = validateConfirmPassword(refPassword, e.target.value);
+    } else {
+      msg = validatePassword(e.target.value, 'Password', true);
+    }
     setErrorMsg(e, msg);
   };
 
   const delayedHandleError = useDebounce(handleError, 1000);
-
   return (
     <div className="textfield input">
       <TextField
