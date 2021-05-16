@@ -34,12 +34,13 @@ const Profile = () => {
     guardian_name: '',
     guardian_phone_number: '',
   });
-  /* eslint-disable */
+
   useEffect(() => {
     setPageTitle('Update Your Profile');
     fetchStudentDetail();
-  }, []);
-  /* eslint-enable */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setPageTitle]);
+
   // Function to fetch student details
   const fetchStudentDetail = async () => {
     try {

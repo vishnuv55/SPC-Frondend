@@ -162,6 +162,12 @@ const validatePhone = (phoneNumber, fieldName = 'Phone Number', isRequired = fal
   }
   return '';
 };
+const validateConfirmPassword = (password, confirmPassword) => {
+  if (password !== confirmPassword) {
+    return `Password doesn't match`;
+  }
+  return '';
+};
 
 export {
   validateString,
@@ -171,4 +177,5 @@ export {
   validateDate,
   validateNumber,
   validatePhone,
+  validateConfirmPassword,
 };
