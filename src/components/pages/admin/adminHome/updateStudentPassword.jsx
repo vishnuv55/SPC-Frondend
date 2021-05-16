@@ -21,7 +21,17 @@ const UpdateStudentPassword = () => {
     const isValuesEmpty = Object.values(values).some((value) => value === '');
     const isError = Object.values(error).some((err) => err !== '');
 
-    if (!isValuesEmpty && !isError) {
+    if (isValuesEmpty) {
+      setToastMessage({
+        severity: 'Error',
+        message: 'Please fill all the fields',
+      });
+    } else if (isError) {
+      setToastMessage({
+        severity: 'Error',
+        message: 'Please resolve the error first',
+      });
+    } else {
       try {
         await updateStudentPassword(values);
         setToastMessage({
@@ -31,11 +41,6 @@ const UpdateStudentPassword = () => {
       } catch (err) {
         handleApiError(err);
       }
-    } else {
-      setToastMessage({
-        severity: 'Error',
-        message: 'Please fill all the fields',
-      });
     }
   };
 
