@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import './style.scss';
 import { Button } from '@material-ui/core';
 import PersonalDetails from './PersonalDetails';
@@ -51,17 +52,17 @@ const Profile = () => {
         name: user.name ? user.name : '',
         dob,
         gender: user.gender ? user.gender : '',
-        tenth_percentage: user.tenth_mark.percentage ? user.tenth_mark.percentage : '',
-        tenth_cgpa: user.tenth_mark.cgpa ? user.tenth_mark.cgpa : '',
-        twelfth_percentage: user.plus_two_mark.percentage ? user.plus_two_mark.percentage : '',
-        twelfth_cgpa: user.plus_two_mark.cgpa ? user.plus_two_mark.cgpa : '',
+        tenth_percentage: user.tenth_mark ? user.tenth_mark.percentage : '',
+        tenth_cgpa: user.tenth_mark ? user.tenth_mark.cgpa : '',
+        twelfth_percentage: user.plus_two_mark ? user.plus_two_mark.percentage : '',
+        twelfth_cgpa: user.plus_two_mark ? user.plus_two_mark.cgpa : '',
         btech_cgpa: user.btech_cgpa ? user.btech_cgpa : '',
         number_of_backlogs: user.number_of_backlogs !== undefined ? user.number_of_backlogs : '',
         phone_number: user.phone_number ? user.phone_number : '',
-        line_one: user.address.line_one ? user.address.line_one : '',
-        line_two: user.address.line_two ? user.address.line_two : '',
-        state: user.address.state ? user.address.state : '',
-        zip: user.address.zip ? user.address.zip : '',
+        line_one: user.address ? user.address.line_one : '',
+        line_two: user.address ? user.address.line_two : '',
+        state: user.address ? user.address.state : '',
+        zip: user.address ? user.address.zip : '',
         guardian_name: user.guardian_name ? user.guardian_name : '',
         guardian_phone_number: user.guardian_contact_number ? user.guardian_contact_number : '',
       };
