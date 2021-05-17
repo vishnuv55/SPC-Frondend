@@ -53,7 +53,7 @@ const Profile = () => {
         dob,
         gender: user.gender ? user.gender : '',
         tenth_percentage: user.tenth_mark ? user.tenth_mark.percentage : '',
-        tenth_cgpa: user.tenth_marka ? user.tenth_mark.cgpa : '',
+        tenth_cgpa: user.tenth_mark ? user.tenth_mark.cgpa : '',
         twelfth_percentage: user.plus_two_mark ? user.plus_two_mark.percentage : '',
         twelfth_cgpa: user.plus_two_mark ? user.plus_two_mark.cgpa : '',
         btech_cgpa: user.btech_cgpa ? user.btech_cgpa : '',
