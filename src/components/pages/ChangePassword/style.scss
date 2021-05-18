@@ -7,15 +7,21 @@
   min-height: 80vh;
 
   @include break-point(tablet) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     .change-password-svg {
-      display: none;
+      width: 60vw;
+    }
+    .change-password-wrapper {
+      margin-top: 2rem;
     }
   }
 
   @include break-point(mobile) {
     background: var(--primary-bg-color);
-    justify-content: flex-start;
+    box-shadow: none;
+    height: 100%;
+    margin: 1.5rem;
+    border-radius: 1rem;
   }
   .change-password-wrapper {
     padding: 2.5rem;
@@ -31,6 +37,14 @@
       justify-content: center;
       align-items: center;
       padding: 0.75rem 0;
+    }
+    @include break-point(mobile) {
+      box-shadow: none;
+      width: 95%;
+      padding: 1rem;
+      .input {
+        padding: 1rem;
+      }
     }
   }
   .change-password-svg {
