@@ -1,9 +1,9 @@
 import { TextField } from '@material-ui/core';
 import React from 'react';
 import useDebounce from '../../hooks/useDebounce';
-import { validateString } from '../../helpers/validation';
+import { validateString, validateUrl } from '../../helpers/validation';
 
-const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, defaultValue, id }) => {
+const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) => {
   const handleChange = (e) => {
     onChange(e);
     delayedHandleError(e);
@@ -38,6 +38,26 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, defaul
       }
       case 'register_number': {
         msg = validateString(e.target.value, 'Register Number', 5, 20, true);
+        break;
+      }
+      case 'company_name': {
+        msg = validateString(e.target.value, 'Company Name', 5, 20, true);
+        break;
+      }
+      case 'location': {
+        msg = validateString(e.target.value, 'Location', 5, 20, true);
+        break;
+      }
+      case 'url': {
+        msg = validateUrl(e.target.value, 'URL', true);
+        break;
+      }
+      case 'salary': {
+        msg = validateString(e.target.value, 'Salary', 5, 20, true);
+        break;
+      }
+      case 'position': {
+        msg = validateString(e.target.value, 'Position', 5, 20, true);
         break;
       }
       default:

@@ -1,22 +1,19 @@
 import { TextField } from '@material-ui/core';
 import React from 'react';
-import { validateDate, validateDateOfBirth } from '../../helpers/validation';
 import useDebounce from '../../hooks/useDebounce';
+import { validateString } from '../../helpers/validation';
 
-const DateInput = ({ label, name, value, onChange, errorMsg, setErrorMsg, id }) => {
+const TextArea = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, rows }) => {
   const handleChange = (e) => {
     onChange(e);
     delayedHandleError(e);
   };
+
   const handleError = (e) => {
     let msg;
     switch (e.target.name) {
-      case 'dob': {
-        msg = validateDateOfBirth(e.target.value, 18, 'Date of Birth', true);
-        break;
-      }
-      case 'drive_date': {
-        msg = validateDate(e.target.value, 'Drive Date', true);
+      case 'description': {
+        msg = validateString(e.target.value, 'Designation', 50, 200, true);
         break;
       }
       default:
@@ -26,27 +23,27 @@ const DateInput = ({ label, name, value, onChange, errorMsg, setErrorMsg, id }) 
   };
 
   const delayedHandleError = useDebounce(handleError, 1000);
+
   return (
-    <div className="input">
+    <div className="textarea input">
       <TextField
         id={id}
-        type="date"
         label={label}
         name={name}
         variant="outlined"
+        type="text"
         size="small"
         fullWidth
+        multiline
+        rows={rows}
         value={value}
         onChange={handleChange}
         error={errorMsg !== ''}
         helperText={errorMsg}
         required
-        InputLabelProps={{
-          shrink: true,
-        }}
       />
     </div>
   );
 };
 
-export default DateInput;
+export default TextArea;

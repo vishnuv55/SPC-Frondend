@@ -18,11 +18,12 @@ const theme = createMuiTheme({
   overrides: {
     MuiButton: {
       text: {
-        borderRadius: '1rem',
-        padding: '.6rem 3rem',
+        borderRadius: '.7rem',
+        padding: '.7rem 3rem',
         textTransform: 'capitalize',
         background: '#00d86b',
         color: '#fff',
+        fontWeight: 600,
         '&:hover': {
           background: '#00c95d',
         },
