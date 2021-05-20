@@ -10,6 +10,7 @@ import AdminLogin from '../pages/admin/login';
 import AdminHome from '../pages/admin/adminHome';
 import Profile from '../pages/student/Profile';
 import ChangePassword from '../pages/ChangePassword';
+import Drives from '../pages/admin/drive';
 
 const Routes = () => {
   return (
@@ -29,7 +30,7 @@ const Routes = () => {
         <AdminHome />
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/drive">
-        <h2> Drive </h2>
+        <Drives />
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/mail">
         <h2> Mail </h2>

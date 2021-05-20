@@ -8,7 +8,7 @@
 
   // Background color variants
   --primary-bg-color: #ffffff;
-  --secondary-bg-color: #effaf4;
+  --secondary-bg-color: #e8eeeb;
   --tertiary-bg-color: #f3f7f3;
 
   // font color variants
@@ -17,7 +17,7 @@
   --tertiary-font-color: #8b938a;
 
   --white-color: #fff;
-  --grey-color: rgb(116, 123, 119);
+  --grey-color: rgb(143, 150, 146);
 
   // box shadows
   --primary-box-shadow: 1px 1px 60px 26px rgba(228, 242, 230, 0.38);
@@ -46,6 +46,16 @@ body {
   }
   @include break-point(small-mobile) {
     font-size: 3.8vw;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    background: var(--grey);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(179, 187, 177);
+    border-radius: 8px;
   }
 }
 

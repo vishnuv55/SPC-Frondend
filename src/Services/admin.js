@@ -12,4 +12,8 @@ const updateStudentPassword = (data) => {
   return api.post('admin/update-student-password', data);
 };
 
-export { createStudent, updateExecomPassword, updateStudentPassword };
+const addNewDrive = (data) => {
+  return api.post('/admin/drive-details', data);
+};
+
+export { createStudent, updateExecomPassword, updateStudentPassword, addNewDrive };

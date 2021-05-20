@@ -162,9 +162,40 @@ const validatePhone = (phoneNumber, fieldName = 'Phone Number', isRequired = fal
   }
   return '';
 };
+/**
+ *
+ * @param {String} password Password to be validated to
+ * @param {String} confirmPassword Password to be confirmed
+ * @returns {String} Error message if any
+ */
 const validateConfirmPassword = (password, confirmPassword) => {
   if (password !== confirmPassword) {
     return `Password doesn't match`;
+  }
+  return '';
+};
+
+/**
+ *
+ * A validator function to validate URL
+ * @param {String} url URL to be validated
+ * @param {String} [fieldName] Field name to be displayed in error message.
+ * @param {Boolean} [isRequired] Is this field required or not
+ */
+const validateUrl = (url, fieldName = 'URL', isRequired = false) => {
+  if (url !== undefined && url !== '') {
+    const regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    if (typeof url !== 'string') {
+      return `${fieldName} must be of type string`;
+    }
+    if (url.length > 500) {
+      return `${fieldName} must not exceed the 100 character limit`;
+    }
+    if (!regexp.test(url)) {
+      return `Invalid ${fieldName}`;
+    }
+  } else if (isRequired) {
+    return `${fieldName} field cannot be empty`;
   }
   return '';
 };
@@ -178,4 +209,5 @@ export {
   validateNumber,
   validatePhone,
   validateConfirmPassword,
+  validateUrl,
 };
