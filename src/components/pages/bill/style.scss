@@ -1,0 +1,8 @@
+.bill-wrapper {
+  margin: 1.5rem;
+  .bills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

@@ -1,0 +1,20 @@
+.bill-card-wrapper {
+  border-radius: 1rem;
+  width: 25rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  background: var(--primary-bg-color);
+  box-shadow: var(--primary-box-shadow);
+  .bill-header {
+    display: flex;
+    justify-content: space-between;
+    .bill-date {
+      background: var(--secondary-bg-color);
+      padding: 0.1rem 1.5rem;
+      border-radius: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 0.45rem;
+    }
+  }
+}
