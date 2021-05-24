@@ -1,20 +1,77 @@
+@import '../../../config/mixins.scss';
+
 .bill-card-wrapper {
   border-radius: 1rem;
-  width: 25rem;
+  width: 22rem;
+  min-width: 19rem;
   padding: 1.5rem;
   margin: 1rem;
   background: var(--primary-bg-color);
   box-shadow: var(--primary-box-shadow);
+  @include break-point(mobile) {
+    width: 100%;
+  }
+
   .bill-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.7rem;
+    .bill-title {
+      display: flex;
+      flex-direction: column;
+      .heading {
+        padding-top: 0;
+        margin: auto;
+      }
+      .amount-wrapper {
+        display: flex;
+        align-items: center;
+        color: var(--primary-font-color);
+        .icon {
+          font-size: 0.9rem;
+        }
+        .amount {
+          font-weight: 400;
+          font-size: 0.9rem;
+        }
+      }
+    }
     .bill-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0.3rem 1rem;
       background: var(--secondary-bg-color);
-      padding: 0.1rem 1.5rem;
-      border-radius: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      line-height: 0.45rem;
+      border-radius: 0.5rem;
+      .day {
+        font-size: 1.3rem;
+      }
+      .month,
+      .year {
+        font-size: 0.6rem;
+        padding: 0.1rem;
+      }
+    }
+  }
+  .description {
+    text-align: justify;
+    line-height: 1.5rem;
+  }
+  .delete-button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 0 0.5rem 0;
+    .delete-button {
+      padding: 0.5rem 1rem;
+      outline: none;
+      border: none;
+      border-radius: 0.3rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--secondary-bg-color);
+      color: #c83b3b;
     }
   }
 }
