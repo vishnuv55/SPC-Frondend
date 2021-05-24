@@ -1,0 +1,32 @@
+@import '../../../../config/mixins.scss';
+
+.bill-form {
+  .bill-input-wrapper {
+    display: flex;
+    width: 40rem;
+    padding: 1.5rem 0;
+    @include break-point(tablet) {
+      flex-direction: column;
+      width: 60vw;
+    }
+    @include break-point(mobile) {
+      flex-direction: column;
+      width: 80vw;
+    }
+    .bill-form-col-1,
+    .bill-form-col-2 {
+      width: 50%;
+      @include break-point(tablet) {
+        width: 100%;
+      }
+    }
+  }
+  .input {
+    padding: 0.75rem;
+  }
+  .bill-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

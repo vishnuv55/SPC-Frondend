@@ -1,0 +1,26 @@
+.delete-form {
+  .button-wrapper {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
+    button {
+      padding: 0.7rem 1.5rem;
+      outline: none;
+      border: none;
+      border-radius: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .delete-button {
+      background: var(--secondary-bg-color);
+      color: #c83b3b;
+      margin-left: 1rem;
+    }
+
+    .cancel-button {
+      background: var(--secondary-bg-color);
+      color: var(--primary-color);
+    }
+  }
+}

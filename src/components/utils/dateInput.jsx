@@ -19,6 +19,10 @@ const DateInput = ({ label, name, value, onChange, errorMsg, setErrorMsg, id }) 
         msg = validateDate(e.target.value, 'Drive Date', true);
         break;
       }
+      case 'billDate': {
+        msg = validateDate(e.target.value, 'Bill Date', true);
+        break;
+      }
       default:
         msg = '';
     }

@@ -19,5 +19,11 @@ const changePassword = (userType, data) => {
 const getBills = (userType) => {
   return api.get(`/${userType}/bill-details`);
 };
+const createBill = (userType, data) => {
+  return api.post(`/${userType}/bill-details`, data);
+};
+const deleteBill = (userType, billId) => {
+  return api.delete(`${userType}/bill/${billId}`);
+};
 
-export { isUserLoggedIn, login, logout, changePassword, getBills };
+export { isUserLoggedIn, login, logout, changePassword, getBills, createBill, deleteBill };
