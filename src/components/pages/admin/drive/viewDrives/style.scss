@@ -1,0 +1,102 @@
+@import '../../../../../config/mixins.scss';
+
+.drives {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+
+  .drive {
+    background: var(--primary-bg-color);
+    margin: 1rem;
+    max-width: 23.5rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+
+    @include break-point(mobile) {
+      margin: 0.5rem;
+      max-width: 100%;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .heading-5 {
+          margin: 0;
+          font-size: 1.5rem;
+        }
+
+        .position {
+          font-size: 0.9rem;
+          margin: 0.3rem 0;
+          .icon {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+
+      .date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0.3rem 0.5rem;
+        background: var(--secondary-bg-color);
+        border-radius: 0.5rem;
+
+        .day {
+          font-size: 1.3rem;
+        }
+        .month,
+        .year {
+          font-size: 0.6rem;
+          padding: 0.1rem;
+        }
+      }
+    }
+    .paragraph {
+      font-size: 0.9rem;
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.5rem;
+      color: var(--secondary-font-color);
+    }
+    .button-container {
+      width: 100%;
+      display: flex;
+
+      .button {
+        padding: 0.5rem 1rem;
+        outline: none;
+        border: none;
+        border-radius: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      .more-button {
+        background: var(--primary-color);
+        color: var(--white-color);
+      }
+      .reg-info-button {
+        background: var(--secondary-bg-color);
+        color: var(--primary-color);
+        margin-left: 1.5rem;
+      }
+
+      .delete-button {
+        margin-left: auto;
+        padding: 0.5rem 0.6rem;
+        outline: none;
+        border: none;
+        border-radius: 0.3rem;
+        color: var(--red-color);
+      }
+    }
+  }
+}
