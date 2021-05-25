@@ -2,11 +2,12 @@ import React from 'react';
 
 import './style.scss';
 import AddNewDrive from './addNewDrives';
+import ViewDrives from './viewDrives';
 
 const Drives = () => {
   return (
     <div className="drives">
-      <h2>drives</h2>
+      <ViewDrives />
       <AddNewDrive />
     </div>
   );

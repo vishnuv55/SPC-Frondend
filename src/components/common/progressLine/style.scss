@@ -1,0 +1,21 @@
+.progress-line {
+  padding: 0.5rem;
+
+  &__label {
+    font-size: 0.9rem;
+    color: var(--secondary-font-color);
+  }
+
+  &__outer {
+    height: 0.5rem;
+    display: flex;
+    border-radius: 0.25rem;
+    background: var(--secondary-bg-color);
+  }
+  &__inner {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: var(--primary-color);
+    transition: width 2s;
+  }
+}

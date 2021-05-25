@@ -16,4 +16,8 @@ const changePassword = (userType, data) => {
   return api.post(`/${userType}/change-password`, data);
 };
 
-export { isUserLoggedIn, login, logout, changePassword };
+const getDriveDetails = (userType) => {
+  return api.get(`/${userType}/drive-details`);
+};
+
+export { isUserLoggedIn, login, logout, changePassword, getDriveDetails };
