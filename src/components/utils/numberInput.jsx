@@ -48,6 +48,10 @@ const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }
         msg = validatePhone(e.target.value, 'Phone Number', true);
         break;
       }
+      case 'billAmount': {
+        msg = validateNumber(parseInt(e.target.value, 10), 1, 999999, 'Amount', true);
+        break;
+      }
 
       default:
         msg = '';

@@ -13,7 +13,11 @@ const TextArea = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, row
     let msg;
     switch (e.target.name) {
       case 'description': {
-        msg = validateString(e.target.value, 'Designation', 50, 200, true);
+        msg = validateString(e.target.value, 'Description', 20, 200, true);
+        break;
+      }
+      case 'billDescription': {
+        msg = validateString(e.target.value, 'Description', 10, 100, true);
         break;
       }
       default:

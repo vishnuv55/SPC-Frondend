@@ -60,6 +60,10 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) 
         msg = validateString(e.target.value, 'Position', 5, 20, true);
         break;
       }
+      case 'billTitle': {
+        msg = validateString(e.target.value, 'Title', 5, 20, true);
+        break;
+      }
       default:
         msg = '';
     }
