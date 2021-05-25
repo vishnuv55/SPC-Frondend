@@ -11,6 +11,7 @@ import AdminHome from '../pages/admin/adminHome';
 import Profile from '../pages/student/Profile';
 import ChangePassword from '../pages/ChangePassword';
 import Drives from '../pages/admin/drive';
+import Bill from '../pages/bill';
 
 const Routes = () => {
   return (
@@ -39,7 +40,7 @@ const Routes = () => {
         <h2> Forum </h2>
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/bill">
-        <h2> Bill </h2>
+        <Bill userType="admin" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/alumni">
         <h2> Alumni </h2>
@@ -51,7 +52,7 @@ const Routes = () => {
         <ExecomHome />
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/bill">
-        <h2> Bill </h2>
+        <Bill userType="execom" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/mail">
         <h2> Mail </h2>

@@ -1,0 +1,180 @@
+@import '../../../config/mixins.scss';
+
+.bill-wrapper {
+  .bills {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    @include break-point(tablet) {
+      justify-content: center;
+      align-items: center;
+    }
+    @include break-point(mobile) {
+      padding: 0.5rem;
+    }
+  }
+  .new-bill-button {
+    border: none;
+    outline: none;
+    width: 4rem;
+    height: 4rem;
+    right: 2rem;
+    bottom: 2rem;
+    position: fixed;
+    background: var(--primary-color);
+    border-radius: 1rem;
+    box-shadow: var(--primary-box-shadow);
+
+    .icon {
+      color: var(--white-color);
+      font-weight: 900;
+      font-size: 2rem;
+    }
+
+    @include break-point(mobile) {
+      bottom: 6rem;
+    }
+  }
+  .modal-container {
+    padding: 1.5rem;
+    background: var(--primary-bg-color);
+    border-radius: 1rem;
+
+    .modal-content {
+      max-height: 85vh;
+      max-width: 90vw;
+      display: flex;
+      flex-direction: column;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .close-button {
+          margin-right: 1rem;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 0.5rem;
+          outline: none;
+          box-shadow: none;
+          border: none;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--secondary-bg-color);
+
+          .icon {
+            color: var(--primary-font-color);
+            font-weight: 600;
+          }
+        }
+
+        .heading-5 {
+          padding-left: 1rem;
+          font-size: 1.6rem;
+        }
+      }
+
+      .horizontal-line {
+        height: 2px;
+        margin: 0 1rem;
+        border-radius: 0.25px;
+        background: var(--tertiary-font-color);
+      }
+
+      .drive-form {
+        padding: 0 1rem;
+        overflow-y: auto;
+        width: auto;
+
+        .heading-6 {
+          padding-top: 1rem;
+          font-size: 1.1rem;
+        }
+
+        .input {
+          width: 100%;
+          padding: 1rem 0;
+        }
+        .checkbox {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        .row {
+          width: 100%;
+          display: flex;
+
+          @include break-point(mobile) {
+            flex-direction: column;
+          }
+
+          .input:first-child {
+            padding-right: 1rem;
+
+            @include break-point(mobile) {
+              padding-left: 0;
+            }
+          }
+          .input:last-child {
+            padding-left: 1rem;
+
+            @include break-point(mobile) {
+              padding-left: 0;
+            }
+          }
+        }
+        .row-2 {
+          .textarea-container {
+            width: 100%;
+            padding-right: 1rem;
+
+            @include break-point(mobile) {
+              padding-right: 0;
+            }
+
+            .input {
+              padding-left: 0;
+              height: 100%;
+            }
+          }
+          .email-url-container {
+            width: 100%;
+            padding-left: 1rem;
+
+            @include break-point(mobile) {
+              padding-left: 0;
+            }
+
+            .input {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+
+      .button-container {
+        width: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin: 0.5rem 1rem;
+
+        .button {
+          border: none;
+          outline: none;
+          border-radius: none;
+          padding: 0.7rem 1rem;
+          color: var(--white-color);
+          background: var(--primary-color);
+          border-radius: 0.5rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
