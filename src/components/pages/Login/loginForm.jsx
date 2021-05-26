@@ -113,7 +113,7 @@ const LoginForm = ({ userType }) => {
               id="execomPassword"
               label="Password"
               name="execomPassword"
-              value={values.execomPassword}
+              password={values.execomPassword}
               errorMsg={error.execomPassword}
               setErrorMsg={handleError}
               onChange={onChange}
