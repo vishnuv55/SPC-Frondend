@@ -9,7 +9,7 @@ import Drive from './drive';
 const Drives = () => {
   const [loading, setLoading] = useState(true);
 
-  const [drives, setDrives] = useState(null);
+  const [drives, setDrives] = useState([]);
 
   const { handleApiError } = useApiError();
 
