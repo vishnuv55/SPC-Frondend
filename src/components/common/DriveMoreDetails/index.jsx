@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 import './style.scss';
-import Modal from '../../../../../utils/modal';
+import Modal from '../../utils/modal';
 import ModalContent from './modalContent';
 
 const MoreDetails = ({ drive }) => {

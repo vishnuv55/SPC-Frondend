@@ -4,8 +4,8 @@ import React from 'react';
 import { FiExternalLink, FiMail, FiMapPin } from 'react-icons/fi';
 import { RiComputerLine } from 'react-icons/ri';
 import { BiRupee } from 'react-icons/bi';
-import DriveDate from '../driveDate';
-import ProgressLine from '../../../../../common/progressLine';
+import DriveDate from '../../pages/admin/drive/viewDrives/driveDate';
+import ProgressLine from '../progressLine';
 
 const ModalContent = ({ drive, handleClose }) => {
   const tenthCGPA = drive.requirements?.tenth_mark?.cgpa;

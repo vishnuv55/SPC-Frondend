@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
-import { useSetRhinoState } from '../../../config/context';
+
+import './style.scss';
+import { useSetRhinoState } from '../../../../config/context';
+import ViewDrives from '../../../common/viewDrives';
 
 const StudentHome = () => {
   const setPageTitle = useSetRhinoState('pageTitle');
@@ -9,9 +12,9 @@ const StudentHome = () => {
   }, [setPageTitle]);
 
   return (
-    <>
-      <h2>Student</h2>
-    </>
+    <div className="student-home">
+      <ViewDrives userType="student" />
+    </div>
   );
 };
 
