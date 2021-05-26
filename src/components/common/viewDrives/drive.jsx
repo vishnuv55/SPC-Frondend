@@ -3,9 +3,8 @@
 import React from 'react';
 
 import { FiBriefcase } from 'react-icons/fi';
-import DeleteDrive from './deleteDrive';
+import MoreDetails from '../DriveMoreDetails';
 import DriveDate from './driveDate';
-import MoreDetails from '../../../../common/DriveMoreDetails';
 
 const Drive = ({ drive }) => {
   return (
@@ -25,8 +24,6 @@ const Drive = ({ drive }) => {
       <div className="paragraph">{drive.description}</div>
       <div className="button-container">
         <MoreDetails drive={drive} />
-        <button className="button reg-info-button">Reg Info</button>
-        <DeleteDrive id={drive._id} />
       </div>
     </div>
   );

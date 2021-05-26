@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from 'react';
-import useApiError from '../../../../../hooks/useApiError';
 
-import { getDriveDetails } from '../../../../../Services/user';
-import Loading from '../../../../common/loading';
+import './style.scss';
+import useApiError from '../../../hooks/useApiError';
+import { getDriveDetails } from '../../../Services/user';
+import Loading from '../loading';
 import Drive from './drive';
 
-const Drives = () => {
+const ViewDrives = ({ userType }) => {
   const [loading, setLoading] = useState(true);
 
   const [drives, setDrives] = useState([]);
@@ -22,7 +23,7 @@ const Drives = () => {
       setLoading(true);
     }
     try {
-      const response = await getDriveDetails('admin');
+      const response = await getDriveDetails(userType);
       setDrives(response.data);
       setLoading(false);
     } catch (err) {
@@ -42,4 +43,4 @@ const Drives = () => {
   );
 };
 
-export default Drives;
+export default ViewDrives;

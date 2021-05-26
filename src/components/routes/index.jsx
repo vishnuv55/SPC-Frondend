@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Switch } from 'react-router-dom';
 import Login from '../pages/Login';
-import StudentHome from '../pages/student';
+import StudentHome from '../pages/student/studentHome';
 import ExecomHome from '../pages/execom';
 import ProtectedRoute from './protectedRoute';
 import Route from './route';
@@ -12,6 +12,7 @@ import Profile from '../pages/student/Profile';
 import ChangePassword from '../pages/ChangePassword';
 import Drives from '../pages/admin/drive';
 import Bill from '../pages/bill';
+import ExecomViewDrives from '../pages/execom/execomViewDrives';
 
 const Routes = () => {
   return (
@@ -58,7 +59,7 @@ const Routes = () => {
         <h2> Mail </h2>
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/drive">
-        <h2> Drive </h2>
+        <ExecomViewDrives />
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/forum">
         <h2> Forum </h2>

@@ -41,7 +41,6 @@ const PasswordInput = ({
         type="password"
         size="small"
         fullWidth
-        defaultValue=""
         value={password}
         onChange={handleChange}
         error={errorMsg !== ''}
