@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FiDollarSign } from 'react-icons/fi';
 import './billCard.scss';
+import { FiDollarSign } from 'react-icons/fi';
 import { isoStringToDate } from '../../../helpers/date';
 import Modal from '../../utils/modal';
 import ModalContent from './deleteBill/ModalContent ';
