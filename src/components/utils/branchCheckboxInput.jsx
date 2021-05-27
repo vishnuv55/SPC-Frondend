@@ -1,24 +1,24 @@
 import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@material-ui/core';
 import React from 'react';
 
-const GenderCheckboxInput = ({ values, onChange }) => {
+const BranchCheckboxInput = ({ values, onChange }) => {
   return (
     <div className="input checkbox-input">
       <FormControl component="fieldset" size="small">
-        <FormLabel component="legend">Preferred gender</FormLabel>
+        <FormLabel component="legend">Preferred Branches</FormLabel>
         <FormGroup fullWidth variant="outlined">
           <div className="checkboxes">
             <FormControlLabel
-              control={<Checkbox checked={values.male} onChange={onChange} name="male" />}
-              label="Male"
+              control={<Checkbox checked={values.CSE} onChange={onChange} name="CSE" />}
+              label="CSE"
             />
             <FormControlLabel
-              control={<Checkbox checked={values.female} onChange={onChange} name="female" />}
-              label="Female"
+              control={<Checkbox checked={values.ECE} onChange={onChange} name="ECE" />}
+              label="ECE"
             />
             <FormControlLabel
-              control={<Checkbox checked={values.others} onChange={onChange} name="others" />}
-              label="Others"
+              control={<Checkbox checked={values.EEE} onChange={onChange} name="EEE" />}
+              label="EEE"
             />
           </div>
         </FormGroup>
@@ -27,4 +27,4 @@ const GenderCheckboxInput = ({ values, onChange }) => {
   );
 };
 
-export default GenderCheckboxInput;
+export default BranchCheckboxInput;

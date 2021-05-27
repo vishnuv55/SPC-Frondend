@@ -23,11 +23,17 @@ const getDriveDetails = (userType) => {
 const getBills = (userType) => {
   return api.get(`/${userType}/bill-details`);
 };
+
 const createBill = (userType, data) => {
   return api.post(`/${userType}/bill-details`, data);
 };
+
 const deleteBill = (userType, billId) => {
-  return api.delete(`${userType}/bill/${billId}`);
+  return api.delete(`/${userType}/bill/${billId}`);
+};
+
+const sendEmail = (userType, data) => {
+  return api.post(`/${userType}/send-email`, data);
 };
 
 export {
@@ -39,4 +45,5 @@ export {
   getBills,
   createBill,
   deleteBill,
+  sendEmail,
 };
