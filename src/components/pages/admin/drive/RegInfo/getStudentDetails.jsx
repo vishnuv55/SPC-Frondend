@@ -8,7 +8,7 @@ import { jsonToCSV } from 'react-papaparse';
 import { regStudentDetails } from '../../../../../Services/admin';
 import useApiError from '../../../../../hooks/useApiError';
 
-const GetStudentDetails = ({ id }) => {
+const GetStudentDetails = ({ id, handleClose }) => {
   const { handleApiError } = useApiError();
   const [requiredDetails, setRequiredDetails] = useState({
     id,
@@ -71,6 +71,7 @@ const GetStudentDetails = ({ id }) => {
     } catch (err) {
       handleApiError(err);
     }
+    handleClose();
   };
   return (
     <div className="req-info">
