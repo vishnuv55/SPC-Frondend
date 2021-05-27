@@ -3,7 +3,7 @@ import React from 'react';
 import useDebounce from '../../hooks/useDebounce';
 import { validateNumber, validatePhone, validateString } from '../../helpers/validation';
 
-const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) => {
+const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, isRequired }) => {
   const handleChange = (e) => {
     onChange(e);
     delayedHandleError(e);
@@ -75,7 +75,7 @@ const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }
         onChange={handleChange}
         error={errorMsg !== ''}
         helperText={errorMsg}
-        required
+        required={isRequired !== undefined ? isRequired : true}
       />
     </div>
   );

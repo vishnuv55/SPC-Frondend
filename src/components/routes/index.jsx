@@ -13,6 +13,7 @@ import ChangePassword from '../pages/ChangePassword';
 import Drives from '../pages/admin/drive';
 import Bill from '../pages/bill';
 import ExecomViewDrives from '../pages/execom/execomViewDrives';
+import Mail from '../pages/mail';
 
 const Routes = () => {
   return (
@@ -35,7 +36,7 @@ const Routes = () => {
         <Drives />
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/mail">
-        <h2> Mail </h2>
+        <Mail userType="admin" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/forum">
         <h2> Forum </h2>
@@ -56,7 +57,7 @@ const Routes = () => {
         <Bill userType="execom" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/mail">
-        <h2> Mail </h2>
+        <Mail userType="execom" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/drive">
         <ExecomViewDrives />

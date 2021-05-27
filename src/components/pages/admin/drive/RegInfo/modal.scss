@@ -1,7 +1,7 @@
 @import '../../../../../config/mixins.scss';
 
 .get-student-details-modal-container {
-  padding: 1.5rem 0.7rem;
+  padding: 1rem;
   background: var(--primary-bg-color);
   border-radius: 1rem;
 
@@ -17,7 +17,7 @@
       align-items: center;
 
       .close-button {
-        margin-right: 1rem;
+        margin: 0 0 0.5rem 0;
         width: 2rem;
         height: 2rem;
         border-radius: 0.5rem;
@@ -37,14 +37,15 @@
       }
 
       .heading-5 {
-        padding-left: 1rem;
+        margin: 0 0 0.5rem 0;
+        padding: 0;
         font-size: 1.6rem;
       }
     }
 
     .horizontal-line {
-      height: 2px;
-      margin: 0 1rem;
+      height: 1px;
+      margin: 0;
       border-radius: 0.25px;
       background: var(--tertiary-font-color);
     }

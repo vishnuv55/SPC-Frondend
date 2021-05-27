@@ -1,6 +1,9 @@
 @import '../../../../../config/mixins.scss';
 
 .req-info {
+  .paragraph {
+    margin: 1rem 0 0.5rem 0;
+  }
   .req-wrapper {
     display: flex;
     .col-1,

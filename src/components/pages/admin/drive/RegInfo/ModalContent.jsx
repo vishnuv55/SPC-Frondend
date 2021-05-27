@@ -9,7 +9,7 @@ const ModalContent = ({ handleClose, id }) => {
       <div className="modal-container">
         <div className="modal-content">
           <div className="header">
-            <h4 className="heading-5">Add a new Drive</h4>
+            <h5 className="heading-5">Download Student Details</h5>
             <button type="button" className="close-button" onClick={handleClose}>
               <IoCloseSharp className="icon" />
             </button>
