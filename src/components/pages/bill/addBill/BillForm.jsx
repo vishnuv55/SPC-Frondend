@@ -1,4 +1,5 @@
 import React from 'react';
+import './billForm.scss';
 import { Button } from '@material-ui/core';
 import { useSetRhinoState } from '../../../../config/context';
 import { createBill } from '../../../../Services/user';
@@ -8,7 +9,6 @@ import NumberInput from '../../../utils/numberInput';
 import DateInput from '../../../utils/dateInput';
 import TextArea from '../../../utils/textArea';
 import useForm from '../../../../hooks/useForm';
-import './billForm.scss';
 
 const BillForm = ({ handleClose, userType }) => {
   const setToastMessage = useSetRhinoState('toastMessage');

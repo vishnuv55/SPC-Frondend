@@ -20,4 +20,14 @@ const deleteDrive = (id) => {
   return api.delete(`/admin/drive/${id}`);
 };
 
-export { createStudent, updateExecomPassword, updateStudentPassword, addNewDrive, deleteDrive };
+const regStudentDetails = (data) => {
+  return api.post('/admin/student-details', data);
+};
+export {
+  createStudent,
+  updateExecomPassword,
+  updateStudentPassword,
+  addNewDrive,
+  deleteDrive,
+  regStudentDetails,
+};

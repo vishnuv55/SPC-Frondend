@@ -1,10 +1,11 @@
 import React from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 import BillForm from './BillForm';
+import './modal.scss';
 
 const ModalContent = ({ handleClose, userType }) => {
   return (
-    <div className="modal-container">
+    <div className="add-bill-modal-container">
       <div className="modal-content">
         <div className="header">
           <h4 className="heading-5">Add a new Bill</h4>
