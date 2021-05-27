@@ -1,0 +1,19 @@
+@import '../../../../../config/mixins.scss';
+
+.req-info {
+  .req-wrapper {
+    display: flex;
+    .col-1,
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include break-point(tablet) {
+      flex-direction: column;
+    }
+  }
+  .button-wrapper {
+    padding-top: 1rem;
+  }
+}
