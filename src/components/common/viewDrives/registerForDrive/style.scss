@@ -1,0 +1,38 @@
+.register-modal {
+  max-width: 20rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  background: var(--primary-bg-color);
+  border-radius: 1rem;
+
+  .content {
+    margin: 0;
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+
+    .button {
+      padding: 0.7rem 1.5rem;
+      outline: none;
+      border: none;
+      border-radius: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .register-button {
+      background: var(--primary-color);
+      color: var(--white-color);
+      margin-left: 1rem;
+    }
+
+    .cancel-button {
+      background: var(--secondary-bg-color);
+      color: var(--primary-color);
+    }
+  }
+}
