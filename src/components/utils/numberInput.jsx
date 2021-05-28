@@ -1,7 +1,12 @@
 import { TextField } from '@material-ui/core';
 import React from 'react';
 import useDebounce from '../../hooks/useDebounce';
-import { validateNumber, validatePhone, validateString } from '../../helpers/validation';
+import {
+  validateNumber,
+  validatePassOutYear,
+  validatePhone,
+  validateString,
+} from '../../helpers/validation';
 
 const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, isRequired }) => {
   const handleChange = (e) => {
@@ -52,7 +57,10 @@ const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, 
         msg = validateNumber(parseInt(e.target.value, 10), 1, 999999, 'Amount', true);
         break;
       }
-
+      case 'pass_out_year': {
+        msg = validatePassOutYear(parseInt(e.target.value, 10));
+        break;
+      }
       default:
         msg = '';
     }

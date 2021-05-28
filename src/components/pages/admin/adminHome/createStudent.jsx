@@ -5,6 +5,7 @@ import useForm from '../../../../hooks/useForm';
 import TextInput from '../../../utils/textInput';
 import EmailInput from '../../../utils/emailInput';
 import BranchInput from '../../../utils/branchInput';
+import NumberInput from '../../../utils/numberInput';
 import { createStudent } from '../../../../Services/admin';
 import useApiError from '../../../../hooks/useApiError';
 import { useSetRhinoState } from '../../../../config/context';
@@ -15,6 +16,7 @@ const CreateStudent = () => {
     email: '',
     register_number: '',
     branch: '',
+    pass_out_year: '',
   });
 
   const { handleApiError } = useApiError();
@@ -23,10 +25,14 @@ const CreateStudent = () => {
   const createNewStudent = async () => {
     const isValuesEmpty = Object.values(values).some((value) => value === '');
     const isError = Object.values(error).some((err) => err !== '');
+    const studentDetails = {
+      ...values,
+      pass_out_year: parseInt(values.pass_out_year, 10),
+    };
 
     if (!isValuesEmpty && !isError) {
       try {
-        await createStudent(values);
+        await createStudent(studentDetails);
         setToastMessage({
           severity: 'Success',
           message: 'Student account successfully created',
@@ -73,6 +79,15 @@ const CreateStudent = () => {
           setErrorMsg={handleError}
         />
         <BranchInput value={values.branch} onChange={onChange} />
+        <NumberInput
+          id="passOutYear"
+          label="Pass Out Year"
+          name="pass_out_year"
+          value={values.pass_out_year}
+          onChange={onChange}
+          errorMsg={error.pass_out_year}
+          setErrorMsg={handleError}
+        />
         <Button onClick={createNewStudent}>Create Student</Button>
       </div>
     </div>
