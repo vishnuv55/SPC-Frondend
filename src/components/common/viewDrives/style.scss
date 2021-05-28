@@ -83,6 +83,11 @@
         background: var(--primary-color);
         color: var(--white-color);
       }
+      .reg-button {
+        background-color: var(--secondary-bg-color);
+        color: var(--primary-color);
+        margin-left: 1rem;
+      }
     }
   }
 }

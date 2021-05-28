@@ -6,4 +6,8 @@ const getStudentDetails = () => {
 const editStudentProfile = (data) => {
   return api.patch('/student/', data);
 };
-export { getStudentDetails, editStudentProfile };
+
+const registerForDrive = (data) => {
+  return api.post('/student/register-drive', data);
+};
+export { getStudentDetails, editStudentProfile, registerForDrive };
