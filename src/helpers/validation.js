@@ -200,6 +200,12 @@ const validateUrl = (url, fieldName = 'URL', isRequired = false) => {
   return '';
 };
 
+const validatePassOutYear = (year) => {
+  const currentYear = new Date().getFullYear();
+  const msg = validateNumber(year, currentYear, currentYear + 4, 'PassOut Year', true);
+  return msg;
+};
+
 export {
   validateString,
   validateEmail,
@@ -210,4 +216,5 @@ export {
   validatePhone,
   validateConfirmPassword,
   validateUrl,
+  validatePassOutYear,
 };
