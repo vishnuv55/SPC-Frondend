@@ -14,6 +14,7 @@ import Drives from '../pages/admin/drive';
 import Bill from '../pages/bill';
 import ExecomViewDrives from '../pages/execom/execomViewDrives';
 import Mail from '../pages/mail';
+import Alumni from '../pages/admin/alumni';
 
 const Routes = () => {
   return (
@@ -45,7 +46,7 @@ const Routes = () => {
         <Bill userType="admin" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/admin/alumni">
-        <h2> Alumni </h2>
+        <Alumni />
       </ProtectedRoute>
 
       {/* Execom Routes */}

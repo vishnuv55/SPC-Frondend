@@ -1,0 +1,28 @@
+.download-alumni {
+  background: var(--primary-bg-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--primary-box-shadow);
+  margin-left: 3rem;
+  @media screen and (max-width: 950px) {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .heading {
+    display: flex;
+    align-items: center;
+    .icon {
+      font-size: 1.8rem;
+      margin-right: 0.7rem;
+    }
+  }
+  .display-text {
+    padding: 1rem;
+    background: var(--secondary-bg-color);
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+  .button-wrapper {
+    padding-top: 1rem;
+  }
+}
