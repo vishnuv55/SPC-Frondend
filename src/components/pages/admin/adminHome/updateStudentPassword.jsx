@@ -1,12 +1,13 @@
 import React from 'react';
 
+import { FiUnlock } from 'react-icons/fi';
 import { Button } from '@material-ui/core';
-import { useSetRhinoState } from '../../../../config/context';
-import { updateStudentPassword } from '../../../../Services/admin';
-import useApiError from '../../../../hooks/useApiError';
 import useForm from '../../../../hooks/useForm';
 import EmailInput from '../../../utils/emailInput';
+import useApiError from '../../../../hooks/useApiError';
 import PasswordInput from '../../../utils/passwordInput';
+import { useSetRhinoState } from '../../../../config/context';
+import { updateStudentPassword } from '../../../../Services/admin';
 
 const UpdateStudentPassword = () => {
   const { values, onChange, error, handleError } = useForm({
@@ -46,7 +47,10 @@ const UpdateStudentPassword = () => {
 
   return (
     <div className="update-password">
-      <h5 className="heading-5">Update Student Password</h5>
+      <h5 className="heading-5">
+        <FiUnlock className="icon" />
+        Update Student Password
+      </h5>
       <form>
         <EmailInput
           label="Email"

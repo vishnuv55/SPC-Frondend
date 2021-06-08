@@ -4,6 +4,10 @@ const createStudent = (data) => {
   return api.post('/admin/create-student', data);
 };
 
+const createStudents = (data) => {
+  return api.post('/admin/create-students', data);
+};
+
 const updateExecomPassword = (data) => {
   return api.post('admin/update-execom-password', data);
 };
@@ -25,6 +29,7 @@ const regStudentDetails = (data) => {
 };
 export {
   createStudent,
+  createStudents,
   updateExecomPassword,
   updateStudentPassword,
   addNewDrive,

@@ -1,8 +1,9 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+
+import { Button } from '@material-ui/core';
+import { FiUnlock } from 'react-icons/fi';
 import { useSetRhinoState } from '../../../../config/context';
 import useApiError from '../../../../hooks/useApiError';
-
 import useForm from '../../../../hooks/useForm';
 import { updateExecomPassword } from '../../../../Services/admin';
 import PasswordInput from '../../../utils/passwordInput';
@@ -45,7 +46,9 @@ const UpdateExecomPassword = () => {
 
   return (
     <div className="update-password">
-      <h5 className="heading-5">Update Execom Password</h5>
+      <h5 className="heading-5">
+        <FiUnlock className="icon" /> Update Execom Password
+      </h5>
       <form>
         <TextInput
           label="Designation"

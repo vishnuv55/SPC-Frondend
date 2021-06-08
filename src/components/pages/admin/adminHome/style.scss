@@ -1,65 +1,103 @@
 @import '../../../../config/mixins.scss';
 
 .admin-home {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
+  padding: 1rem;
 
-  @include break-point(tablet) {
-    flex-direction: column;
-    align-items: stretch;
+  @include break-point(mobile) {
+    padding: 0.5rem;
   }
 
-  .create-student-container,
-  .password-container {
-    width: 100%;
-    margin: 2rem;
-
-    @include break-point(tablet) {
-      width: auto;
-    }
-
-    @include break-point(mobile) {
-      margin: 1.25rem;
-    }
-  }
   .create-student-container {
-    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
 
     @include break-point(tablet) {
-      margin: 2rem 2rem 1rem 2rem;
-    }
-
-    @include break-point(mobile) {
-      margin: 1.25rem;
+      flex-direction: column;
     }
 
     .create-student {
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 1rem;
+      margin: 1rem;
+      width: 50%;
       background: var(--primary-bg-color);
+      box-shadow: var(--primary-box-shadow);
+
+      @include break-point(tablet) {
+        width: auto;
+      }
+
+      .heading-5 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+        .icon {
+          margin-right: 1rem;
+        }
+      }
 
       .input {
         margin: 2rem 0;
       }
     }
+
+    .student-file-upload {
+      padding: 2rem;
+      border-radius: 1rem;
+      margin: 1rem;
+      background: var(--primary-bg-color);
+      box-shadow: var(--primary-box-shadow);
+      height: auto;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      @include break-point(tablet) {
+        width: auto;
+      }
+
+      .heading-5 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+        .icon {
+          margin-right: 1rem;
+        }
+      }
+    }
   }
+
   .password-container {
-    margin-left: 1rem;
+    display: flex;
+    width: auto;
 
     @include break-point(tablet) {
-      margin-left: 1rem 2rem 2rem 2rem;
-    }
-
-    @include break-point(mobile) {
-      margin: 1.25rem;
+      flex-direction: column;
     }
 
     .update-password {
-      margin-bottom: 2rem;
-      padding: 2.5rem;
-      border-radius: 1rem;
+      width: 100%;
+      margin: 1rem;
       background: var(--primary-bg-color);
+      border-radius: 1rem;
+      box-shadow: var(--primary-box-shadow);
+      padding: 2rem;
+
+      @include break-point(tablet) {
+        width: auto;
+      }
+
+      .heading-5 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+        .icon {
+          margin-right: 1rem;
+        }
+      }
 
       .input {
         margin: 2rem 0;

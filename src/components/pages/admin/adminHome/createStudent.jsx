@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button } from '@material-ui/core';
+import { FiUserPlus } from 'react-icons/fi';
 import useForm from '../../../../hooks/useForm';
 import TextInput from '../../../utils/textInput';
 import EmailInput from '../../../utils/emailInput';
@@ -50,7 +51,9 @@ const CreateStudent = () => {
 
   return (
     <div className="create-student">
-      <h5 className="heading-5">Create New Student Account</h5>
+      <h5 className="heading-5">
+        <FiUserPlus className="icon" /> Create New Student Account
+      </h5>
       <div>
         <TextInput
           id="name"
