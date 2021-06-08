@@ -1,0 +1,41 @@
+@import '../../../../config/mixins.scss';
+
+.create-alumni {
+  background: var(--primary-bg-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--primary-box-shadow);
+  .heading {
+    display: flex;
+    align-items: center;
+    .icon {
+      font-size: 1.8rem;
+      margin-right: 0.7rem;
+    }
+  }
+  .display-text {
+    padding: 1rem;
+    background: var(--secondary-bg-color);
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+  .input-form {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    .input {
+      width: 100%;
+    }
+    .button-wrapper {
+      min-width: 13rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+    @include break-point(mobile) {
+      flex-direction: column;
+      .create-alumni-button {
+        margin-top: 0.7rem;
+      }
+    }
+  }
+}
