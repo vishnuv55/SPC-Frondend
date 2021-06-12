@@ -40,7 +40,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="login-form">
+    <div className="login-form">
       <PasswordInput
         label="Password"
         name="password"
@@ -52,7 +52,7 @@ const LoginForm = () => {
       <div className="button">
         <Button onClick={handleLogin}>Sign In</Button>
       </div>
-    </form>
+    </div>
   );
 };
 export default LoginForm;

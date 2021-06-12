@@ -77,7 +77,7 @@ const LoginForm = ({ userType }) => {
 
   return (
     <>
-      <form className="login-form">
+      <div className="login-form">
         {userType === 'student' ? (
           <>
             <EmailInput
@@ -123,7 +123,7 @@ const LoginForm = ({ userType }) => {
         <div className="button">
           <Button onClick={handleLogin}>Sign In</Button>
         </div>
-      </form>
+      </div>
     </>
   );
 };
