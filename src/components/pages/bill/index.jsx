@@ -46,14 +46,16 @@ const Bill = ({ userType }) => {
     <div className="bill-wrapper">
       <div className="bills">
         {bills.map((item) => {
-          return <BillCard key={item.date} bill={item} userType={userType} />;
+          return (
+            <BillCard key={item.date} bill={item} userType={userType} fetchBills={fetchBills} />
+          );
         })}
       </div>
       <button type="button" className="new-bill-button" onClick={handleOpen}>
         <FiPlus className="icon" />
       </button>
       <Modal open={open} handleClose={handleClose}>
-        <ModalContent handleClose={handleClose} userType={userType} />
+        <ModalContent handleClose={handleClose} userType={userType} fetchBills={fetchBills} />
       </Modal>
     </div>
   );

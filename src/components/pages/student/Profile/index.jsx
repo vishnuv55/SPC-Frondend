@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './style.scss';
 import { Button } from '@material-ui/core';
+import Loading from '../../../common/loading';
 import PersonalDetails from './PersonalDetails';
 import EducationalDetails from './EducationalDetails';
 import useForm from '../../../../hooks/useForm';
@@ -13,6 +14,8 @@ import { convertDateFormate } from '../../../../helpers/date';
 import { useSetRhinoState } from '../../../../config/context';
 
 const Profile = () => {
+  const [loading, setLoading] = useState(true);
+
   const setPageTitle = useSetRhinoState('pageTitle');
   const setToastMessage = useSetRhinoState('toastMessage');
   // State to store Student details
@@ -44,6 +47,7 @@ const Profile = () => {
 
   // Function to fetch student details
   const fetchStudentDetail = async () => {
+    setLoading(true);
     try {
       const student = await getStudentDetails();
       const user = student.data;
@@ -67,8 +71,10 @@ const Profile = () => {
         guardian_phone_number: user.guardian_contact_number ? user.guardian_contact_number : '',
       };
       setValues(studentObj);
+      setLoading(false);
     } catch (err) {
       handleApiError(err);
+      setLoading(false);
     }
   };
 
@@ -148,6 +154,11 @@ const Profile = () => {
       });
     }
   };
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="profile">
       <div className="input-form">

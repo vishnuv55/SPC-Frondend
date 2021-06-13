@@ -1,13 +1,15 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
+import React, { useState } from 'react';
+
 import { useHistory } from 'react-router-dom';
-import EmailInput from '../../utils/emailInput';
-import useForm from '../../../hooks/useForm';
-import PasswordInput from '../../utils/passwordInput';
-import TextInput from '../../utils/textInput';
-import useApiError from '../../../hooks/useApiError';
-import { useSetRhinoState } from '../../../config/context';
 import { login } from '../../../Services/user';
+import { useSetRhinoState } from '../../../config/context';
+
+import Button from '../../common/button';
+import useForm from '../../../hooks/useForm';
+import TextInput from '../../utils/textInput';
+import EmailInput from '../../utils/emailInput';
+import useApiError from '../../../hooks/useApiError';
+import PasswordInput from '../../utils/passwordInput';
 
 const LoginForm = ({ userType }) => {
   const { values, onChange, error, handleError } = useForm({
@@ -16,6 +18,8 @@ const LoginForm = ({ userType }) => {
     designation: '',
     execomPassword: '',
   });
+
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   // eslint-disable-next-line no-unused-vars
   const setUser = useSetRhinoState('user');
@@ -32,6 +36,7 @@ const LoginForm = ({ userType }) => {
         error.email === '' &&
         error.studentPassword === ''
       ) {
+        setButtonLoading(true);
         const data = {
           email: values.email,
           password: values.studentPassword,
@@ -46,6 +51,7 @@ const LoginForm = ({ userType }) => {
           history.push(`/${userType}/home`);
         } catch (err) {
           handleApiError(err);
+          setButtonLoading(false);
         }
       }
     }
@@ -56,6 +62,7 @@ const LoginForm = ({ userType }) => {
         error.designation === '' &&
         error.execomPassword === ''
       ) {
+        setButtonLoading(true);
         const data = {
           designation: values.designation,
           password: values.execomPassword,
@@ -70,6 +77,7 @@ const LoginForm = ({ userType }) => {
           history.push(`/${userType}/home`);
         } catch (err) {
           handleApiError(err);
+          setButtonLoading(false);
         }
       }
     }
@@ -77,7 +85,7 @@ const LoginForm = ({ userType }) => {
 
   return (
     <>
-      <form className="login-form">
+      <div className="login-form">
         {userType === 'student' ? (
           <>
             <EmailInput
@@ -121,9 +129,11 @@ const LoginForm = ({ userType }) => {
           </>
         )}
         <div className="button">
-          <Button onClick={handleLogin}>Sign In</Button>
+          <Button onClick={handleLogin} loading={buttonLoading}>
+            Sign In
+          </Button>
         </div>
-      </form>
+      </div>
     </>
   );
 };

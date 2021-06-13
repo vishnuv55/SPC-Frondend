@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Button } from '@material-ui/core';
 import { FiUnlock } from 'react-icons/fi';
 import { useSetRhinoState } from '../../../../config/context';
-import useApiError from '../../../../hooks/useApiError';
-import useForm from '../../../../hooks/useForm';
 import { updateExecomPassword } from '../../../../Services/admin';
-import PasswordInput from '../../../utils/passwordInput';
+
+import Button from '../../../common/button';
+import useForm from '../../../../hooks/useForm';
 import TextInput from '../../../utils/textInput';
+import useApiError from '../../../../hooks/useApiError';
+import PasswordInput from '../../../utils/passwordInput';
 
 const UpdateExecomPassword = () => {
   const { values, onChange, error, handleError } = useForm({
     designation: '',
     password: '',
   });
+
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const { handleApiError } = useApiError();
   const setToastMessage = useSetRhinoState('toastMessage');
@@ -32,14 +35,17 @@ const UpdateExecomPassword = () => {
         message: 'Please resolve the error first',
       });
     } else {
+      setButtonLoading(true);
       try {
         await updateExecomPassword(values);
         setToastMessage({
           severity: 'Success',
           message: 'Execom Password successfully Updated',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -49,7 +55,7 @@ const UpdateExecomPassword = () => {
       <h5 className="heading-5">
         <FiUnlock className="icon" /> Update Execom Password
       </h5>
-      <form>
+      <div>
         <TextInput
           label="Designation"
           name="designation"
@@ -67,8 +73,12 @@ const UpdateExecomPassword = () => {
           setErrorMsg={handleError}
           onChange={onChange}
         />
-        <Button onClick={updatePassword}>Update Password</Button>
-      </form>
+        <div className="button-container">
+          <Button onClick={updatePassword} loading={buttonLoading}>
+            Update Password
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };

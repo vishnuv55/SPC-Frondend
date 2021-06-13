@@ -53,5 +53,7 @@
   }
   .button-container {
     padding-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
   }
 }

@@ -40,6 +40,11 @@
       .input {
         margin: 2rem 0;
       }
+
+      .button-container {
+        display: flex;
+        justify-content: flex-start;
+      }
     }
 
     .student-file-upload {
@@ -101,6 +106,11 @@
 
       .input {
         margin: 2rem 0;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: flex-start;
       }
     }
   }

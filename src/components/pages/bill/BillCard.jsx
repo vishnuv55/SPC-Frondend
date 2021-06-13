@@ -5,7 +5,7 @@ import { isoStringToDate } from '../../../helpers/date';
 import Modal from '../../utils/modal';
 import ModalContent from './deleteBill/ModalContent ';
 
-const BillCard = ({ bill, userType }) => {
+const BillCard = ({ bill, userType, fetchBills }) => {
   const [open, setOpen] = useState(false);
   const billDate = isoStringToDate(bill.bill_date);
   const handleOpen = () => {
@@ -40,7 +40,12 @@ const BillCard = ({ bill, userType }) => {
         </button>
       </div>
       <Modal open={open} handleClose={handleClose}>
-        <ModalContent handleClose={handleClose} userType={userType} billId={billId} />
+        <ModalContent
+          handleClose={handleClose}
+          userType={userType}
+          billId={billId}
+          fetchBills={fetchBills}
+        />
       </Modal>
     </div>
   );

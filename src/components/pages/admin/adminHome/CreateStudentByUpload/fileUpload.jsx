@@ -1,15 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useState } from 'react';
 
 import Papa from 'papaparse';
-import { Button } from '@material-ui/core';
 import { useDropzone } from 'react-dropzone';
 import { FiUploadCloud } from 'react-icons/fi';
 import { createStudents } from '../../../../../Services/admin';
 import { useSetRhinoState } from '../../../../../config/context';
+import Button from '../../../../common/button';
 
 const FileUpload = () => {
   const setToastMessage = useSetRhinoState('toastMessage');
+
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     maxFiles: 1,
@@ -37,6 +39,7 @@ const FileUpload = () => {
   const parse = async () => {
     const csvResult = [];
     if (file !== undefined) {
+      setButtonLoading(true);
       try {
         Papa.parse(file, {
           dynamicTyping: true,
@@ -47,6 +50,7 @@ const FileUpload = () => {
           },
           complete(results) {
             createNewStudents(csvResult);
+            setButtonLoading(false);
           },
         });
       } catch (error) {
@@ -54,6 +58,7 @@ const FileUpload = () => {
           severity: 'error',
           message: 'Error parsing the file',
         });
+        setButtonLoading(false);
       }
     }
   };
@@ -79,7 +84,9 @@ const FileUpload = () => {
         </div>
       </div>
       <div className="button-container">
-        <Button onClick={parse}>Create Accounts</Button>
+        <Button onClick={parse} loading={buttonLoading}>
+          Create Accounts
+        </Button>
       </div>
     </div>
   );

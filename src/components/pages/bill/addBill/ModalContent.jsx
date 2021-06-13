@@ -3,7 +3,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import BillForm from './BillForm';
 import './modal.scss';
 
-const ModalContent = ({ handleClose, userType }) => {
+const ModalContent = ({ handleClose, userType, fetchBills }) => {
   return (
     <div className="add-bill-modal-container">
       <div className="modal-content">
@@ -14,7 +14,7 @@ const ModalContent = ({ handleClose, userType }) => {
           </button>
         </div>
         <div className="horizontal-line"> </div>
-        <BillForm handleClose={handleClose} userType={userType} />
+        <BillForm handleClose={handleClose} userType={userType} fetchBills={fetchBills} />
       </div>
     </div>
   );

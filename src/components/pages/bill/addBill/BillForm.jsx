@@ -10,7 +10,7 @@ import DateInput from '../../../utils/dateInput';
 import TextArea from '../../../utils/textArea';
 import useForm from '../../../../hooks/useForm';
 
-const BillForm = ({ handleClose, userType }) => {
+const BillForm = ({ handleClose, userType, fetchBills }) => {
   const setToastMessage = useSetRhinoState('toastMessage');
   const { handleApiError } = useApiError();
 
@@ -47,6 +47,7 @@ const BillForm = ({ handleClose, userType }) => {
           severity: 'success',
           message: 'Bill added successfully',
         });
+        fetchBills();
         handleClose();
       } catch (err) {
         handleApiError(err);

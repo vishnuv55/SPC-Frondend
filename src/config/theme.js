@@ -18,8 +18,9 @@ const theme = createMuiTheme({
   overrides: {
     MuiButton: {
       text: {
-        borderRadius: '.7rem',
-        padding: '.7rem 3rem',
+        borderRadius: '.5rem',
+        padding: '.5rem 1.5rem',
+        fontSize: '.85rem',
         textTransform: 'capitalize',
         background: '#00d86b',
         color: '#fff',

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiUnlock } from 'react-icons/fi';
-import { Button } from '@material-ui/core';
+import { useSetRhinoState } from '../../../../config/context';
+import { updateStudentPassword } from '../../../../Services/admin';
+
+import Button from '../../../common/button';
 import useForm from '../../../../hooks/useForm';
 import EmailInput from '../../../utils/emailInput';
 import useApiError from '../../../../hooks/useApiError';
 import PasswordInput from '../../../utils/passwordInput';
-import { useSetRhinoState } from '../../../../config/context';
-import { updateStudentPassword } from '../../../../Services/admin';
 
 const UpdateStudentPassword = () => {
   const { values, onChange, error, handleError } = useForm({
@@ -15,7 +16,10 @@ const UpdateStudentPassword = () => {
     password: '',
   });
 
+  const [buttonLoading, setButtonLoading] = useState(false);
+
   const { handleApiError } = useApiError();
+
   const setToastMessage = useSetRhinoState('toastMessage');
 
   const updatePassword = async () => {
@@ -33,14 +37,17 @@ const UpdateStudentPassword = () => {
         message: 'Please resolve the error first',
       });
     } else {
+      setButtonLoading(true);
       try {
         await updateStudentPassword(values);
         setToastMessage({
           severity: 'Success',
           message: 'Student Password successfully Updated',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -51,7 +58,7 @@ const UpdateStudentPassword = () => {
         <FiUnlock className="icon" />
         Update Student Password
       </h5>
-      <form>
+      <div>
         <EmailInput
           label="Email"
           name="email"
@@ -69,8 +76,12 @@ const UpdateStudentPassword = () => {
           setErrorMsg={handleError}
           onChange={onChange}
         />
-        <Button onClick={updatePassword}>Update Password</Button>
-      </form>
+        <div className="button-container">
+          <Button onClick={updatePassword} loading={buttonLoading}>
+            Update Password
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
