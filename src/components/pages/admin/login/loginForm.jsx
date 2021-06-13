@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
-import PasswordInput from '../../../utils/passwordInput';
-import useForm from '../../../../hooks/useForm';
 import { login } from '../../../../Services/user';
 import { useSetRhinoState } from '../../../../config/context';
+
+import Button from '../../../common/button';
+import useForm from '../../../../hooks/useForm';
 import useApiError from '../../../../hooks/useApiError';
+import PasswordInput from '../../../utils/passwordInput';
 
 const LoginForm = () => {
   const { values, onChange, error, handleError } = useForm({
     password: '',
   });
+
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const { handleApiError } = useApiError();
 
@@ -21,6 +24,7 @@ const LoginForm = () => {
 
   const handleLogin = async () => {
     if (error.password === '') {
+      setButtonLoading(true);
       const data = {
         email: values.email,
         password: values.password,
@@ -35,6 +39,7 @@ const LoginForm = () => {
         history.push('/admin/home');
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -50,7 +55,9 @@ const LoginForm = () => {
         onChange={onChange}
       />
       <div className="button">
-        <Button onClick={handleLogin}>Sign In</Button>
+        <Button onClick={handleLogin} loading={buttonLoading}>
+          Sign In
+        </Button>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Button } from '@material-ui/core';
 import { FiUserPlus } from 'react-icons/fi';
 import useForm from '../../../../hooks/useForm';
 import TextInput from '../../../utils/textInput';
@@ -10,6 +9,7 @@ import NumberInput from '../../../utils/numberInput';
 import { createStudent } from '../../../../Services/admin';
 import useApiError from '../../../../hooks/useApiError';
 import { useSetRhinoState } from '../../../../config/context';
+import Button from '../../../common/button';
 
 const CreateStudent = () => {
   const { values, onChange, error, handleError } = useForm({
@@ -20,7 +20,10 @@ const CreateStudent = () => {
     pass_out_year: '',
   });
 
+  const [buttonLoading, setButtonLoading] = useState(false);
+
   const { handleApiError } = useApiError();
+
   const setToastMessage = useSetRhinoState('toastMessage');
 
   const createNewStudent = async () => {
@@ -32,14 +35,17 @@ const CreateStudent = () => {
     };
 
     if (!isValuesEmpty && !isError) {
+      setButtonLoading(true);
       try {
         await createStudent(studentDetails);
         setToastMessage({
           severity: 'Success',
           message: 'Student account successfully created',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     } else {
       setToastMessage({
@@ -91,7 +97,11 @@ const CreateStudent = () => {
           errorMsg={error.pass_out_year}
           setErrorMsg={handleError}
         />
-        <Button onClick={createNewStudent}>Create Student</Button>
+        <div className="button-container">
+          <Button onClick={createNewStudent} loading={buttonLoading}>
+            Create Student
+          </Button>
+        </div>
       </div>
     </div>
   );
