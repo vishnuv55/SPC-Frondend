@@ -4,7 +4,7 @@ import { useSetRhinoState } from '../../../../config/context';
 import useApiError from '../../../../hooks/useApiError';
 import { deleteBill } from '../../../../Services/user';
 
-const DeleteBill = ({ handleClose, userType, billId }) => {
+const DeleteBill = ({ handleClose, userType, billId, fetchBills }) => {
   const { handleApiError } = useApiError();
   const setToastMessage = useSetRhinoState('toastMessage');
   const handleDeleteBill = async () => {
@@ -14,6 +14,7 @@ const DeleteBill = ({ handleClose, userType, billId }) => {
         severity: 'success',
         message: 'Bill deleted successfully',
       });
+      fetchBills();
       handleClose();
     } catch (err) {
       handleApiError(err);
