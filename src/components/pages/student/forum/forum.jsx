@@ -25,10 +25,6 @@ const Forum = () => {
     getForumQueries();
   }, []);
 
-  if (queries.length === 0) {
-    return <h2>no queries yet</h2>;
-  }
-
   return (
     <div className="student-queries">
       <ShowQueries queries={queries} />

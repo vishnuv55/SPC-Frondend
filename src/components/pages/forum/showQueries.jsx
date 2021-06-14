@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Query from './query';
 import { getQueries } from '../../../Services/user';
 import useApiError from '../../../hooks/useApiError';
+import NoContent from '../../common/NoContent';
 
 const ShowQueries = ({ userType }) => {
   const { handleApiError } = useApiError();
@@ -23,6 +24,10 @@ const ShowQueries = ({ userType }) => {
   useEffect(() => {
     getForumQueries();
   }, []);
+
+  if (queries.length === 0) {
+    return <NoContent />;
+  }
 
   return (
     <div className="queries">
