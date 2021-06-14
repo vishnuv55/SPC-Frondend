@@ -13,12 +13,13 @@
   .drive {
     background: var(--primary-bg-color);
     margin: 1rem;
-    max-width: 23.5rem;
+    width: 23.5rem;
     border-radius: 1rem;
     padding: 1.5rem;
 
     @include break-point(mobile) {
       margin: 0.5rem;
+      width: auto;
       max-width: 100%;
     }
 
