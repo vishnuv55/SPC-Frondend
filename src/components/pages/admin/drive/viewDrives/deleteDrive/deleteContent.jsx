@@ -2,7 +2,7 @@
 import React from 'react';
 
 import './style.scss';
-import { useSetRhinoState } from '../../../../../../config/context';
+import { useRhinoValue, useSetRhinoState } from '../../../../../../config/context';
 import useApiError from '../../../../../../hooks/useApiError';
 import { deleteDrive } from '../../../../../../Services/admin';
 
@@ -11,6 +11,8 @@ const DeleteContent = ({ id, handleClose }) => {
 
   const { handleApiError } = useApiError();
 
+  const setReload = useRhinoValue('reload');
+
   const handleDelete = async () => {
     try {
       await deleteDrive(id);
@@ -18,6 +20,7 @@ const DeleteContent = ({ id, handleClose }) => {
         severity: 'success',
         message: 'The drive has been successfully deleted',
       });
+      setReload((prevReload) => !prevReload);
     } catch (err) {
       handleApiError(err);
     }

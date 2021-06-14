@@ -1,7 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 
-import { Button } from '@material-ui/core';
 import TextInput from '../../../../utils/textInput';
 import useForm from '../../../../../hooks/useForm';
 import EmailInput from '../../../../utils/emailInput';
@@ -12,6 +11,7 @@ import { useSetRhinoState } from '../../../../../config/context';
 import useApiError from '../../../../../hooks/useApiError';
 import TextArea from '../../../../utils/textArea';
 import { addNewDrive } from '../../../../../Services/admin';
+import Button from '../../../../common/button';
 
 const DriveForm = ({ handleClose }) => {
   const { values, onChange, error, handleError } = useForm({
@@ -36,6 +36,10 @@ const DriveForm = ({ handleClose }) => {
     female: true,
     others: true,
   });
+
+  const [buttonLoading, setButtonLoading] = useState(false);
+
+  const setReload = useSetRhinoState('reload');
 
   const setToastMessage = useSetRhinoState('toastMessage');
 
@@ -69,6 +73,7 @@ const DriveForm = ({ handleClose }) => {
         message: 'Confirm password and New password must be same',
       });
     } else {
+      setButtonLoading(true);
       try {
         const data = {
           company_name: values.company_name,
@@ -102,9 +107,12 @@ const DriveForm = ({ handleClose }) => {
           severity: 'Success',
           message: 'Drive successfully created',
         });
+        setButtonLoading(false);
+        setReload((prevReload) => !prevReload);
         handleClose();
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -262,7 +270,7 @@ const DriveForm = ({ handleClose }) => {
         <GenderCheckboxInput values={preferredGender} onChange={handleCheckboxChange} />
       </div>
       <div className="button-container">
-        <Button className="button" onClick={addDrive}>
+        <Button className="button" loading={buttonLoading} onClick={addDrive}>
           Add Drive
         </Button>
       </div>

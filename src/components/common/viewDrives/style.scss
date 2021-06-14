@@ -9,13 +9,14 @@
   .drive {
     background: var(--primary-bg-color);
     margin: 1rem;
-    max-width: 23.5rem;
+    width: 23.5rem;
     border-radius: 1rem;
     padding: 1.5rem;
 
     @include break-point(mobile) {
       margin: 0.5rem;
-      max-width: 100%;
+      width: auto;
+      width: 100%;
     }
 
     .header {
@@ -89,5 +90,36 @@
         margin-left: 1rem;
       }
     }
+  }
+}
+.no-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 100%;
+  margin: 2rem;
+  padding: 5rem 2rem;
+  border-radius: 1rem;
+  background: var(--primary-bg-color);
+
+  @include break-point(mobile) {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+
+  .no-content-img {
+    width: 20rem;
+    margin: 2rem;
+
+    @include break-point(mobile) {
+      width: 70vw;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 }
