@@ -1,0 +1,118 @@
+@import '../../../../config/mixins.scss';
+
+.new-question-button {
+  border: none;
+  outline: none;
+  width: 4rem;
+  height: 4rem;
+  right: 2rem;
+  bottom: 2rem;
+  position: fixed;
+  background: var(--primary-color);
+  border-radius: 1rem;
+  box-shadow: var(--primary-box-shadow);
+
+  .icon {
+    color: var(--white-color);
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  @include break-point(mobile) {
+    bottom: 6rem;
+  }
+}
+
+.student-queries {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .query {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: var(--primary-bg-color);
+
+    @include break-point(mobile) {
+      margin: 0.5rem;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .name,
+    .created-date {
+      font-size: 0.75rem;
+      color: var(--secondary-font-color);
+      margin-right: 1rem;
+    }
+
+    .question {
+      color: var(--primary-font-color);
+      font-size: 1.2rem;
+      margin: 0.4rem 0;
+    }
+    .answer {
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0.7rem 0;
+      color: var(--secondary-font-color);
+    }
+
+    .horizontal-line {
+      width: 100%;
+      height: 0.75px;
+      margin: 0.4rem 0;
+      background-color: var(--grey-color);
+    }
+    .footer {
+      margin: 0.5rem 0 0 0;
+      display: flex;
+
+      .designation {
+        margin-left: auto;
+        font-size: 0.7rem;
+        color: var(--secondary-font-color);
+      }
+    }
+  }
+}
+.add-question-modal {
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+  background-color: var(--primary-bg-color);
+  width: 25rem;
+
+  @include break-point(tablet) {
+    width: auto;
+    margin: 1rem;
+  }
+
+  .heading-5 {
+    margin: 0;
+  }
+
+  .question-content {
+    .input {
+      margin: 1.5rem 0;
+    }
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .cancel-button {
+        border-radius: 0.5rem;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.85rem;
+        text-transform: capitalize;
+        outline: none;
+        border: none;
+        margin-right: 1.5rem;
+      }
+    }
+  }
+}
