@@ -1,5 +1,4 @@
 /* eslint-disable react/button-has-type */
-import { Button } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import { FiSend } from 'react-icons/fi';
@@ -9,10 +8,12 @@ import { useSetRhinoState } from '../../../config/context';
 import { sendEmail } from '../../../Services/user';
 import TextInput from '../../utils/textInput';
 import useApiError from '../../../hooks/useApiError';
+import Button from '../../common/button';
 
 const MailContent = ({ values, error, checkboxValues, onChange, handleError, userType }) => {
   const setToastMessage = useSetRhinoState('toastMessage');
   const [content, setContent] = useState('');
+  const [buttonLoading, setButtonLoading] = useState(false);
   const { handleApiError } = useApiError();
 
   const sendMail = async () => {
@@ -51,6 +52,7 @@ const MailContent = ({ values, error, checkboxValues, onChange, handleError, use
         message: 'Mail must include subject and content',
       });
     } else {
+      setButtonLoading(true);
       const data = {
         ...(values.tenth_percentage !== '' && { tenth_mark: values.tenth_percentage }),
         ...(values.twelfth_percentage !== '' && { plus_two_mark: values.twelfth_percentage }),
@@ -68,8 +70,10 @@ const MailContent = ({ values, error, checkboxValues, onChange, handleError, use
           severity: 'success',
           message: `Mail has been successfully send to ${response.data.accepted}`,
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -90,7 +94,7 @@ const MailContent = ({ values, error, checkboxValues, onChange, handleError, use
       />
       <ReactQuill theme="snow" value={content} onChange={setContent} className="quill-editor" />
       <div className="send-button-container">
-        <Button className="send-button" onClick={sendMail}>
+        <Button className="send-button" onClick={sendMail} loading={buttonLoading}>
           Send Mail
         </Button>
       </div>
