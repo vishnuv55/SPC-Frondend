@@ -9,15 +9,21 @@ const BranchCheckboxInput = ({ values, onChange }) => {
         <FormGroup fullWidth variant="outlined">
           <div className="checkboxes">
             <FormControlLabel
-              control={<Checkbox checked={values.CSE} onChange={onChange} name="CSE" />}
+              control={
+                <Checkbox checked={values.CSE} color="primary" onChange={onChange} name="CSE" />
+              }
               label="CSE"
             />
             <FormControlLabel
-              control={<Checkbox checked={values.ECE} onChange={onChange} name="ECE" />}
+              control={
+                <Checkbox checked={values.ECE} color="primary" onChange={onChange} name="ECE" />
+              }
               label="ECE"
             />
             <FormControlLabel
-              control={<Checkbox checked={values.EEE} onChange={onChange} name="EEE" />}
+              control={
+                <Checkbox checked={values.EEE} color="primary" onChange={onChange} name="EEE" />
+              }
               label="EEE"
             />
           </div>

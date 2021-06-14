@@ -9,15 +9,31 @@ const GenderCheckboxInput = ({ values, onChange }) => {
         <FormGroup fullWidth variant="outlined">
           <div className="checkboxes">
             <FormControlLabel
-              control={<Checkbox checked={values.male} onChange={onChange} name="male" />}
+              control={
+                <Checkbox checked={values.male} color="primary" onChange={onChange} name="male" />
+              }
               label="Male"
             />
             <FormControlLabel
-              control={<Checkbox checked={values.female} onChange={onChange} name="female" />}
+              control={
+                <Checkbox
+                  checked={values.female}
+                  color="primary"
+                  onChange={onChange}
+                  name="female"
+                />
+              }
               label="Female"
             />
             <FormControlLabel
-              control={<Checkbox checked={values.others} onChange={onChange} name="others" />}
+              control={
+                <Checkbox
+                  checked={values.others}
+                  color="primary"
+                  onChange={onChange}
+                  name="others"
+                />
+              }
               label="Others"
             />
           </div>
