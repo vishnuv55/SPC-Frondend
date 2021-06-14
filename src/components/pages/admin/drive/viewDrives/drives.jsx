@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from 'react';
 import useApiError from '../../../../../hooks/useApiError';
+import { useRhinoValue } from '../../../../../config/context';
 
-import { getDriveDetails } from '../../../../../Services/user';
-import Loading from '../../../../common/loading';
 import Drive from './drive';
+import Loading from '../../../../common/loading';
+import NoDrives from '../../../../common/noDrives/noDrive';
+import { getDriveDetails } from '../../../../../Services/user';
 
 const Drives = () => {
   const [loading, setLoading] = useState(true);
@@ -13,9 +15,11 @@ const Drives = () => {
 
   const { handleApiError } = useApiError();
 
+  const reload = useRhinoValue('reload');
+
   useEffect(() => {
     getDrives();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [reload]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getDrives = async () => {
     if (!loading) {
@@ -33,6 +37,14 @@ const Drives = () => {
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (drives.length === 0) {
+    return (
+      <div className="no-drive-container">
+        <NoDrives />
+      </div>
+    );
   }
 
   return (

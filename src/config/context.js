@@ -7,6 +7,7 @@ const { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState } = create
     severity: 'success',
     message: '',
   },
+  reload: false,
 });
 
 export { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState };

@@ -1,5 +1,9 @@
 @import '../../../../../config/mixins.scss';
 
+.no-drive-container {
+  width: 100%;
+}
+
 .drives {
   display: flex;
   justify-content: flex-start;

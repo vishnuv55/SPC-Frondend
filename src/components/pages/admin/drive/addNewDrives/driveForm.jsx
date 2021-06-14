@@ -37,6 +37,8 @@ const DriveForm = ({ handleClose }) => {
     others: true,
   });
 
+  const setReload = useSetRhinoState('reload');
+
   const setToastMessage = useSetRhinoState('toastMessage');
 
   const { handleApiError } = useApiError();
@@ -102,6 +104,7 @@ const DriveForm = ({ handleClose }) => {
           severity: 'Success',
           message: 'Drive successfully created',
         });
+        setReload((prevReload) => !prevReload);
         handleClose();
       } catch (err) {
         handleApiError(err);

@@ -6,6 +6,7 @@ import useApiError from '../../../hooks/useApiError';
 import { getDriveDetails } from '../../../Services/user';
 import Loading from '../loading';
 import Drive from './drive';
+import NoDrives from '../noDrives/noDrive';
 
 const ViewDrives = ({ userType }) => {
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,10 @@ const ViewDrives = ({ userType }) => {
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (drives.length === 0) {
+    return <NoDrives />;
   }
 
   return (
