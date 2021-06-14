@@ -7,13 +7,13 @@
   justify-content: center;
   width: auto;
   height: 100%;
-  margin: 1.5rem;
+  margin: 2rem;
   padding: 5rem 2rem;
   border-radius: 1rem;
   background: var(--primary-bg-color);
 
   @include break-point(mobile) {
-    margin: 0.5rem;
+    margin: 1.5rem;
     padding: 2rem;
   }
 

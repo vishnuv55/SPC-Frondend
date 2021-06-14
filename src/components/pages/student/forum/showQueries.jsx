@@ -10,11 +10,11 @@ const ShowQueries = ({ queries }) => {
   }
 
   return (
-    <>
+    <div className="student-queries">
       {queries.map((query) => (
         <Query key={query._id} query={query} />
       ))}
-    </>
+    </div>
   );
 };
 

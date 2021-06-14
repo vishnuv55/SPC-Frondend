@@ -26,10 +26,10 @@ const Forum = () => {
   }, []);
 
   return (
-    <div className="student-queries">
+    <>
       <ShowQueries queries={queries} />
       <AddNewQuestion getForumQueries={getForumQueries} />
-    </div>
+    </>
   );
 };
 

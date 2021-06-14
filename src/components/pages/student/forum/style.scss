@@ -1,32 +1,32 @@
 @import '../../../../config/mixins.scss';
 
+.new-question-button {
+  border: none;
+  outline: none;
+  width: 4rem;
+  height: 4rem;
+  right: 2rem;
+  bottom: 2rem;
+  position: fixed;
+  background: var(--primary-color);
+  border-radius: 1rem;
+  box-shadow: var(--primary-box-shadow);
+
+  .icon {
+    color: var(--white-color);
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  @include break-point(mobile) {
+    bottom: 6rem;
+  }
+}
+
 .student-queries {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-
-  .new-question-button {
-    border: none;
-    outline: none;
-    width: 4rem;
-    height: 4rem;
-    right: 2rem;
-    bottom: 2rem;
-    position: fixed;
-    background: var(--primary-color);
-    border-radius: 1rem;
-    box-shadow: var(--primary-box-shadow);
-
-    .icon {
-      color: var(--white-color);
-      font-weight: 900;
-      font-size: 2rem;
-    }
-
-    @include break-point(mobile) {
-      bottom: 6rem;
-    }
-  }
 
   .query {
     margin: 1rem;
