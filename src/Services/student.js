@@ -10,4 +10,9 @@ const editStudentProfile = (data) => {
 const registerForDrive = (data) => {
   return api.post('/student/register-drive', data);
 };
-export { getStudentDetails, editStudentProfile, registerForDrive };
+
+const askQuestion = (data) => {
+  return api.post('/student/forum/question', data);
+};
+
+export { getStudentDetails, editStudentProfile, registerForDrive, askQuestion };

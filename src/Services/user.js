@@ -36,6 +36,14 @@ const sendEmail = (userType, data) => {
   return api.post(`/${userType}/send-email`, data);
 };
 
+const getQueries = (userType) => {
+  return api.get(`/${userType}/forum/queries`);
+};
+
+const addQueryAnswer = (userType, data) => {
+  return api.post(`/${userType}/forum/answer`, data);
+};
+
 export {
   isUserLoggedIn,
   login,
@@ -46,4 +54,6 @@ export {
   createBill,
   deleteBill,
   sendEmail,
+  getQueries,
+  addQueryAnswer,
 };

@@ -68,6 +68,14 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) 
         msg = validateString(e.target.value, 'Subject', 5, 100, true);
         break;
       }
+      case 'question': {
+        msg = validateString(e.target.value, 'Question', 10, 100, true);
+        break;
+      }
+      case 'answer': {
+        msg = validateString(e.target.value, 'Answer', 10, 100, true);
+        break;
+      }
       default:
         msg = '';
     }
