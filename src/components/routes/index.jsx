@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { Switch } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 import Login from '../pages/Login';
 import StudentHome from '../pages/student/studentHome';
-import ExecomHome from '../pages/execom';
 import ProtectedRoute from './protectedRoute';
 import Route from './route';
 import AdminLogin from '../pages/admin/login';
@@ -54,7 +53,7 @@ const Routes = () => {
       {/* Execom Routes */}
 
       <ProtectedRoute exact path="/execom/home">
-        <ExecomHome />
+        <Redirect to="/execom/bill" />
       </ProtectedRoute>
       <ProtectedRoute exact path="/execom/bill">
         <Bill userType="execom" />
