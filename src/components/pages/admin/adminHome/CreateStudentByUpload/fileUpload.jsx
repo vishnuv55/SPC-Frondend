@@ -25,6 +25,7 @@ const FileUpload = () => {
         severity: 'success',
         message: 'Students created successfully',
       });
+      setButtonLoading(false);
     } catch (error) {
       setToastMessage({
         severity: 'error',
@@ -32,6 +33,7 @@ const FileUpload = () => {
           ? error.response?.data?.message
           : 'Some error has occurred',
       });
+      setButtonLoading(false);
     }
   };
 
@@ -50,7 +52,6 @@ const FileUpload = () => {
           },
           complete(results) {
             createNewStudents(csvResult);
-            setButtonLoading(false);
           },
         });
       } catch (error) {
