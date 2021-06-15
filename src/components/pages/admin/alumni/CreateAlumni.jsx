@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './createAlumni.scss';
-import { Button } from '@material-ui/core';
 import { FiUpload } from 'react-icons/fi';
 import { useSetRhinoState } from '../../../../config/context';
 import useForm from '../../../../hooks/useForm';
 import useApiError from '../../../../hooks/useApiError';
 import NumberInput from '../../../utils/numberInput';
 import { createAlumni } from '../../../../Services/admin';
+import Button from '../../../common/button';
 
 const CreateAlumni = () => {
   const { handleApiError } = useApiError();
@@ -14,7 +14,9 @@ const CreateAlumni = () => {
   const { values, onChange, error, handleError } = useForm({
     pass_out_year: '',
   });
+  const [buttonLoading, setButtonLoading] = useState(false);
   const handleCreateAlumni = async () => {
+    setButtonLoading(true);
     const passOutYear = {
       pass_out_year: parseInt(values.pass_out_year, 10),
     };
@@ -35,8 +37,10 @@ const CreateAlumni = () => {
           severity: 'success',
           message: 'Alumni created successfully',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -62,7 +66,11 @@ const CreateAlumni = () => {
           setErrorMsg={handleError}
         />
         <div className="button-wrapper">
-          <Button className="create-alumni-button" onClick={handleCreateAlumni}>
+          <Button
+            className="create-alumni-button"
+            loading={buttonLoading}
+            onClick={handleCreateAlumni}
+          >
             Create Alumni
           </Button>
         </div>

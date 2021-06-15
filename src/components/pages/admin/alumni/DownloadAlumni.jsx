@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './downloadAlumni.scss';
-import { Button } from '@material-ui/core';
 import { FiDownload } from 'react-icons/fi';
 import { jsonToCSV } from 'react-papaparse';
 import useApiError from '../../../../hooks/useApiError';
 import { getAlumni } from '../../../../Services/admin';
+import Button from '../../../common/button';
 
 const DownloadAlumni = () => {
   const { handleApiError } = useApiError();
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const generateCsvFile = async (data) => {
     const csv = await jsonToCSV(data);
@@ -21,11 +22,14 @@ const DownloadAlumni = () => {
     testLink.click();
   };
   const handleDownload = async () => {
+    setButtonLoading(true);
     try {
       const alumni = await getAlumni();
       generateCsvFile(alumni);
+      setButtonLoading(false);
     } catch (error) {
       handleApiError(error);
+      setButtonLoading(false);
     }
   };
   return (
@@ -38,7 +42,10 @@ const DownloadAlumni = () => {
         <p className="paragraph"> Click the download button to download alumni details.</p>
       </div>
       <div className="button-wrapper">
-        <Button onClick={handleDownload}> Download</Button>
+        <Button onClick={handleDownload} loading={buttonLoading}>
+          {' '}
+          Download
+        </Button>
       </div>
     </div>
   );
