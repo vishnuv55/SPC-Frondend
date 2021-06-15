@@ -23,6 +23,7 @@
       .heading {
         padding-top: 0;
         margin: auto;
+        color: var(--primary-font-color);
       }
       .amount-wrapper {
         display: flex;
@@ -45,6 +46,7 @@
       padding: 0.3rem 1rem;
       background: var(--secondary-bg-color);
       border-radius: 0.5rem;
+      color: var(--primary-font-color);
       .day {
         font-size: 1.3rem;
       }
