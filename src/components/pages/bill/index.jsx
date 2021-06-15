@@ -8,6 +8,7 @@ import Modal from '../../utils/modal';
 import ModalContent from './addBill/ModalContent';
 import { useSetRhinoState } from '../../../config/context';
 import Loading from '../../common/loading';
+import NoDrives from '../../common/noDrives/noDrive';
 
 const Bill = ({ userType }) => {
   const [bills, setBills] = useState([]);
@@ -41,6 +42,21 @@ const Bill = ({ userType }) => {
   };
   if (loading) {
     return <Loading />;
+  }
+  if (bills.length === 0) {
+    return (
+      <div className="no-drive-container">
+        <NoDrives />
+        <div className="bill-wrapper">
+          <button type="button" className="new-bill-button" onClick={handleOpen}>
+            <FiPlus className="icon" />
+          </button>
+          <Modal open={open} handleClose={handleClose}>
+            <ModalContent handleClose={handleClose} userType={userType} fetchBills={fetchBills} />
+          </Modal>
+        </div>
+      </div>
+    );
   }
   return (
     <div className="bill-wrapper">

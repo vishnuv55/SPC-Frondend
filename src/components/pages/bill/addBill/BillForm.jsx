@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './billForm.scss';
-import { Button } from '@material-ui/core';
 import { useSetRhinoState } from '../../../../config/context';
 import { createBill } from '../../../../Services/user';
 import useApiError from '../../../../hooks/useApiError';
@@ -9,10 +8,12 @@ import NumberInput from '../../../utils/numberInput';
 import DateInput from '../../../utils/dateInput';
 import TextArea from '../../../utils/textArea';
 import useForm from '../../../../hooks/useForm';
+import Button from '../../../common/button';
 
 const BillForm = ({ handleClose, userType, fetchBills }) => {
   const setToastMessage = useSetRhinoState('toastMessage');
   const { handleApiError } = useApiError();
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const { values, onChange, error, handleError } = useForm({
     billTitle: '',
@@ -24,6 +25,7 @@ const BillForm = ({ handleClose, userType, fetchBills }) => {
   const handleAddBill = async () => {
     const isValuesEmpty = Object.values(values).some((value) => value === '');
     const isError = Object.values(error).some((err) => err !== '');
+    setButtonLoading(true);
     const newBill = {
       bill_title: values.billTitle,
       bill_amount: parseInt(values.billAmount, 10),
@@ -48,9 +50,11 @@ const BillForm = ({ handleClose, userType, fetchBills }) => {
           message: 'Bill added successfully',
         });
         fetchBills();
+        setButtonLoading(false);
         handleClose();
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -101,7 +105,9 @@ const BillForm = ({ handleClose, userType, fetchBills }) => {
       </div>
 
       <div className="bill-button-wrapper">
-        <Button onClick={handleAddBill}>Add Bill</Button>
+        <Button onClick={handleAddBill} loading={buttonLoading}>
+          Add Bill
+        </Button>
       </div>
     </div>
   );

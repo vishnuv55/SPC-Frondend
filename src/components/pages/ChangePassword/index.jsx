@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './style.scss';
-import { Button } from '@material-ui/core';
 import { useSetRhinoState } from '../../../config/context';
 import useForm from '../../../hooks/useForm';
 import InputForm from './inputForm';
 import useApiError from '../../../hooks/useApiError';
 import { changePassword } from '../../../Services/user';
 import img from '../../../assets/changePassword.svg';
+import Button from '../../common/button';
 
 const ChangePassword = ({ userType }) => {
   const { values, onChange, error, handleError } = useForm({
@@ -22,6 +22,8 @@ const ChangePassword = ({ userType }) => {
 
   const { handleApiError } = useApiError();
 
+  const [buttonLoading, setButtonLoading] = useState(false);
+
   useEffect(() => {
     setPageTitle('Update Password');
   }, [setPageTitle]);
@@ -30,6 +32,7 @@ const ChangePassword = ({ userType }) => {
   const handleChangePassword = async () => {
     const isValuesEmpty = Object.values(values).some((value) => value === '');
     const isError = Object.values(error).some((err) => err !== '');
+    setButtonLoading(true);
 
     if (isValuesEmpty) {
       setToastMessage({
@@ -59,8 +62,10 @@ const ChangePassword = ({ userType }) => {
           severity: 'success',
           message: 'Password successfully updated',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -70,7 +75,9 @@ const ChangePassword = ({ userType }) => {
       <div className="change-password-wrapper">
         <InputForm values={values} onChange={onChange} error={error} handleError={handleError} />
         <div className="button-wrapper">
-          <Button onClick={handleChangePassword}>Change Password</Button>
+          <Button onClick={handleChangePassword} loading={buttonLoading}>
+            Change Password
+          </Button>
         </div>
       </div>
       <img src={img} className="change-password-svg" alt="Change password" />
