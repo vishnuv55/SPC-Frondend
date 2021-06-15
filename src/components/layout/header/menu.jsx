@@ -39,7 +39,7 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-const Menu = () => {
+const Menu = ({ darkMode, toggleDarkMode }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const [user, setUser] = useRhinoState('user');
@@ -68,6 +68,7 @@ const Menu = () => {
   };
 
   const handleThemeChange = () => {
+    toggleDarkMode();
     setAnchorEl(null);
   };
 
@@ -88,7 +89,9 @@ const Menu = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <StyledMenuItem onClick={handleThemeChange}>Dark mode</StyledMenuItem>
+        <StyledMenuItem onClick={handleThemeChange}>
+          {darkMode ? 'Light Mode' : 'Dark mode'}
+        </StyledMenuItem>
         <StyledMenuItem onClick={handleLogout}>Logout</StyledMenuItem>
       </StyledMenu>
     </div>

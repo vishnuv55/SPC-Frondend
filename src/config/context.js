@@ -8,6 +8,7 @@ const { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState } = create
     message: '',
   },
   reload: false,
+  darkMode: false,
 });
 
 export { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState };
