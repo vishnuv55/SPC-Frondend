@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import './mixins.scss';
 
-:root {
+body {
   //color variants
   --primary-color: #00d86b;
   --primary-color-light: #daffec;
@@ -22,6 +22,29 @@
 
   // box shadows
   --primary-box-shadow: 1px 1px 60px 26px rgba(228, 242, 230, 0.38);
+}
+
+.dark {
+  //color variants
+  --primary-color: #00d86b;
+  --primary-color-light: #292b29;
+
+  // Background color variants
+  --primary-bg-color: #1d1f1d;
+  --secondary-bg-color: #222422;
+  --tertiary-bg-color: #262926;
+
+  // font color variants
+  --primary-font-color: #ffffff;
+  --secondary-font-color: #dbe4df;
+  --tertiary-font-color: #cfd8ce;
+
+  --white-color: #fff;
+  --grey-color: rgb(143, 150, 146);
+  --red-color: #c83b3b;
+
+  // box shadows
+  --primary-box-shadow: none;
 }
 
 html,

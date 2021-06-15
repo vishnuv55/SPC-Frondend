@@ -40,6 +40,7 @@
         .position {
           font-size: 0.9rem;
           margin: 0.3rem 0;
+          color: var(--primary-font-color);
           .icon {
             margin-right: 0.5rem;
           }
@@ -53,6 +54,7 @@
         justify-content: space-evenly;
         padding: 0.3rem 0.5rem;
         background: var(--secondary-bg-color);
+        color: var(--primary-font-color);
         border-radius: 0.5rem;
 
         .day {
@@ -100,6 +102,7 @@
         outline: none;
         border: none;
         border-radius: 0.3rem;
+        background: var(--secondary-bg-color);
         color: var(--red-color);
       }
     }

@@ -48,7 +48,7 @@ const CreateAlumni = () => {
     <div className="create-alumni">
       <div className="heading">
         <FiUpload className="icon" />
-        <h3 className="heading-4">Change Student to Alumni</h3>
+        <h5 className="heading-5">Change Student to Alumni</h5>
       </div>
       <div className="display-text">
         <p className="paragraph">

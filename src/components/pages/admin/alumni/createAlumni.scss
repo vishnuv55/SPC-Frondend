@@ -11,6 +11,7 @@
     .icon {
       font-size: 1.8rem;
       margin-right: 0.7rem;
+      color: var(--primary-font-color);
     }
   }
   .display-text {
@@ -21,20 +22,29 @@
   }
   .input-form {
     display: flex;
-    align-items: center;
+    justify-content: stretch;
     padding-top: 1rem;
     .input {
       width: 100%;
     }
     .button-wrapper {
-      min-width: 13rem;
+      margin-left: 1rem;
+      width: 15rem;
       display: flex;
       justify-content: flex-end;
     }
     @include break-point(mobile) {
       flex-direction: column;
-      .create-alumni-button {
-        margin-top: 0.7rem;
+
+      .input {
+        width: auto;
+      }
+
+      .button-wrapper {
+        width: 100%;
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-top: 1.5rem;
       }
     }
   }

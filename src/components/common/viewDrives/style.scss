@@ -53,11 +53,13 @@
 
         .day {
           font-size: 1.3rem;
+          color: var(--primary-font-color);
         }
         .month,
         .year {
           font-size: 0.6rem;
           padding: 0.1rem;
+          color: var(--primary-font-color);
         }
       }
     }

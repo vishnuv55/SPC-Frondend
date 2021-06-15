@@ -8,7 +8,7 @@ import Loading from '../common/loading';
 import SideNav from './sideNav';
 import Header from './header';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, darkMode, toggleDarkMode }) => {
   const [user, setUser] = useRhinoState('user');
 
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
       <div className="dashboard-layout">
         <SideNav />
         <div className="dashboard-container">
-          <Header />
+          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <div className="dashboard-pages">{children}</div>
         </div>
       </div>

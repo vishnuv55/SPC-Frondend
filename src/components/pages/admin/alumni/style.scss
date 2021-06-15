@@ -1,8 +1,15 @@
+@import '../../../../config/mixins.scss';
+
 .alumni-wrapper {
-  margin: 2rem;
+  margin: 1rem;
+  width: auto;
   display: flex;
-  @media screen and (max-width: 950px) {
-    flex-direction: column;
-    align-items: flex-start;
+  flex-wrap: wrap;
+
+  .create-alumni,
+  .download-alumni {
+    max-width: 30rem;
+    margin: 1rem;
+    width: 100%;
   }
 }

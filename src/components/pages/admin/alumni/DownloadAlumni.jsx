@@ -36,14 +36,15 @@ const DownloadAlumni = () => {
     <div className="download-alumni">
       <div className="heading">
         <FiDownload className="icon" />
-        <h3 className="heading-4"> Download Alumni Details </h3>
+        <h3 className="heading-5"> Download Alumni Details </h3>
       </div>
       <div className="display-text">
-        <p className="paragraph"> Click the download button to download alumni details.</p>
+        <p className="paragraph">
+          The entire alumni details in the database will be downloaded by clicking below button.
+        </p>
       </div>
       <div className="button-wrapper">
         <Button onClick={handleDownload} loading={buttonLoading}>
-          {' '}
           Download
         </Button>
       </div>

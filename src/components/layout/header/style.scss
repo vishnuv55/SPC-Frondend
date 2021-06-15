@@ -43,7 +43,6 @@
           background: var(--tertiary-bg-color);
           border-radius: 0.5rem;
           cursor: pointer;
-          box-shadow: 0 30px 50px -10px #ccc;
 
           &:before {
             content: 'Dark';
@@ -87,6 +86,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            color: var(--primary-font-color);
           }
           .menu-list {
             background: violet;
