@@ -63,7 +63,7 @@ const validatePassword = (data, name, isRequired) => {
   if (data.length < 6 && data !== '') {
     return `${name} must be more than 6 letters`;
   }
-  if (data.length > 100) {
+  if (data.length > 50) {
     return `${name} cannot be more than 100 letters`;
   }
   return '';

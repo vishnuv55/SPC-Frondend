@@ -38,7 +38,7 @@ const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, 
         break;
       }
       case 'number_of_backlogs': {
-        msg = validateNumber(parseInt(e.target.value, 10), 0, 50, 'Number of Backlogs', true);
+        msg = validateNumber(parseInt(e.target.value, 10), 0, 57, 'Number of Backlogs', true);
         break;
       }
       case 'phone_number': {
@@ -54,7 +54,7 @@ const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, 
         break;
       }
       case 'billAmount': {
-        msg = validateNumber(parseInt(e.target.value, 10), 1, 999999, 'Amount', true);
+        msg = validateNumber(parseInt(e.target.value, 10), 1, 999999999, 'Amount', true);
         break;
       }
       case 'pass_out_year': {
