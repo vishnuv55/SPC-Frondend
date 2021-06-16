@@ -12,7 +12,7 @@ const DateInput = ({ label, name, value, onChange, errorMsg, setErrorMsg, id }) 
     let msg;
     switch (e.target.name) {
       case 'dob': {
-        msg = validateDateOfBirth(e.target.value, 18, 'Date of Birth', true);
+        msg = validateDateOfBirth(e.target.value, 16, 'Date of Birth', true);
         break;
       }
       case 'drive_date': {

@@ -17,7 +17,7 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) 
         break;
       }
       case 'name': {
-        msg = validateString(e.target.value, 'Name', 3, 50, true);
+        msg = validateString(e.target.value, 'Name', 2, 30, true);
         break;
       }
       case 'line_one': {
@@ -41,11 +41,11 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) 
         break;
       }
       case 'company_name': {
-        msg = validateString(e.target.value, 'Company Name', 5, 20, true);
+        msg = validateString(e.target.value, 'Company Name', 3, 100, true);
         break;
       }
       case 'location': {
-        msg = validateString(e.target.value, 'Location', 5, 20, true);
+        msg = validateString(e.target.value, 'Location', 3, 100, true);
         break;
       }
       case 'url': {
@@ -53,27 +53,27 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) 
         break;
       }
       case 'salary': {
-        msg = validateString(e.target.value, 'Salary', 5, 20, true);
+        msg = validateString(e.target.value, 'Salary', 3, 50, true);
         break;
       }
       case 'position': {
-        msg = validateString(e.target.value, 'Position', 5, 20, true);
+        msg = validateString(e.target.value, 'Position', 3, 30, true);
         break;
       }
       case 'billTitle': {
-        msg = validateString(e.target.value, 'Title', 5, 20, true);
+        msg = validateString(e.target.value, 'Title', 3, 30, true);
         break;
       }
       case 'subject': {
-        msg = validateString(e.target.value, 'Subject', 5, 100, true);
+        msg = validateString(e.target.value, 'Subject', 5, 128, true);
         break;
       }
       case 'question': {
-        msg = validateString(e.target.value, 'Question', 10, 100, true);
+        msg = validateString(e.target.value, 'Question', 10, 128, true);
         break;
       }
       case 'answer': {
-        msg = validateString(e.target.value, 'Answer', 10, 100, true);
+        msg = validateString(e.target.value, 'Answer', 2, 250, true);
         break;
       }
       default:
