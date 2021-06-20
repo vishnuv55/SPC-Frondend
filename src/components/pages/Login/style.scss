@@ -19,6 +19,10 @@
     margin: 0;
   }
 
+  @include break-point(tablet) {
+    background: var(--primary-bg-color);
+  }
+
   .left-container {
     width: 100%;
     margin-left: 2rem;
@@ -42,6 +46,7 @@
       @include break-point(tablet) {
         text-align: center;
         margin: 0;
+        display: none;
       }
 
       @include break-point(mobile) {
@@ -58,8 +63,13 @@
       }
 
       @include break-point(tablet) {
-        display: none;
+        width: 14rem;
+        margin-top: 2rem;
       }
+
+      // @include break-point(tablet) {
+      //   display: none;
+      // }
     }
   }
 
@@ -84,9 +94,15 @@
       flex-direction: column;
       align-items: center;
 
-      @include break-point(mobile) {
+      @include break-point(tablet) {
         margin: 0;
-        width: 90%;
+        width: 85%;
+        background: none;
+        box-shadow: none;
+      }
+
+      @include break-point(mobile) {
+        width: 100%;
       }
 
       .heading-4 {
@@ -100,7 +116,7 @@
         margin: 0 3rem;
         width: 20rem;
         height: 2.4rem;
-        border-radius: 0.7rem;
+        border-radius: 0.5rem;
         background: var(--primary-color-light);
 
         @include break-point(mobile) {
@@ -110,7 +126,7 @@
         .switcher {
           z-index: 1;
           position: absolute;
-          border-radius: 0.7rem;
+          border-radius: 0.5rem;
           width: 50%;
           height: 100%;
           background: var(--primary-color);
@@ -135,7 +151,8 @@
           z-index: 2;
           width: 50%;
           height: 100%;
-          font-size: 1rem;
+          font-size: 0.9rem;
+          font-weight: 600;
           display: flex;
           align-items: center;
           justify-content: center;
