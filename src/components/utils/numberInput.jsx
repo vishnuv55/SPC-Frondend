@@ -61,6 +61,10 @@ const NumberInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id, 
         msg = validatePassOutYear(parseInt(e.target.value, 10));
         break;
       }
+      case 'ctc': {
+        msg = validateNumber(parseInt(e.target.value, 10), 500, 999999999, 'CTC', false);
+        break;
+      }
       default:
         msg = '';
     }

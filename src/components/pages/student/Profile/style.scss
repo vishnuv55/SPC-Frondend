@@ -101,4 +101,44 @@
       justify-content: center;
     }
   }
+  .placement-wrapper {
+    width: 51%;
+
+    @include break-point(tablet) {
+      width: 100%;
+    }
+
+    .placement-form {
+      padding: 2.5rem;
+      margin: 2rem;
+      border-radius: 1rem;
+      box-shadow: var(--primary-box-shadow);
+      background: var(--primary-bg-color);
+
+      .heading-container {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          margin-right: 0.5rem;
+          font-size: 1.5rem;
+          color: var(--primary-font-color);
+        }
+      }
+
+      .input {
+        padding: 1rem 0;
+      }
+      .button-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 1rem 0 0 0;
+
+        @include break-point(mobile) {
+          justify-content: center;
+        }
+      }
+    }
+  }
 }

@@ -12,6 +12,7 @@ import useApiError from '../../../../hooks/useApiError';
 import { getStudentDetails, editStudentProfile } from '../../../../Services/student';
 import { convertDateFormate } from '../../../../helpers/date';
 import { useSetRhinoState } from '../../../../config/context';
+import PlacementDetails from './placement-details';
 
 const Profile = () => {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,8 @@ const Profile = () => {
     zip: '',
     guardian_name: '',
     guardian_phone_number: '',
+    placed_company: '',
+    ctc: '',
   });
 
   useEffect(() => {
@@ -69,6 +72,8 @@ const Profile = () => {
         zip: user.address ? user.address.zip : '',
         guardian_name: user.guardian_name ? user.guardian_name : '',
         guardian_phone_number: user.guardian_contact_number ? user.guardian_contact_number : '',
+        placed_company: user.placed_company ? user.placed_company : '',
+        ctc: user.ctc ? user.ctc : '',
       };
       setValues(studentObj);
       setLoading(false);
@@ -118,14 +123,14 @@ const Profile = () => {
         date_of_birth: values.dob,
         gender: values.gender,
         tenth_mark: {
-          percentage: parseInt(values.tenth_percentage, 10),
-          cgpa: parseInt(values.tenth_cgpa, 10),
+          percentage: parseFloat(values.tenth_percentage, 10),
+          cgpa: parseFloat(values.tenth_cgpa, 10),
         },
         plus_two_mark: {
-          percentage: parseInt(values.twelfth_percentage, 10),
-          cgpa: parseInt(values.twelfth_cgpa, 10),
+          percentage: parseFloat(values.twelfth_percentage, 10),
+          cgpa: parseFloat(values.twelfth_cgpa, 10),
         },
-        btech_cgpa: parseInt(values.btech_cgpa, 10),
+        btech_cgpa: parseFloat(values.btech_cgpa, 10),
         number_of_backlogs: parseInt(values.number_of_backlogs, 10),
         phone_number: parseInt(values.phone_number, 10),
         address: {
@@ -193,6 +198,14 @@ const Profile = () => {
       </div>
       <div className="button-wrapper">
         <Button onClick={handleEditProfile}> Edit Profile</Button>
+      </div>
+      <div className="placement-wrapper">
+        <PlacementDetails
+          values={values}
+          onChange={onChange}
+          error={error}
+          handleError={handleError}
+        />
       </div>
     </div>
   );

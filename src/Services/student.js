@@ -15,4 +15,14 @@ const askQuestion = (data) => {
   return api.post('/student/forum/question', data);
 };
 
-export { getStudentDetails, editStudentProfile, registerForDrive, askQuestion };
+const updatePlacementDetails = (data) => {
+  return api.post('/student/placement-details', data);
+};
+
+export {
+  getStudentDetails,
+  editStudentProfile,
+  registerForDrive,
+  askQuestion,
+  updatePlacementDetails,
+};
