@@ -76,6 +76,10 @@ const TextInput = ({ label, name, value, errorMsg, setErrorMsg, onChange, id }) 
         msg = validateString(e.target.value, 'Answer', 2, 250, true);
         break;
       }
+      case 'placed_company': {
+        msg = validateString(e.target.value, 'Placed Company', 3, 50, false);
+        break;
+      }
       default:
         msg = '';
     }
