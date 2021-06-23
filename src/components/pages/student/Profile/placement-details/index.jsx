@@ -13,7 +13,6 @@ const PlacementDetails = ({ values, onChange, error, handleError }) => {
   const [buttonLoading, setButtonLoading] = useState(false);
 
   const handleUpdate = async () => {
-    setButtonLoading(true);
     const placementDetails = {
       placed_company: values.placed_company,
       ctc: parseInt(values.ctc, 10),
@@ -30,6 +29,7 @@ const PlacementDetails = ({ values, onChange, error, handleError }) => {
       });
     } else {
       try {
+        setButtonLoading(true);
         await updatePlacementDetails(placementDetails);
         setToastMessage({
           severity: 'success',
