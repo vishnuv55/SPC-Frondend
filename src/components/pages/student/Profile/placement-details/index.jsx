@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiAward } from 'react-icons/fi';
+import Button from '../../../../common/button';
 import TextInput from '../../../../utils/textInput';
 import NumberInput from '../../../../utils/numberInput';
-import Button from '../../../../common/button';
 import useApiError from '../../../../../hooks/useApiError';
 import { useSetRhinoState } from '../../../../../config/context';
 import { updatePlacementDetails } from '../../../../../Services/student';
@@ -10,8 +10,10 @@ import { updatePlacementDetails } from '../../../../../Services/student';
 const PlacementDetails = ({ values, onChange, error, handleError }) => {
   const setToastMessage = useSetRhinoState('toastMessage');
   const { handleApiError } = useApiError();
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const handleUpdate = async () => {
+    setButtonLoading(true);
     const placementDetails = {
       placed_company: values.placed_company,
       ctc: parseInt(values.ctc, 10),
@@ -33,8 +35,10 @@ const PlacementDetails = ({ values, onChange, error, handleError }) => {
           severity: 'success',
           message: 'Placement Details update successful',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     }
   };
@@ -64,7 +68,9 @@ const PlacementDetails = ({ values, onChange, error, handleError }) => {
         setErrorMsg={handleError}
       />
       <div className="button-wrapper">
-        <Button onClick={handleUpdate}>Update</Button>
+        <Button onClick={handleUpdate} loading={buttonLoading}>
+          Update
+        </Button>
       </div>
     </div>
   );
