@@ -16,7 +16,7 @@ const PlacementDetails = ({ values, onChange, error, handleError }) => {
       placed_company: values.placed_company,
       ctc: parseInt(values.ctc, 10),
     };
-    if (values.placed_company === '' && values.ctc === '') {
+    if (values.placed_company === '' || values.ctc === '') {
       setToastMessage({
         severity: 'Error',
         message: 'Please fill all the fields',
