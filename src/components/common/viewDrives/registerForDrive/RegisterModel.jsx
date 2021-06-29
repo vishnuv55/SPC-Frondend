@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSetRhinoState } from '../../../../config/context';
 import useApiError from '../../../../hooks/useApiError';
 import { registerForDrive } from '../../../../Services/student';
+import Button from '../../button';
 
-const ModalContent = ({ id, handleClose }) => {
+const RegisterModel = ({ id, handleClose, setIsRegistered }) => {
   const { handleApiError } = useApiError();
 
   const setToastMessage = useSetRhinoState('toastMessage');
+
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const handleRegister = async () => {
     const data = {
@@ -14,13 +17,17 @@ const ModalContent = ({ id, handleClose }) => {
     };
 
     try {
+      setButtonLoading(true);
       await registerForDrive(data);
       setToastMessage({
         severity: 'success',
         message: 'You have been successfully registered for the drive',
       });
+      setIsRegistered(true);
+      setButtonLoading(false);
     } catch (err) {
       handleApiError(err);
+      setButtonLoading(false);
     }
     handleClose();
   };
@@ -32,12 +39,12 @@ const ModalContent = ({ id, handleClose }) => {
         <button type="button" onClick={handleClose} className="button cancel-button">
           Cancel
         </button>
-        <button type="button" onClick={handleRegister} className="button register-button">
+        <Button onClick={handleRegister} className="button register-button" loading={buttonLoading}>
           Register
-        </button>
+        </Button>
       </div>
     </div>
   );
 };
 
-export default ModalContent;
+export default RegisterModel;

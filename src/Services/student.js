@@ -19,10 +19,15 @@ const updatePlacementDetails = (data) => {
   return api.post('/student/placement-details', data);
 };
 
+const deRegisterDrive = (data) => {
+  return api.post('student/deregister-drive', data);
+};
+
 export {
   getStudentDetails,
   editStudentProfile,
   registerForDrive,
   askQuestion,
   updatePlacementDetails,
+  deRegisterDrive,
 };

@@ -8,7 +8,7 @@ import MoreDetails from '../DriveMoreDetails';
 import DriveDate from './driveDate';
 import RegisterForDrive from './registerForDrive';
 
-const Drive = ({ drive }) => {
+const Drive = ({ drive, registeredDrives }) => {
   const user = useRhinoValue('user');
 
   return (
@@ -28,7 +28,9 @@ const Drive = ({ drive }) => {
       <div className="paragraph">{drive.description}</div>
       <div className="button-container">
         <MoreDetails drive={drive} />
-        {user.user_type === 'student' ? <RegisterForDrive id={drive._id} /> : null}
+        {user.user_type === 'student' ? (
+          <RegisterForDrive registeredDrives={registeredDrives} id={drive._id} />
+        ) : null}
       </div>
     </div>
   );
