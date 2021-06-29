@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './style.scss';
 import Modal from '../../../utils/modal';
-import ModalContent from './modalContent';
+import RegisterModel from './RegisterModel';
+import UnRegisterModel from './UnRegisterModel';
 
-const RegisterForDrive = ({ id }) => {
+const RegisterForDrive = ({ id, registeredDrives }) => {
   const [open, setOpen] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -14,14 +16,23 @@ const RegisterForDrive = ({ id }) => {
   const handleClose = () => {
     setOpen(false);
   };
+  useEffect(() => {
+    const isStudentRegistered = registeredDrives.includes(id);
+    setIsRegistered(isStudentRegistered);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, registeredDrives]);
 
   return (
     <>
       <button type="button" onClick={handleOpen} className="button reg-button">
-        Register
+        {isRegistered ? 'Un-Register' : 'Register'}
       </button>
       <Modal open={open} handleClose={handleClose}>
-        <ModalContent handleClose={handleClose} id={id} />
+        {isRegistered ? (
+          <UnRegisterModel handleClose={handleClose} id={id} setIsRegistered={setIsRegistered} />
+        ) : (
+          <RegisterModel handleClose={handleClose} id={id} setIsRegistered={setIsRegistered} />
+        )}
       </Modal>
     </>
   );
