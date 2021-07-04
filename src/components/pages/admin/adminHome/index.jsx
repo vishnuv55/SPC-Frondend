@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 
-import './style.scss';
 import { useSetRhinoState } from '../../../../config/context';
+
+import './style.scss';
+import ViewStudents from './viewStudents';
 import CreateStudent from './createStudent';
 import UpdateExecomPassword from './updateExecomPassword';
-import UpdateStudentPassword from './updateStudentPassword';
 import CreateStudentByUpload from './CreateStudentByUpload';
+import UpdateStudentPassword from './updateStudentPassword';
 
 const AdminHome = () => {
   const setPageTitle = useSetRhinoState('pageTitle');
@@ -24,6 +26,7 @@ const AdminHome = () => {
         <UpdateStudentPassword />
         <UpdateExecomPassword />
       </div>
+      <ViewStudents />
     </div>
   );
 };

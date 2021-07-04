@@ -60,6 +60,7 @@ const UpdateStudentPassword = () => {
       </h5>
       <div>
         <EmailInput
+          id="student-email"
           label="Email"
           name="email"
           email={values.email}
