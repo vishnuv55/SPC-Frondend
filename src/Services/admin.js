@@ -44,6 +44,10 @@ const deleteStudent = (id) => {
   return api.delete(`/admin/student/${id}`);
 };
 
+const getPlacedStudents = (data) => {
+  return api.post('/admin/placed-students', data);
+};
+
 export {
   createStudent,
   createStudents,
@@ -56,4 +60,5 @@ export {
   getAlumni,
   getStudentsData,
   deleteStudent,
+  getPlacedStudents,
 };
