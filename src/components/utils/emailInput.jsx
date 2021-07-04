@@ -3,7 +3,7 @@ import React from 'react';
 import useDebounce from '../../hooks/useDebounce';
 import { validateEmail } from '../../helpers/validation';
 
-const EmailInput = ({ label, name, email, errorMsg, setErrorMsg, onChange }) => {
+const EmailInput = ({ id, label, name, email, errorMsg, setErrorMsg, onChange }) => {
   const handleChange = (e) => {
     onChange(e);
     delayedHandleError(e);
@@ -19,7 +19,7 @@ const EmailInput = ({ label, name, email, errorMsg, setErrorMsg, onChange }) => 
   return (
     <div className="textfield input">
       <TextField
-        id="email"
+        id={id === undefined ? 'email' : id}
         label={label}
         name={name}
         variant="outlined"

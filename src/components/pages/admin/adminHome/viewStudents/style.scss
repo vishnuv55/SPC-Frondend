@@ -1,0 +1,276 @@
+@import '../../../../../config/mixins.scss';
+
+.view-student-details {
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--primary-bg-color);
+
+  .heading-5 {
+    margin: 0 0 1rem 0;
+  }
+
+  .students {
+    width: auto;
+    overflow-x: auto;
+
+    .student-table {
+      width: 100%;
+      border-radius: 0.5rem;
+      border-collapse: collapse;
+      border: 1px solid var(--tertiary-bg-color);
+
+      .headings {
+        background: var(--secondary-bg-color);
+
+        th {
+          font-weight: 500;
+          text-align: start;
+          font-size: 0.9rem;
+          padding: 1rem 0.5rem;
+          color: var(--primary-font-color);
+
+          &:first-child {
+            border-radius: 0.5rem 0 0 0.5rem;
+          }
+
+          &:last-child {
+            border-radius: 0 0.5rem 0.5rem 0;
+          }
+        }
+      }
+
+      .row {
+        &:nth-child(even) {
+          background: var(--secondary-bg-color);
+        }
+
+        .column {
+          padding: 0.5rem;
+          font-size: 0.9rem;
+          color: var(--secondary-font-color);
+
+          &:first-child {
+            border-radius: 0.5rem 0 0 0.5rem;
+          }
+
+          &:last-child {
+            border-radius: 0 0.5rem 0.5rem 0;
+          }
+
+          .mail {
+            margin: 0;
+            text-decoration: none;
+            color: var(--secondary-font-color);
+          }
+
+          .more-button,
+          .delete-button {
+            border: none;
+            outline: none;
+            font-weight: 600;
+            font-size: 0.7rem;
+            border-radius: 0.3rem;
+            padding: 0.4rem 0.5rem;
+            background: var(--tertiary-bg-color);
+          }
+
+          .more-button {
+            min-width: 5rem;
+            color: var(--primary-color);
+          }
+
+          .delete-button {
+            color: var(--red-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Student details modal styles
+
+.student-details-modal {
+  overflow-y: auto;
+  padding: 1.5rem;
+  min-width: 34rem;
+  max-height: 85vh;
+  border-radius: 1rem;
+  color: var(--primary-font-color);
+  background: var(--primary-bg-color);
+
+  @include break-point(mobile) {
+    min-width: 85vw;
+  }
+
+  .heading-5 {
+    margin-top: 0;
+  }
+
+  .register-number-container {
+    display: flex;
+
+    .register-number {
+      margin: 0;
+      font-size: 0.8rem;
+      border-radius: 1rem;
+      padding: 0.4rem 0.7rem;
+      color: var(--primary-font-color);
+      background: var(--primary-color-light);
+    }
+  }
+
+  .personal-info-container {
+    margin: 1rem 0;
+
+    .row {
+      display: flex;
+
+      @include break-point(mobile) {
+        flex-direction: column;
+      }
+
+      .col-1,
+      .col-2 {
+        width: 50%;
+
+        @include break-point(mobile) {
+          width: auto;
+        }
+
+        .container {
+          display: flex;
+          margin: 0.7rem;
+          padding: 0.4rem;
+          border-radius: 0.3rem;
+          flex-direction: column;
+          border: 1px solid var(--secondary-bg-color);
+
+          .label {
+            font-size: 0.7rem;
+            color: var(--secondary-font-color);
+          }
+
+          .content {
+            font-size: 1rem;
+            color: var(--primary-font-color);
+          }
+        }
+      }
+
+      .email-container {
+        width: 100%;
+        display: flex;
+        margin: 0.7rem;
+        padding: 0.4rem;
+        border-radius: 0.3rem;
+        flex-direction: column;
+        border: 1px solid var(--secondary-bg-color);
+
+        @include break-point(mobile) {
+          width: auto;
+        }
+
+        .label {
+          font-size: 0.7rem;
+        }
+
+        .link {
+          font-size: 1rem;
+          text-decoration: none;
+          transition: color 250ms ease;
+          color: var(--primary-font-color);
+
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  .educational-details {
+    .progress-bar-container {
+      display: flex;
+      margin: 1rem 0;
+
+      .col-1,
+      .col-2 {
+        width: 50%;
+      }
+
+      .col-1 {
+        margin-right: 0.5rem;
+      }
+      .col-2 {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+  .placement-status {
+    padding: 0.7rem;
+    margin: 0.7rem 0 1rem;
+    border-radius: 0.5rem;
+    color: var(--primary-font-color);
+    background-color: var(--secondary-bg-color);
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+
+    .close-button {
+      border: none;
+      outline: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 0.3rem;
+      padding: 0.7rem 1.5rem;
+      color: var(--primary-color);
+      background: var(--secondary-bg-color);
+    }
+  }
+}
+
+// Delete student / no info alert modal styes
+
+.delete-alert,
+.no-info-modal {
+  margin: 1rem;
+  padding: 1.5rem;
+  max-width: 20rem;
+  border-radius: 1rem;
+  background: var(--primary-bg-color);
+
+  .content {
+    margin: 0;
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
+
+    .button {
+      border: none;
+      outline: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 0.3rem;
+      padding: 0.7rem 1.5rem;
+    }
+
+    .delete-button {
+      margin-left: 1rem;
+      color: var(--red-color);
+      background: var(--secondary-bg-color);
+    }
+
+    .cancel-button {
+      color: var(--primary-color);
+      background: var(--secondary-bg-color);
+    }
+  }
+}

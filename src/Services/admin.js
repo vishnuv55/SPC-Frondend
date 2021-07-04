@@ -27,12 +27,23 @@ const deleteDrive = (id) => {
 const regStudentDetails = (data) => {
   return api.post('/admin/student-details', data);
 };
+
 const createAlumni = (data) => {
   return api.post('/admin/alumni-details', data);
 };
+
 const getAlumni = () => {
   return api.get('/admin/alumni-details');
 };
+
+const getStudentsData = () => {
+  return api.get('/admin/students');
+};
+
+const deleteStudent = (id) => {
+  return api.delete(`/admin/student/${id}`);
+};
+
 export {
   createStudent,
   createStudents,
@@ -43,4 +54,6 @@ export {
   regStudentDetails,
   createAlumni,
   getAlumni,
+  getStudentsData,
+  deleteStudent,
 };
