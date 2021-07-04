@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 
+import { FiAward } from 'react-icons/fi';
 import { getStudentsData } from '../../../../../Services/admin';
 
 import './style.scss';
@@ -31,7 +32,10 @@ const ViewStudents = () => {
 
   return (
     <div className="view-student-details">
-      <h5 className="heading-5">Students Details</h5>
+      <h5 className="heading-5">
+        <FiAward className="icon" />
+        Students Details
+      </h5>
       <StudentDetailsTable students={students} getStudentsDetails={getStudentsDetails} />
     </div>
   );
