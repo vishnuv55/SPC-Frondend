@@ -17,8 +17,10 @@ const RegisterForDrive = ({ id, registeredDrives }) => {
     setOpen(false);
   };
   useEffect(() => {
-    const isStudentRegistered = registeredDrives.includes(id);
-    setIsRegistered(isStudentRegistered);
+    if (registeredDrives !== undefined) {
+      const isStudentRegistered = registeredDrives.includes(id);
+      setIsRegistered(isStudentRegistered);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, registeredDrives]);
 
