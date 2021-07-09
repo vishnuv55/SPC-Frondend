@@ -44,6 +44,10 @@ const addQueryAnswer = (userType, data) => {
   return api.post(`/${userType}/forum/answer`, data);
 };
 
+const deleteQuery = (userType, id) => {
+  return api.delete(`/${userType}//forum/queries/${id}`);
+};
+
 export {
   isUserLoggedIn,
   login,
@@ -56,4 +60,5 @@ export {
   sendEmail,
   getQueries,
   addQueryAnswer,
+  deleteQuery,
 };

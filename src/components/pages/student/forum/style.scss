@@ -1,21 +1,21 @@
 @import '../../../../config/mixins.scss';
 
 .new-question-button {
+  width: 4rem;
+  right: 2rem;
+  height: 4rem;
+  bottom: 2rem;
   border: none;
   outline: none;
-  width: 4rem;
-  height: 4rem;
-  right: 2rem;
-  bottom: 2rem;
   position: fixed;
-  background: var(--primary-color);
   border-radius: 1rem;
+  background: var(--primary-color);
   box-shadow: var(--primary-box-shadow);
 
   .icon {
-    color: var(--white-color);
-    font-weight: 900;
     font-size: 2rem;
+    font-weight: 900;
+    color: var(--white-color);
   }
 
   @include break-point(mobile) {
@@ -40,22 +40,43 @@
 
     .header {
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
+      flex-direction: row;
       justify-content: flex-start;
     }
 
     .name,
     .created-date {
       font-size: 0.75rem;
-      color: var(--secondary-font-color);
       margin-right: 1rem;
+      color: var(--secondary-font-color);
     }
 
     .question {
-      color: var(--primary-font-color);
-      font-size: 1.2rem;
+      display: flex;
       margin: 0.4rem 0;
+      font-size: 1.2rem;
+      color: var(--primary-font-color);
+
+      .edit-question-button {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: none;
+        margin-left: 0.7rem;
+        transition: color 200ms ease;
+        color: var(--primary-font-color);
+
+        .icon {
+          font-size: 1.1rem;
+        }
+
+        &:hover,
+        &:focus {
+          color: var(--primary-color);
+        }
+      }
     }
     .answer {
       font-size: 0.9rem;
@@ -70,8 +91,8 @@
       background-color: var(--grey-color);
     }
     .footer {
-      margin: 0.5rem 0 0 0;
       display: flex;
+      margin: 0.5rem 0 0 0;
 
       .designation {
         margin-left: auto;
@@ -81,11 +102,12 @@
     }
   }
 }
-.add-question-modal {
+.add-question-modal,
+.edit-question-modal {
+  width: 25rem;
   padding: 1.5rem;
   border-radius: 0.7rem;
   background-color: var(--primary-bg-color);
-  width: 25rem;
 
   @include break-point(tablet) {
     width: auto;
@@ -105,16 +127,16 @@
       justify-content: flex-end;
 
       .cancel-button {
+        border: none;
+        outline: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-right: 1.5rem;
         border-radius: 0.5rem;
         padding: 0.5rem 1.5rem;
-        font-size: 0.85rem;
         text-transform: capitalize;
-        outline: none;
-        border: none;
-        margin-right: 1.5rem;
-        background-color: var(--secondary-bg-color);
         color: var(--primary-color);
-        font-weight: 600;
+        background-color: var(--secondary-bg-color);
       }
     }
   }
