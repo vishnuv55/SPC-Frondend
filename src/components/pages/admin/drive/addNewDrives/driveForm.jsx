@@ -91,14 +91,14 @@ const DriveForm = ({ handleClose }) => {
               ...(preferredGender.others ? ['other'] : ''),
             ],
             tenth_mark: {
-              percentage: parseInt(values.tenth_percentage, 10),
-              cgpa: parseInt(values.tenth_cgpa, 10),
+              percentage: parseFloat(values.tenth_percentage, 10),
+              cgpa: parseFloat(values.tenth_cgpa, 10),
             },
             plus_two_mark: {
-              percentage: parseInt(values.twelfth_percentage, 10),
-              cgpa: parseInt(values.twelfth_cgpa, 10),
+              percentage: parseFloat(values.twelfth_percentage, 10),
+              cgpa: parseFloat(values.twelfth_cgpa, 10),
             },
-            btech_min_cgpa: parseInt(values.btech_cgpa, 10),
+            btech_min_cgpa: parseFloat(values.btech_cgpa, 10),
             number_of_backlogs: parseInt(values.number_of_backlogs, 10),
           },
         };
