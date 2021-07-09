@@ -155,15 +155,22 @@
   .footer {
     display: flex;
     justify-content: flex-end;
+
     .close-button {
-      padding: 0.7rem 1.5rem;
-      outline: none;
       border: none;
-      border-radius: 0.3rem;
-      font-size: 0.9rem;
+      outline: none;
       font-weight: 600;
-      background: var(--secondary-bg-color);
+      font-size: 0.9rem;
+      border-radius: 0.3rem;
+      padding: 0.7rem 1.5rem;
+      transition: all 200ms ease;
       color: var(--primary-color);
+      background: var(--secondary-bg-color);
+
+      &:hover {
+        cursor: pointer;
+        background: var(--tertiary-bg-color);
+      }
     }
   }
 }

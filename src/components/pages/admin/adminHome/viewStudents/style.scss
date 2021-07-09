@@ -79,6 +79,10 @@
             border-radius: 0.3rem;
             padding: 0.4rem 0.5rem;
             background: var(--tertiary-bg-color);
+
+            &:hover {
+              cursor: pointer;
+            }
           }
 
           .more-button {
@@ -235,6 +239,12 @@
       padding: 0.7rem 1.5rem;
       color: var(--primary-color);
       background: var(--secondary-bg-color);
+      transition: all 200ms ease;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--tertiary-bg-color);
+      }
     }
   }
 }
@@ -266,6 +276,12 @@
       font-size: 0.9rem;
       border-radius: 0.3rem;
       padding: 0.7rem 1.5rem;
+      transition: all 200ms ease;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--tertiary-bg-color);
+      }
     }
 
     .delete-button {

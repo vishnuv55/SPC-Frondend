@@ -135,8 +135,14 @@
         border-radius: 0.5rem;
         padding: 0.5rem 1.5rem;
         text-transform: capitalize;
+        transition: all 200ms ease;
         color: var(--primary-color);
         background-color: var(--secondary-bg-color);
+
+        &:hover {
+          cursor: pointer;
+          background: var(--tertiary-bg-color);
+        }
       }
     }
   }

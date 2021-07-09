@@ -28,11 +28,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 200ms ease;
         background: var(--secondary-bg-color);
 
         .icon {
           color: var(--primary-font-color);
           font-weight: 600;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: var(--tertiary-bg-color);
         }
       }
 
@@ -137,6 +143,12 @@
         background: var(--primary-color);
         border-radius: 0.5rem;
         font-weight: 600;
+        transition: all 200ms ease;
+
+        &:hover {
+          cursor: pointer;
+          background: var(--primary-color-dark);
+        }
       }
     }
   }
