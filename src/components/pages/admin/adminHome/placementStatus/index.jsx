@@ -82,7 +82,7 @@ const PlacementStatus = () => {
         />
         <div className="button-container">
           <Button onClick={downloadDetails} loading={buttonLoading}>
-            Create Student
+            Download
           </Button>
         </div>
       </div>

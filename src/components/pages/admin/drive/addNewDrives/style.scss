@@ -54,10 +54,16 @@
         align-items: center;
         justify-content: center;
         background: var(--secondary-bg-color);
+        transition: all 200ms ease;
 
         .icon {
           color: var(--primary-font-color);
           font-weight: 600;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: var(--tertiary-bg-color);
         }
       }
 

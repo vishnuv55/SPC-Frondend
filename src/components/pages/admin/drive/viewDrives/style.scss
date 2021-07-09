@@ -85,15 +85,28 @@
         border-radius: 0.3rem;
         font-size: 0.8rem;
         font-weight: 600;
+        transition: all 200ms ease;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
       .more-button {
         background: var(--primary-color);
         color: var(--white-color);
+
+        &:hover {
+          background: var(--primary-color-dark);
+        }
       }
       .reg-info-button {
         background: var(--secondary-bg-color);
         color: var(--primary-color);
         margin-left: 1.5rem;
+
+        &:hover {
+          background: var(--tertiary-bg-color);
+        }
       }
 
       .delete-button {
@@ -104,6 +117,11 @@
         border-radius: 0.3rem;
         background: var(--secondary-bg-color);
         color: var(--red-color);
+
+        &:hover {
+          cursor: pointer;
+          background: var(--tertiary-bg-color);
+        }
       }
     }
   }

@@ -25,7 +25,6 @@ const BillForm = ({ handleClose, userType, fetchBills }) => {
   const handleAddBill = async () => {
     const isValuesEmpty = Object.values(values).some((value) => value === '');
     const isError = Object.values(error).some((err) => err !== '');
-    setButtonLoading(true);
     const newBill = {
       bill_title: values.billTitle,
       bill_amount: parseInt(values.billAmount, 10),
@@ -43,6 +42,7 @@ const BillForm = ({ handleClose, userType, fetchBills }) => {
         message: 'Please fill up all fields',
       });
     } else {
+      setButtonLoading(true);
       try {
         await createBill(userType, newBill);
         setToastMessage({

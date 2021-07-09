@@ -22,18 +22,29 @@
       border-radius: 0.3rem;
       font-size: 0.9rem;
       font-weight: 600;
+      transition: all 200ms ease;
     }
 
     .register-button {
       background: var(--primary-color);
       color: var(--white-color);
       margin-left: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--primary-color-dark);
+      }
     }
 
     .cancel-button {
       background: var(--secondary-bg-color);
       color: var(--primary-color);
       margin-right: 1.5rem;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--tertiary-bg-color);
+      }
     }
   }
 }

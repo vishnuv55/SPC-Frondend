@@ -86,12 +86,14 @@
           display: flex;
           justify-content: flex-start;
           font-size: 0.9rem;
-          m .icon {
+
+          .icon {
             margin-left: 0.2rem;
             transition: all 500ms ease;
           }
 
           &:hover {
+            cursor: pointer;
             .icon {
               transform: translateX(5px);
             }
@@ -132,13 +134,22 @@
       justify-content: flex-end;
 
       .cancel-button {
+        border: none;
+        outline: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin-right: 1.5rem;
         border-radius: 0.5rem;
         padding: 0.5rem 1.5rem;
-        font-size: 0.85rem;
+        color: var(--red-color);
         text-transform: capitalize;
-        outline: none;
-        border: none;
-        margin-right: 1.5rem;
+        transition: all 200ms ease;
+        background: var(--secondary-bg-color);
+
+        &:hover {
+          cursor: pointer;
+          background: var(--tertiary-bg-color);
+        }
       }
     }
   }
@@ -153,14 +164,22 @@
     display: flex;
     margin-top: 1rem;
     justify-content: flex-end;
+
     button {
-      padding: 0.7rem 1.5rem;
-      outline: none;
       border: none;
-      border-radius: 0.3rem;
-      font-size: 0.9rem;
+      outline: none;
       font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 0.3rem;
+      padding: 0.7rem 1.5rem;
+      transition: all 200ms ease;
+
+      &:hover {
+        cursor: pointer;
+        background: var(--tertiary-bg-color);
+      }
     }
+
     .delete-button {
       background: var(--secondary-bg-color);
       color: var(--red-color);

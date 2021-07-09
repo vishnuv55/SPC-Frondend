@@ -67,14 +67,20 @@
     align-items: center;
     padding: 1rem 0 0.5rem 0;
     .delete-button {
-      padding: 0.5rem 1rem;
-      outline: none;
       border: none;
-      border-radius: 0.3rem;
-      font-size: 0.8rem;
+      outline: none;
       font-weight: 600;
-      background: var(--secondary-bg-color);
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
       color: var(--red-color);
+      transition: all 200ms ease;
+      background: var(--secondary-bg-color);
+
+      &:hover {
+        cursor: pointer;
+        background: var(--tertiary-bg-color);
+      }
     }
   }
 }

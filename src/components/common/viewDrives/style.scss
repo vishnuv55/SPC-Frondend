@@ -81,15 +81,26 @@
         border-radius: 0.3rem;
         font-size: 0.8rem;
         font-weight: 600;
+        transition: all 200ms ease;
       }
       .more-button {
         background: var(--primary-color);
         color: var(--white-color);
+
+        &:hover {
+          cursor: pointer;
+          background: var(--primary-color-dark);
+        }
       }
       .reg-button {
         background-color: var(--secondary-bg-color);
         color: var(--primary-color);
         margin-left: 1rem;
+
+        &:hover {
+          cursor: pointer;
+          background: var(--tertiary-bg-color);
+        }
       }
     }
   }
