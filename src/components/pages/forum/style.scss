@@ -6,12 +6,32 @@
   flex-direction: column;
 
   .query {
-    display: flex;
-    flex-direction: column;
     margin: 1rem;
     padding: 1rem;
+    display: flex;
+    position: relative;
     border-radius: 1rem;
+    flex-direction: column;
     background: var(--primary-bg-color);
+
+    .delete-button {
+      top: 1rem;
+      right: 1rem;
+      position: absolute;
+
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 1rem;
+
+      .icon {
+        color: var(--red-color);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
 
     @include break-point(mobile) {
       margin: 0.5rem;
@@ -120,6 +140,36 @@
         border: none;
         margin-right: 1.5rem;
       }
+    }
+  }
+}
+
+.delete-forum-alert {
+  padding: 1.5rem;
+  background: var(--primary-bg-color);
+  border-radius: 1rem;
+  .button-wrapper {
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
+    button {
+      padding: 0.7rem 1.5rem;
+      outline: none;
+      border: none;
+      border-radius: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .delete-button {
+      background: var(--secondary-bg-color);
+      color: var(--red-color);
+      margin-left: 1rem;
+    }
+
+    .cancel-button {
+      background: var(--secondary-bg-color);
+      color: var(--primary-color);
     }
   }
 }

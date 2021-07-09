@@ -23,6 +23,10 @@ const deRegisterDrive = (data) => {
   return api.post('student/deregister-drive', data);
 };
 
+const editQuestion = (data) => {
+  return api.patch('/student/forum/question', data);
+};
+
 export {
   getStudentDetails,
   editStudentProfile,
@@ -30,4 +34,5 @@ export {
   askQuestion,
   updatePlacementDetails,
   deRegisterDrive,
+  editQuestion,
 };

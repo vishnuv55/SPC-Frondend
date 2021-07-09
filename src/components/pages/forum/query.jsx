@@ -1,8 +1,9 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 
-import { isoStringToDate } from '../../../helpers/date';
+import DeleteQuery from './deleteQuery';
 import AddNewAnswer from './addNewAnswer';
+import { isoStringToDate } from '../../../helpers/date';
 
 const Query = ({ query, getForumQueries, userType }) => {
   const date = isoStringToDate(query.created_date);
@@ -22,6 +23,7 @@ const Query = ({ query, getForumQueries, userType }) => {
           <div className="designation">answered by {query.answer.designation}</div>
         ) : null}
       </div>
+      <DeleteQuery id={query._id} getForumQueries={getForumQueries} />
     </div>
   );
 };

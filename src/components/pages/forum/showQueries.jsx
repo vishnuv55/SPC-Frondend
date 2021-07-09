@@ -3,27 +3,37 @@
 import React, { useEffect, useState } from 'react';
 
 import Query from './query';
+import Loading from '../../common/loading';
+import NoContent from '../../common/NoContent';
 import { getQueries } from '../../../Services/user';
 import useApiError from '../../../hooks/useApiError';
-import NoContent from '../../common/NoContent';
 
 const ShowQueries = ({ userType }) => {
   const { handleApiError } = useApiError();
 
   const [queries, setQueries] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   const getForumQueries = async () => {
+    setLoading(true);
     try {
       const response = await getQueries(userType);
       setQueries(response.data);
+      setLoading(false);
     } catch (err) {
       handleApiError(err);
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     getForumQueries();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (queries.length === 0) {
     return <NoContent />;
