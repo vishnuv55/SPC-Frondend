@@ -55,15 +55,15 @@ const MailContent = ({ values, error, checkboxValues, onChange, handleError, use
       setButtonLoading(true);
       const data = {
         ...(values.tenth_percentage !== '' && {
-          tenth_mark: parseInt(values.tenth_percentage, 10),
+          tenth_mark: parseFloat(values.tenth_percentage, 10),
         }),
         ...(values.twelfth_percentage !== '' && {
-          plus_two_mark: parseInt(values.twelfth_percentage, 10),
+          plus_two_mark: parseFloat(values.twelfth_percentage, 10),
         }),
         ...(values.number_of_backlogs !== '' && {
           number_of_backlogs: parseInt(values.number_of_backlogs, 10),
         }),
-        ...(values.btech_cgpa !== '' && { btech_cgpa: parseInt(values.btech_cgpa, 10) }),
+        ...(values.btech_cgpa !== '' && { btech_cgpa: parseFloat(values.btech_cgpa, 10) }),
         branch_list: branchList,
         gender_list: genderList,
         subject: values.subject,
