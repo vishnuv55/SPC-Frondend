@@ -1,10 +1,11 @@
 import React from 'react';
 
 import './style.scss';
-import loginImage from '../../../../assets/admin-login-image.svg';
 import LoginForm from './loginForm';
+import Menu from '../../../common/menuButton';
+import loginImage from '../../../../assets/admin-login-image.svg';
 
-const AdminLogin = () => {
+const AdminLogin = ({ darkMode, toggleDarkMode }) => {
   return (
     <div className="admin-login">
       <img src={loginImage} alt="" className="login-image" />
@@ -12,6 +13,7 @@ const AdminLogin = () => {
         <h3 className="heading-3">Sign In as Admin</h3>
         <LoginForm />
       </div>
+      <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </div>
   );
 };

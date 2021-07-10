@@ -9,6 +9,10 @@ const { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState } = create
   },
   reload: false,
   darkMode: false,
+  installable: {
+    installable: false,
+    deferredPrompt: null,
+  },
 });
 
 export { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState };

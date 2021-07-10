@@ -1,0 +1,54 @@
+.menu {
+  top: 2rem;
+  right: 2rem;
+  position: fixed;
+  z-index: 1000;
+
+  .menu-content {
+    top: 2.5rem;
+    right: 2.5rem;
+    padding: 0.5rem;
+    position: absolute;
+    border-radius: 1rem;
+    background: var(--primary-bg-color);
+    box-shadow: var(--secondary-box-shadow);
+
+    .link {
+      min-width: 8rem;
+      margin: 0.2rem 0;
+      padding: 0.3rem 1.5rem;
+      border-radius: 0.3rem;
+      border: none;
+      outline: none;
+      background: none;
+      transition: all 200ms ease;
+      font-size: 0.9rem;
+      color: var(--primary-font-color);
+
+      &:hover {
+        background: var(--secondary-bg-color);
+      }
+    }
+  }
+
+  .menu-button {
+    margin: 0;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    display: flex;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 500ms ease;
+    color: var(--primary-font-color);
+    background: var(--primary-bg-color);
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}
