@@ -26,7 +26,7 @@ const DeleteStudent = ({ id, getStudentsDetails }) => {
       await deleteStudent(id);
       setToastMessage({
         severity: 'success',
-        message: 'The drive has been successfully deleted',
+        message: 'This student has been successfully deleted',
       });
       getStudentsDetails();
     } catch (err) {

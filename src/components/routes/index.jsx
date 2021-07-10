@@ -17,19 +17,19 @@ import Alumni from '../pages/admin/alumni';
 import StudentForum from '../pages/student/forum';
 import Forum from '../pages/forum';
 
-const Routes = () => {
+const Routes = ({ darkMode, toggleDarkMode }) => {
   return (
     <Switch>
       {/* Common Routes */}
 
       <Route exact path="/">
-        <Login />
+        <Login darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </Route>
 
       {/* Admin Routes */}
 
       <Route exact path="/admin">
-        <AdminLogin />
+        <AdminLogin darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </Route>
       <ProtectedRoute exact path="/admin/home">
         <AdminHome />

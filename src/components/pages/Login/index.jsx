@@ -4,8 +4,9 @@ import './style.scss';
 import LoginContainer from './LoginContainer';
 import heroImg from '../../../assets/login-image.svg';
 import Follow from './follow';
+import Menu from '../../common/menuButton';
 
-const Login = () => {
+const Login = ({ darkMode, toggleDarkMode }) => {
   return (
     <div className="login">
       <div className="left-container">
@@ -23,6 +24,7 @@ const Login = () => {
         <LoginContainer />
         <Follow />
       </div>
+      <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </div>
   );
 };
