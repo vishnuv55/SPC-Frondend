@@ -73,9 +73,9 @@ const Menu = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <div className="menu">
+    <div className="header-menu">
       <button
-        className="menu-button"
+        className="header-menu-button"
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
