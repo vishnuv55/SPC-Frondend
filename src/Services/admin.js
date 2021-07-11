@@ -36,8 +36,8 @@ const getAlumni = () => {
   return api.get('/admin/alumni-details');
 };
 
-const getStudentsData = () => {
-  return api.get('/admin/students');
+const getStudentsData = (data) => {
+  return api.post('/admin/students', data);
 };
 
 const deleteStudent = (id) => {

@@ -24,6 +24,8 @@
     }
 
     .button-container {
+      display: flex;
+      justify-content: flex-start;
       min-width: 10rem;
     }
   }

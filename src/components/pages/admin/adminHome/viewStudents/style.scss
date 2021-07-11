@@ -16,9 +16,33 @@
     }
   }
 
+  .view-students-form {
+    width: 100%;
+    display: flex;
+
+    .input {
+      width: 100%;
+      margin: 0 1.5rem 0 0;
+    }
+
+    @include break-point(tablet) {
+      flex-direction: column;
+
+      .input {
+        margin: 0 0 2rem 0;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
   .students {
     width: auto;
     overflow-x: auto;
+    margin-top: 2rem;
 
     .student-table {
       width: 100%;
