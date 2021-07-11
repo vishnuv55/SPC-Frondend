@@ -72,13 +72,14 @@
         }
       }
 
-      .menu {
+      .header-menu {
         display: none;
 
         @include break-point(mobile) {
           display: block;
           padding: 0 1rem;
-          .menu-button {
+
+          .header-menu-button {
             background: transparent;
             border: none;
             outline: none;
@@ -88,6 +89,7 @@
             align-items: center;
             color: var(--primary-font-color);
           }
+
           .menu-list {
             background: violet;
             min-width: 5rem;
