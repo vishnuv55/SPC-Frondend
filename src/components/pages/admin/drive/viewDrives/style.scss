@@ -19,8 +19,7 @@
 
     @include break-point(mobile) {
       margin: 0.5rem;
-      width: auto;
-      max-width: 100%;
+      width: 100%;
     }
 
     .header {
