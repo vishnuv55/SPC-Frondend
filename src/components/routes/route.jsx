@@ -9,7 +9,7 @@ const Route = ({ children, ...rest }) => {
     <DefaultRoute
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
       render={() => {
-        return !user.is_user_logged_in ? children : <Redirect to="/" />;
+        return !user.is_user_logged_in ? children : <Redirect to={`/${user.user_type}/home`} />;
       }}
     />
   );
