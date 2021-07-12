@@ -20,31 +20,19 @@ const ViewDrives = ({ userType }) => {
 
   useEffect(() => {
     getDrives();
-    getStudent();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getDrives = async () => {
-    if (!loading) {
-      setLoading(true);
-    }
+    setLoading(true);
     try {
       const response = await getDriveDetails(userType);
       setDrives(response.data);
-      setLoading(false);
-    } catch (err) {
-      handleApiError(err);
-      setLoading(false);
-    }
-  };
-  const getStudent = async () => {
-    if (!loading) {
-      setLoading(true);
-    }
-    try {
+
       if (userType === 'student') {
         const student = await getStudentDetails();
         setRegisteredDrives(student.data.registered_drives);
       }
+
       setLoading(false);
     } catch (err) {
       handleApiError(err);

@@ -4,7 +4,7 @@ import { FiTrash } from 'react-icons/fi';
 
 import Modal from '../../utils/modal';
 import useApiError from '../../../hooks/useApiError';
-import { useRhinoValue } from '../../../config/context';
+import { useRhinoValue, useSetRhinoState } from '../../../config/context';
 import { deleteQuery } from '../../../Services/user';
 
 const DeleteQuery = ({ id, getForumQueries }) => {
@@ -12,6 +12,8 @@ const DeleteQuery = ({ id, getForumQueries }) => {
   const [open, setOpen] = useState(false);
 
   const user = useRhinoValue('user');
+
+  const setToastMessage = useSetRhinoState('toastMessage');
 
   const handleOpen = () => {
     setOpen(true);
@@ -24,6 +26,12 @@ const DeleteQuery = ({ id, getForumQueries }) => {
   const handleDeleteForum = async () => {
     try {
       await deleteQuery(user.user_type, id);
+
+      setToastMessage({
+        severity: 'success',
+        message: 'Query successfully deleted',
+      });
+
       getForumQueries();
       handleClose();
     } catch (error) {

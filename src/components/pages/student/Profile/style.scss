@@ -90,6 +90,8 @@
     }
   }
   .button-wrapper {
+    display: flex;
+    justify-content: flex-start;
     margin-left: 2rem;
 
     @include break-point(mobile) {
@@ -115,6 +117,10 @@
       box-shadow: var(--primary-box-shadow);
       background: var(--primary-bg-color);
 
+      @include break-point(mobile) {
+        margin: 1.5rem;
+      }
+
       .heading-container {
         display: flex;
         align-items: center;
@@ -137,6 +143,7 @@
 
         @include break-point(mobile) {
           justify-content: center;
+          padding: 0;
         }
       }
     }

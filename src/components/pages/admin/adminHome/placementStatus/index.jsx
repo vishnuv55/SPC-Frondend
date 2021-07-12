@@ -28,7 +28,7 @@ const PlacementStatus = () => {
 
     const testLink = document.createElement('a');
     testLink.href = csvURL;
-    testLink.setAttribute('download', 'AlumniDetails.csv');
+    testLink.setAttribute('download', 'PlacementDetails.csv');
     testLink.click();
   };
 
