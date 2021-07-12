@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
 
-import './style.scss';
-import { Button } from '@material-ui/core';
-import Loading from '../../../common/loading';
-import PersonalDetails from './PersonalDetails';
-import EducationalDetails from './EducationalDetails';
-import useForm from '../../../../hooks/useForm';
-import ContactDetails from './ContactDetails';
-import GuardianDetails from './GuardianDetails';
-import useApiError from '../../../../hooks/useApiError';
-import { getStudentDetails, editStudentProfile } from '../../../../Services/student';
 import { convertDateFormate } from '../../../../helpers/date';
 import { useSetRhinoState } from '../../../../config/context';
+import { getStudentDetails, editStudentProfile } from '../../../../Services/student';
+
+import './style.scss';
+import Button from '../../../common/button';
+import ContactDetails from './ContactDetails';
+import Loading from '../../../common/loading';
+import PersonalDetails from './PersonalDetails';
+import useForm from '../../../../hooks/useForm';
+import GuardianDetails from './GuardianDetails';
 import PlacementDetails from './placement-details';
+import EducationalDetails from './EducationalDetails';
+import useApiError from '../../../../hooks/useApiError';
 
 const Profile = () => {
   const [loading, setLoading] = useState(true);
+
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const setPageTitle = useSetRhinoState('pageTitle');
   const setToastMessage = useSetRhinoState('toastMessage');
@@ -118,6 +121,7 @@ const Profile = () => {
       error.guardian_name === '' &&
       error.guardian_phone_number === ''
     ) {
+      setButtonLoading(true);
       const editObj = {
         name: values.name,
         date_of_birth: values.dob,
@@ -149,8 +153,10 @@ const Profile = () => {
           severity: 'success',
           message: 'Profile update successful',
         });
+        setButtonLoading(false);
       } catch (err) {
         handleApiError(err);
+        setButtonLoading(false);
       }
     } else {
       setToastMessage({
@@ -197,7 +203,9 @@ const Profile = () => {
         </div>
       </div>
       <div className="button-wrapper">
-        <Button onClick={handleEditProfile}> Edit Profile</Button>
+        <Button type="button" onClick={handleEditProfile} loading={buttonLoading}>
+          Edit Profile
+        </Button>
       </div>
       <div className="placement-wrapper">
         <PlacementDetails

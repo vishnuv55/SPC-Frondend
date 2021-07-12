@@ -6,7 +6,7 @@ import GenderInput from '../../../utils/genderInput';
 
 const PersonalDetails = ({ values, onChange, error, handleError }) => {
   return (
-    <div>
+    <>
       <div className="heading-container">
         <FiUser className="icon" />
         <h4 className="heading-5">Personal Details</h4>
@@ -32,7 +32,7 @@ const PersonalDetails = ({ values, onChange, error, handleError }) => {
         setErrorMsg={handleError}
       />
       <GenderInput value={values.gender} onChange={onChange} />
-    </div>
+    </>
   );
 };
 
