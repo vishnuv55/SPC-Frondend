@@ -8,16 +8,20 @@
     flex-direction: column;
   }
 
+  @include break-point(mobile) {
+    margin: 0.5rem;
+  }
+
   .criteria-container,
   .mail-content {
     width: 50%;
     margin: 1rem;
     padding: 2rem;
-    background: var(--primary-bg-color);
-    border-radius: 1rem;
-    box-shadow: var(--primary-box-shadow);
     display: flex;
+    border-radius: 1rem;
     flex-direction: column;
+    background: var(--primary-bg-color);
+    box-shadow: var(--primary-box-shadow);
 
     @include break-point(desktop) {
       width: auto;
@@ -53,15 +57,34 @@
       .container {
         display: flex;
         margin: 1rem 0;
+
+        @include break-point(mobile) {
+          flex-direction: column;
+          width: 100%;
+          margin: 0;
+        }
+
         .input {
           width: 50%;
 
+          @include break-point(mobile) {
+            width: 100%;
+          }
+
           &:first-child {
             margin: 0 1rem 0 0;
+
+            @include break-point(mobile) {
+              margin: 1rem 0;
+            }
           }
 
           &:last-child {
             margin: 0 0 0 1rem;
+
+            @include break-point(mobile) {
+              margin: 1rem 0;
+            }
           }
         }
       }
@@ -93,9 +116,15 @@
 
       .ql-toolbar {
         border-radius: 0.5rem 0.5rem 0 0;
+
+        * {
+          background-color: var(--primary-bg-color);
+          color: var(--primary-font-color);
+        }
       }
 
       .ql-container {
+        color: var(--primary-font-color);
         border-radius: 0 0 0.5rem 0.5rem;
 
         @include break-point(desktop) {
