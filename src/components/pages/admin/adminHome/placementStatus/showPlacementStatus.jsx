@@ -26,7 +26,6 @@ const ShowPlacementStatus = () => {
     try {
       setButtonLoading(true);
       const response = await getPlacementInfo();
-      console.log(response.data);
       setPlacementInfo(response.data);
       setButtonLoading(false);
       handleOpen();
