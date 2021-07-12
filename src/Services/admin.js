@@ -48,6 +48,10 @@ const getPlacedStudents = (data) => {
   return api.post('/admin/placed-students', data);
 };
 
+const getPlacementInfo = () => {
+  return api.get('/admin/placement-report');
+};
+
 export {
   createStudent,
   createStudents,
@@ -61,4 +65,5 @@ export {
   getStudentsData,
   deleteStudent,
   getPlacedStudents,
+  getPlacementInfo,
 };

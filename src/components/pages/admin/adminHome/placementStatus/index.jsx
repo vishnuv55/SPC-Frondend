@@ -7,6 +7,7 @@ import useForm from '../../../../../hooks/useForm';
 import { getPlacedStudents } from '../../../../../Services/admin';
 import Button from '../../../../common/button';
 import NumberInput from '../../../../utils/numberInput';
+import ShowPlacementStatus from './showPlacementStatus';
 import './style.scss';
 
 const PlacementStatus = () => {
@@ -84,6 +85,7 @@ const PlacementStatus = () => {
           <Button onClick={downloadDetails} loading={buttonLoading}>
             Download
           </Button>
+          <ShowPlacementStatus />
         </div>
       </div>
     </div>
