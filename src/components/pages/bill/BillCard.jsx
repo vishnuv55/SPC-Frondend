@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './billCard.scss';
-import { FiDollarSign } from 'react-icons/fi';
+import { BiRupee } from 'react-icons/bi';
 import { isoStringToDate } from '../../../helpers/date';
 import Modal from '../../utils/modal';
 import ModalContent from './deleteBill/ModalContent ';
@@ -23,7 +23,7 @@ const BillCard = ({ bill, userType, fetchBills }) => {
         <div className="bill-title">
           <h2 className="heading">{bill.bill_title}</h2>
           <div className="amount-wrapper">
-            <FiDollarSign className="icon" />
+            <BiRupee className="icon" />
             <span className="amount"> {bill.bill_amount}</span>
           </div>
         </div>
