@@ -11,5 +11,9 @@
     max-width: 30rem;
     margin: 1rem;
     width: 100%;
+
+    @include break-point(mobile) {
+      margin: 0.5rem;
+    }
   }
 }
