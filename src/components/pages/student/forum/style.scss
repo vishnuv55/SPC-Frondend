@@ -109,8 +109,8 @@
   border-radius: 0.7rem;
   background-color: var(--primary-bg-color);
 
-  @include break-point(tablet) {
-    width: auto;
+  @include break-point(mobile) {
+    width: 80%;
     margin: 1rem;
   }
 
