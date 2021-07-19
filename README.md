@@ -8,7 +8,7 @@
 
 ## ℹ About
 
-Smart Placement Cell is a Progressive web app made using React.js, which lets you o automate the current manual works done by the Placement cell in an institution all over the world.
+Smart Placement Cell is a Progressive web app made using React.js, which lets you to automate the current manual works done by the Placement cell in an institution all over the world.
 
 
 
@@ -82,19 +82,21 @@ SPC
 
 ## Features of Admin
 ### Login 
+
 ![Admin login](https://user-images.githubusercontent.com/49515794/120094946-d3c67b00-c140-11eb-8de4-1a0073fc4ab0.png)
 This feature help the Admin to login to the UI.
 
 
 ### Add student details
-
-![add details](https://user-images.githubusercontent.com/49515794/120094985-fce70b80-c140-11eb-909b-47059758969e.png)
+![1_admin_home](https://user-images.githubusercontent.com/49515794/126101240-b30177fe-d3f6-4a7e-b4c6-718f9ba255cd.png)
 
 
 This feature enables the Admin to add student details to database.
 
 ### Update student &  execom  password
-This feature enables the Admin to update the students and execom password in case they forget or otherwise.
+![Screenshot from 2021-07-19 09-36-44](https://user-images.githubusercontent.com/49515794/126101419-ee88a0a8-fcf9-4de4-83ce-44382ca26d27.png)
+
+This feature enables the Admin to update the students and execom password in case they forget or otherwise.Also Admin Can download & view the placement records.It also provide the functionality to view the student details individually branch wise and year wise.
   
 ### Add drive details
 ![add drive](https://user-images.githubusercontent.com/49515794/120095003-1720e980-c141-11eb-9a65-825f9524abbd.png)
@@ -113,8 +115,12 @@ This feature enables to notify students about placement drives available via E-m
 This feature enables Admin to regularly update the bills used to purchase different utilities remotely.
 ### Chat Forum
 This feature enables Admin to respond to the various queries raised by the students.
+![1_admin_forum](https://user-images.githubusercontent.com/49515794/126100882-612d7bcf-038f-4cb1-af7a-a46f1c5ee0cc.png)
 ### Manage Alumni data
 This is used to manage alumni details.
+
+![1_admin_alumni](https://user-images.githubusercontent.com/49515794/126101093-03e518a6-dadc-4128-b5cb-b8236a787d89.png)
+
 
 
 
@@ -150,6 +156,8 @@ This feature  enable Student to view and update their profile details.
 
 ### Chat forum
 This feature enables Student to can raise various queries to Admin and Execom.
+
+
 
 ### View & register for drive
 
