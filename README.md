@@ -1,6 +1,6 @@
 <div align="center">
-<img src="" />
-<h1>SMART PLACEMENT CELL📬</h1>
+<img src="https://user-images.githubusercontent.com/49515794/126103230-d9d564b6-28de-4173-aeba-fb8a91d47653.png" />
+<h1>CHETHAS📬</h1>
 <p>Automates the placement cell works<p/>
 </div>
 
