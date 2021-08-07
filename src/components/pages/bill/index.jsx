@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import './style.scss';
+
 import { FiPlus } from 'react-icons/fi';
-import { getBills } from '../../../Services/user';
-import useApiError from '../../../hooks/useApiError';
+
+import './style.scss';
 import BillCard from './BillCard';
 import Modal from '../../utils/modal';
-import ModalContent from './addBill/ModalContent';
-import { useSetRhinoState } from '../../../config/context';
 import Loading from '../../common/loading';
+import ModalContent from './addBill/ModalContent';
+import { getBills } from '../../../Services/user';
 import NoDrives from '../../common/noDrives/noDrive';
+import useApiError from '../../../hooks/useApiError';
+import { useSetRhinoState } from '../../../config/context';
 
 const Bill = ({ userType }) => {
   const [bills, setBills] = useState([]);

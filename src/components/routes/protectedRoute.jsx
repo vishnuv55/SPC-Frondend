@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Route, Redirect } from 'react-router-dom';
+
 import { useRhinoValue } from '../../config/context';
 
 const ProtectedRoute = ({ children, ...rest }) => {

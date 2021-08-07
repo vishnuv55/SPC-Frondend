@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 import { useHistory } from 'react-router-dom';
-import { login } from '../../../Services/user';
-import { useSetRhinoState } from '../../../config/context';
 
 import Button from '../../common/button';
 import useForm from '../../../hooks/useForm';
 import TextInput from '../../utils/textInput';
+import { login } from '../../../Services/user';
 import EmailInput from '../../utils/emailInput';
 import useApiError from '../../../hooks/useApiError';
 import PasswordInput from '../../utils/passwordInput';
+import { useSetRhinoState } from '../../../config/context';
 
 const LoginForm = ({ userType }) => {
   const { values, onChange, error, handleError } = useForm({

@@ -1,10 +1,11 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 
-import './style.scss';
 import { FiPlus } from 'react-icons/fi';
-import Modal from '../../../../utils/modal';
+
+import './style.scss';
 import ModalContent from './modalContent';
+import Modal from '../../../../utils/modal';
 
 const AddNewDrive = () => {
   const [open, setOpen] = useState(false);

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Route as DefaultRoute, Redirect } from 'react-router-dom';
+
 import { useRhinoValue } from '../../config/context';
 
 const Route = ({ children, ...rest }) => {

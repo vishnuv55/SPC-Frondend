@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 
 import { FiTrash } from 'react-icons/fi';
-import Modal from '../../../../../utils/modal';
+
 import DeleteContent from './deleteContent';
+import Modal from '../../../../../utils/modal';
 
 const DeleteDrive = ({ id }) => {
   const [open, setOpen] = useState(false);

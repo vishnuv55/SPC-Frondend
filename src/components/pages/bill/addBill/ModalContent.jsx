@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { IoCloseSharp } from 'react-icons/io5';
-import BillForm from './BillForm';
+
 import './modal.scss';
+import BillForm from './BillForm';
 
 const ModalContent = ({ handleClose, userType, fetchBills }) => {
   return (

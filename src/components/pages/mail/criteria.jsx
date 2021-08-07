@@ -1,7 +1,8 @@
 import React from 'react';
+
+import NumberInput from '../../utils/numberInput';
 import BranchCheckboxInput from '../../utils/branchCheckboxInput';
 import GenderCheckboxInput from '../../utils/genderCheckboxInput';
-import NumberInput from '../../utils/numberInput';
 
 const Criteria = ({
   values,

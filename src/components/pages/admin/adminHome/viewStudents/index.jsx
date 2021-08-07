@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 
 import { FiAward } from 'react-icons/fi';
-import { getStudentsData } from '../../../../../Services/admin';
-import { useSetRhinoState } from '../../../../../config/context';
 
 import './style.scss';
 import Button from '../../../../common/button';
@@ -12,6 +10,8 @@ import NumberInput from '../../../../utils/numberInput';
 import BranchInput from '../../../../utils/branchInput';
 import StudentDetailsTable from './StudentDetailsTable';
 import useApiError from '../../../../../hooks/useApiError';
+import { getStudentsData } from '../../../../../Services/admin';
+import { useSetRhinoState } from '../../../../../config/context';
 
 const ViewStudents = () => {
   const { values, onChange, error, handleError } = useForm({

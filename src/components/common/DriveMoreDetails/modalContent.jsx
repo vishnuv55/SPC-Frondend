@@ -1,11 +1,12 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 
-import { FiExternalLink, FiMail, FiMapPin } from 'react-icons/fi';
-import { RiComputerLine } from 'react-icons/ri';
 import { BiRupee } from 'react-icons/bi';
-import DriveDate from '../../pages/admin/drive/viewDrives/driveDate';
+import { RiComputerLine } from 'react-icons/ri';
+import { FiExternalLink, FiMail, FiMapPin } from 'react-icons/fi';
+
 import ProgressLine from '../progressLine';
+import DriveDate from '../../pages/admin/drive/viewDrives/driveDate';
 
 const ModalContent = ({ drive, handleClose }) => {
   const tenthCGPA = drive.requirements?.tenth_mark?.cgpa;

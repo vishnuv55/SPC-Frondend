@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './billCard.scss';
+
 import { BiRupee } from 'react-icons/bi';
-import { isoStringToDate } from '../../../helpers/date';
+
+import './billCard.scss';
 import Modal from '../../utils/modal';
 import ModalContent from './deleteBill/ModalContent ';
+import { isoStringToDate } from '../../../helpers/date';
 
 const BillCard = ({ bill, userType, fetchBills }) => {
   const [open, setOpen] = useState(false);

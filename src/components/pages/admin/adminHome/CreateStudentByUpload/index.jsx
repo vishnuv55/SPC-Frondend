@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './style.scss';
 import { FiUsers } from 'react-icons/fi';
+
+import './style.scss';
 import FileUpload from './fileUpload';
 
 const CreateStudentByUpload = () => {

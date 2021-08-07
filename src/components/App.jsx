@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 
-import '../config/index.scss';
 import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter } from 'react-router-dom';
+
+import '../config/index.scss';
 import Layout from './layout';
 import Routes from './routes';
 import Toast from './utils/toast';
-import useDarkMode from '../hooks/useDarkMode';
 import getMuiTheme from '../config/theme';
+import useDarkMode from '../hooks/useDarkMode';
 import { useSetRhinoState } from '../config/context';
 
 function App() {

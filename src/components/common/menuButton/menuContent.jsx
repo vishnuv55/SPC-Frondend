@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import React from 'react';
+
 import { useHistory } from 'react-router-dom';
+
 import { useRhinoState } from '../../../config/context';
 
 const MenuContent = ({ darkMode, toggleDarkMode, toggleMenu }) => {

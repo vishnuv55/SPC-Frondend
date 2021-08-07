@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
-import FaceBook from '../../../assets/Facebook.svg';
 import Gmail from '../../../assets/Gmail.svg';
+import FaceBook from '../../../assets/Facebook.svg';
 import LinkedIn from '../../../assets/LinkedIN.svg';
 
 const Follow = () => {

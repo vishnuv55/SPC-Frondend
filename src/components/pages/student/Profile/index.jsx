@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import { convertDateFormate } from '../../../../helpers/date';
-import { useSetRhinoState } from '../../../../config/context';
-import { getStudentDetails, editStudentProfile } from '../../../../Services/student';
-
 import './style.scss';
 import Button from '../../../common/button';
 import ContactDetails from './ContactDetails';
@@ -14,6 +10,9 @@ import GuardianDetails from './GuardianDetails';
 import PlacementDetails from './placement-details';
 import EducationalDetails from './EducationalDetails';
 import useApiError from '../../../../hooks/useApiError';
+import { convertDateFormate } from '../../../../helpers/date';
+import { useSetRhinoState } from '../../../../config/context';
+import { getStudentDetails, editStudentProfile } from '../../../../Services/student';
 
 const Profile = () => {
   const [loading, setLoading] = useState(true);

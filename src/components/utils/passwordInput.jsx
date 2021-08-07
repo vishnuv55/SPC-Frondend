@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { TextField } from '@material-ui/core';
-import { validateConfirmPassword, validatePassword } from '../../helpers/validation';
+
 import useDebounce from '../../hooks/useDebounce';
+import { validateConfirmPassword, validatePassword } from '../../helpers/validation';
 
 const PasswordInput = ({
   label,

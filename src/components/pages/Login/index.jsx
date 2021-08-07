@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './style.scss';
-import LoginContainer from './LoginContainer';
-import heroImg from '../../../assets/login-image.svg';
 import Follow from './follow';
 import Menu from '../../common/menuButton';
+import LoginContainer from './LoginContainer';
+import heroImg from '../../../assets/login-image.svg';
 
 const Login = ({ darkMode, toggleDarkMode }) => {
   return (

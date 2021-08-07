@@ -1,6 +1,8 @@
 import React from 'react';
-import './modal.scss';
+
 import { IoCloseSharp } from 'react-icons/io5';
+
+import './modal.scss';
 import GetStudentDetails from './getStudentDetails';
 
 const ModalContent = ({ handleClose, id }) => {

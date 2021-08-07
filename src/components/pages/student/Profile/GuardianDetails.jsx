@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { FiHome } from 'react-icons/fi';
-import NumberInput from '../../../utils/numberInput';
+
 import TextInput from '../../../utils/textInput';
+import NumberInput from '../../../utils/numberInput';
 
 const GuardianDetails = ({ values, onChange, error, handleError }) => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './style.scss';
-import AddNewDrive from './addNewDrives';
 import ViewDrives from './viewDrives';
+import AddNewDrive from './addNewDrives';
 
 const Drives = () => {
   return (

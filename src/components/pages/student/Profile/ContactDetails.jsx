@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { FiPhone } from 'react-icons/fi';
-import NumberInput from '../../../utils/numberInput';
+
 import TextInput from '../../../utils/textInput';
+import NumberInput from '../../../utils/numberInput';
 
 const ContactDetails = ({ values, onChange, error, handleError }) => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import UserSwitcher from './userSwitcher';
 import LoginForm from './loginForm';
+import UserSwitcher from './userSwitcher';
 
 const LoginContainer = () => {
   const [userType, setUserType] = useState('student');

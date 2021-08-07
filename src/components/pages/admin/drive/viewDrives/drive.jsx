@@ -3,9 +3,10 @@
 import React from 'react';
 
 import { FiBriefcase } from 'react-icons/fi';
+
 import RegInfo from '../RegInfo';
-import DeleteDrive from './deleteDrive';
 import DriveDate from './driveDate';
+import DeleteDrive from './deleteDrive';
 import MoreDetails from '../../../../common/DriveMoreDetails';
 
 const Drive = ({ drive }) => {

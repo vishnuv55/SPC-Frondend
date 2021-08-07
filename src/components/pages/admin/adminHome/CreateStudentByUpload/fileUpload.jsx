@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import Papa from 'papaparse';
 import { useDropzone } from 'react-dropzone';
 import { FiUploadCloud } from 'react-icons/fi';
+
+import Button from '../../../../common/button';
 import { createStudents } from '../../../../../Services/admin';
 import { useSetRhinoState } from '../../../../../config/context';
-import Button from '../../../../common/button';
 
 const FileUpload = () => {
   const setToastMessage = useSetRhinoState('toastMessage');

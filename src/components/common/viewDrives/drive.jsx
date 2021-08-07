@@ -3,10 +3,11 @@
 import React from 'react';
 
 import { FiBriefcase } from 'react-icons/fi';
-import { useRhinoValue } from '../../../config/context';
-import MoreDetails from '../DriveMoreDetails';
+
 import DriveDate from './driveDate';
+import MoreDetails from '../DriveMoreDetails';
 import RegisterForDrive from './registerForDrive';
+import { useRhinoValue } from '../../../config/context';
 
 const Drive = ({ drive, registeredDrives }) => {
   const user = useRhinoValue('user');

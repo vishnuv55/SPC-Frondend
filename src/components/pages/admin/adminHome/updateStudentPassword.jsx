@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 import { FiUnlock } from 'react-icons/fi';
-import { useSetRhinoState } from '../../../../config/context';
-import { updateStudentPassword } from '../../../../Services/admin';
 
 import Button from '../../../common/button';
 import useForm from '../../../../hooks/useForm';
 import EmailInput from '../../../utils/emailInput';
 import useApiError from '../../../../hooks/useApiError';
 import PasswordInput from '../../../utils/passwordInput';
+import { useSetRhinoState } from '../../../../config/context';
+import { updateStudentPassword } from '../../../../Services/admin';
 
 const UpdateStudentPassword = () => {
   const { values, onChange, error, handleError } = useForm({
