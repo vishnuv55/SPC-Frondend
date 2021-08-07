@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { FiUser } from 'react-icons/fi';
+
 import TextInput from '../../../utils/textInput';
 import DateInput from '../../../utils/dateInput';
 import GenderInput from '../../../utils/genderInput';

@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react';
 
 import './style.scss';
+import Drive from './drive';
+import Loading from '../loading';
+import NoDrives from '../noDrives/noDrive';
 import useApiError from '../../../hooks/useApiError';
 import { getDriveDetails } from '../../../Services/user';
-import Loading from '../loading';
-import Drive from './drive';
-import NoDrives from '../noDrives/noDrive';
 import { getStudentDetails } from '../../../Services/student';
 
 const ViewDrives = ({ userType }) => {

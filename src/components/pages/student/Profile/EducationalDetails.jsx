@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { FiAward } from 'react-icons/fi';
+
 import NumberInput from '../../../utils/numberInput';
 
 const EducationalDetails = ({ values, onChange, error, handleError }) => {

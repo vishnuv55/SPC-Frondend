@@ -1,7 +1,7 @@
 import React from 'react';
 
-import DeleteBill from './DeleteBill';
 import './modal.scss';
+import DeleteBill from './DeleteBill';
 
 const ModalContent = ({ handleClose, userType, billId, fetchBills }) => {
   return (

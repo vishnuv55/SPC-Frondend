@@ -1,14 +1,15 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 
-import { FiSend } from 'react-icons/fi';
 import ReactQuill from 'react-quill';
+import { FiSend } from 'react-icons/fi';
 import 'react-quill/dist/quill.snow.css';
-import { useSetRhinoState } from '../../../config/context';
-import { sendEmail } from '../../../Services/user';
-import TextInput from '../../utils/textInput';
-import useApiError from '../../../hooks/useApiError';
+
 import Button from '../../common/button';
+import TextInput from '../../utils/textInput';
+import { sendEmail } from '../../../Services/user';
+import useApiError from '../../../hooks/useApiError';
+import { useSetRhinoState } from '../../../config/context';
 
 const MailContent = ({ values, error, checkboxValues, onChange, handleError, userType }) => {
   const setToastMessage = useSetRhinoState('toastMessage');

@@ -1,7 +1,8 @@
-import { TextField } from '@material-ui/core';
 import React from 'react';
-import { validateDate, validateDateOfBirth } from '../../helpers/validation';
+
+import { TextField } from '@material-ui/core';
 import useDebounce from '../../hooks/useDebounce';
+import { validateDate, validateDateOfBirth } from '../../helpers/validation';
 
 const DateInput = ({ label, name, value, onChange, errorMsg, setErrorMsg, id }) => {
   const handleChange = (e) => {

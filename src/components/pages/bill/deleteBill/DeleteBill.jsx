@@ -1,8 +1,9 @@
 import React from 'react';
+
 import './deleteBill.scss';
-import { useSetRhinoState } from '../../../../config/context';
-import useApiError from '../../../../hooks/useApiError';
 import { deleteBill } from '../../../../Services/user';
+import useApiError from '../../../../hooks/useApiError';
+import { useSetRhinoState } from '../../../../config/context';
 
 const DeleteBill = ({ handleClose, userType, billId, fetchBills }) => {
   const { handleApiError } = useApiError();

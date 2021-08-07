@@ -1,21 +1,22 @@
 import React from 'react';
 
 import { Redirect, Switch } from 'react-router-dom';
-import Login from '../pages/Login';
-import StudentHome from '../pages/student/studentHome';
-import ProtectedRoute from './protectedRoute';
+
 import Route from './route';
-import AdminLogin from '../pages/admin/login';
-import AdminHome from '../pages/admin/adminHome';
-import Profile from '../pages/student/Profile';
-import ChangePassword from '../pages/ChangePassword';
-import Drives from '../pages/admin/drive';
 import Bill from '../pages/bill';
-import ExecomViewDrives from '../pages/execom/execomViewDrives';
 import Mail from '../pages/mail';
-import Alumni from '../pages/admin/alumni';
-import StudentForum from '../pages/student/forum';
+import Login from '../pages/Login';
 import Forum from '../pages/forum';
+import Drives from '../pages/admin/drive';
+import Alumni from '../pages/admin/alumni';
+import ProtectedRoute from './protectedRoute';
+import AdminLogin from '../pages/admin/login';
+import Profile from '../pages/student/Profile';
+import AdminHome from '../pages/admin/adminHome';
+import StudentForum from '../pages/student/forum';
+import ChangePassword from '../pages/ChangePassword';
+import StudentHome from '../pages/student/studentHome';
+import ExecomViewDrives from '../pages/execom/execomViewDrives';
 
 const Routes = ({ darkMode, toggleDarkMode }) => {
   return (

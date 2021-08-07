@@ -1,9 +1,9 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 
-import { useSetRhinoState } from '../../../../config/context';
-import useApiError from '../../../../hooks/useApiError';
 import { logout } from '../../../../Services/user';
+import useApiError from '../../../../hooks/useApiError';
+import { useSetRhinoState } from '../../../../config/context';
 
 const LogoutContent = ({ user, handleClose }) => {
   const setUser = useSetRhinoState('user');

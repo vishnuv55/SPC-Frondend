@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Modal from '../../../../utils/modal';
+
 import ModalContent from './ModalContent';
+import Modal from '../../../../utils/modal';
 
 const RegInfo = ({ id }) => {
   const [open, setOpen] = useState(false);

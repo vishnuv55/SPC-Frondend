@@ -1,5 +1,5 @@
 import React from 'react';
-// import ConfirmPasswordInput from '../../utils/confirmPassword';
+
 import PasswordInput from '../../utils/passwordInput';
 
 const InputForm = ({ values, onChange, error, handleError }) => {

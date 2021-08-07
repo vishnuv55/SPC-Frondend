@@ -2,9 +2,9 @@
 import React from 'react';
 
 import './style.scss';
-import { useSetRhinoState } from '../../../../../../config/context';
 import useApiError from '../../../../../../hooks/useApiError';
 import { deleteDrive } from '../../../../../../Services/admin';
+import { useSetRhinoState } from '../../../../../../config/context';
 
 const DeleteContent = ({ id, handleClose }) => {
   const setToastMessage = useSetRhinoState('toastMessage');

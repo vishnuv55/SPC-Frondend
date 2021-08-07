@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './style.scss';
-
 import { Button as MaterialButton } from '@material-ui/core';
+
+import './style.scss';
 import ButtonProgress from './buttonProgress';
 
 const Button = ({ children, loading, onClick }) => {

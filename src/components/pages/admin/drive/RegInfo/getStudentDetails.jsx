@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import './style.scss';
+
+import { Button } from '@material-ui/core';
+import { jsonToCSV } from 'react-papaparse';
 import Switch from '@material-ui/core/Switch';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { Button } from '@material-ui/core';
-import { jsonToCSV } from 'react-papaparse';
-import { regStudentDetails } from '../../../../../Services/admin';
+
+import './style.scss';
 import useApiError from '../../../../../hooks/useApiError';
+import { regStudentDetails } from '../../../../../Services/admin';
 
 const GetStudentDetails = ({ id, handleClose }) => {
   const { handleApiError } = useApiError();

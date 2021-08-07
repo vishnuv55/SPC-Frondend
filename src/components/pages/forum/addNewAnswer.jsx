@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 import { FiArrowRight } from 'react-icons/fi';
-import { useSetRhinoState } from '../../../config/context';
-import useApiError from '../../../hooks/useApiError';
-import useForm from '../../../hooks/useForm';
-import { addQueryAnswer } from '../../../Services/user';
-import Button from '../../common/button';
+
 import Modal from '../../utils/modal';
+import Button from '../../common/button';
+import useForm from '../../../hooks/useForm';
 import TextInput from '../../utils/textInput';
+import useApiError from '../../../hooks/useApiError';
+import { addQueryAnswer } from '../../../Services/user';
+import { useSetRhinoState } from '../../../config/context';
 
 const AddNewAnswer = ({ id, userType, getForumQueries }) => {
   const { values, onChange, error, handleError } = useForm({

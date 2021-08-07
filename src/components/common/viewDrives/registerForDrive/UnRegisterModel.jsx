@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useSetRhinoState } from '../../../../config/context';
-import useApiError from '../../../../hooks/useApiError';
-import { deRegisterDrive } from '../../../../Services/student';
+
 import Button from '../../button';
+import useApiError from '../../../../hooks/useApiError';
+import { useSetRhinoState } from '../../../../config/context';
+import { deRegisterDrive } from '../../../../Services/student';
 
 const UnRegisterModel = ({ id, handleClose, setIsRegistered }) => {
   const { handleApiError } = useApiError();

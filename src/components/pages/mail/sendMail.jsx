@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { FiCheckSquare } from 'react-icons/fi';
+
 import Criteria from './criteria';
 import MailContent from './mailContent';
 import useForm from '../../../hooks/useForm';

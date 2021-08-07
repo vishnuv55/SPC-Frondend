@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavItem from './navItem';
 
 const NavList = ({ listData }) => {

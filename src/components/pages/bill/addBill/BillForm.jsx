@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+
 import './billForm.scss';
-import { useSetRhinoState } from '../../../../config/context';
-import { createBill } from '../../../../Services/user';
-import useApiError from '../../../../hooks/useApiError';
-import TextInput from '../../../utils/textInput';
-import NumberInput from '../../../utils/numberInput';
-import DateInput from '../../../utils/dateInput';
+import Button from '../../../common/button';
 import TextArea from '../../../utils/textArea';
 import useForm from '../../../../hooks/useForm';
-import Button from '../../../common/button';
+import TextInput from '../../../utils/textInput';
+import DateInput from '../../../utils/dateInput';
+import NumberInput from '../../../utils/numberInput';
+import { createBill } from '../../../../Services/user';
+import useApiError from '../../../../hooks/useApiError';
+import { useSetRhinoState } from '../../../../config/context';
 
 const BillForm = ({ handleClose, userType, fetchBills }) => {
   const setToastMessage = useSetRhinoState('toastMessage');

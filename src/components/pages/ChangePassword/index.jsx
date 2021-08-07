@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 import './style.scss';
-import { useSetRhinoState } from '../../../config/context';
-import useForm from '../../../hooks/useForm';
 import InputForm from './inputForm';
-import useApiError from '../../../hooks/useApiError';
-import { changePassword } from '../../../Services/user';
-import img from '../../../assets/changePassword.svg';
 import Button from '../../common/button';
+import useForm from '../../../hooks/useForm';
+import useApiError from '../../../hooks/useApiError';
+import img from '../../../assets/changePassword.svg';
+import { changePassword } from '../../../Services/user';
+import { useSetRhinoState } from '../../../config/context';
 
 const ChangePassword = ({ userType }) => {
   const { values, onChange, error, handleError } = useForm({

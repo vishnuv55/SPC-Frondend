@@ -4,8 +4,8 @@ import { FiTrash } from 'react-icons/fi';
 
 import Modal from '../../utils/modal';
 import useApiError from '../../../hooks/useApiError';
-import { useRhinoValue, useSetRhinoState } from '../../../config/context';
 import { deleteQuery } from '../../../Services/user';
+import { useRhinoValue, useSetRhinoState } from '../../../config/context';
 
 const DeleteQuery = ({ id, getForumQueries }) => {
   const { handleApiError } = useApiError();

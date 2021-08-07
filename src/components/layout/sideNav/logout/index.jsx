@@ -1,8 +1,9 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 
-import './style.scss';
 import { FiLogOut } from 'react-icons/fi';
+
+import './style.scss';
 import Modal from '../../../utils/modal';
 import LogoutContent from './logoutContent';
 

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { FiHome, FiUser, FiMessageSquare, FiLock, FiFile, FiMail, FiAward } from 'react-icons/fi';
 import { BiRupee } from 'react-icons/bi';
+import { FiHome, FiUser, FiMessageSquare, FiLock, FiFile, FiMail, FiAward } from 'react-icons/fi';
+
 /**
  *
  * @param {String} user Values can be 'student','execom' or 'admin'

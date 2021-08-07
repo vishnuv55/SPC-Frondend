@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 
-import { MenuItem, Menu as MaterialMenu, withStyles } from '@material-ui/core';
 import { FiMoreVertical } from 'react-icons/fi';
+import { MenuItem, Menu as MaterialMenu, withStyles } from '@material-ui/core';
+
 import { logout } from '../../../Services/user';
-import { useRhinoState } from '../../../config/context';
 import useApiError from '../../../hooks/useApiError';
+import { useRhinoState } from '../../../config/context';
 
 const StyledMenu = withStyles({
   paper: {
@@ -75,6 +75,7 @@ const Menu = ({ darkMode, toggleDarkMode }) => {
   return (
     <div className="header-menu">
       <button
+        type="button"
         className="header-menu-button"
         aria-controls="simple-menu"
         aria-haspopup="true"

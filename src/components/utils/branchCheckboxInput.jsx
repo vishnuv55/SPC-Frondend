@@ -1,5 +1,6 @@
-import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@material-ui/core';
 import React from 'react';
+
+import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@material-ui/core';
 
 const BranchCheckboxInput = ({ values, onChange }) => {
   return (
