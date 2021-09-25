@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import CreateAlumni from './CreateAlumni';
 import DownloadAlumni from './DownloadAlumni';
-import { useSetRhinoState } from '../../../../config/context';
 
 const Alumni = () => {
   const setPageTitle = useSetRhinoState('pageTitle');

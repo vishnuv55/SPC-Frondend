@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { RhinoProvider } from 'react-rhino';
 
 import App from './components/App';
+import store from './config/store';
 import reportWebVitals from './reportWebVitals';
-import { RhinoProvider } from './config/context';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RhinoProvider>
+    <RhinoProvider store={store}>
       <App />
     </RhinoProvider>
   </React.StrictMode>,

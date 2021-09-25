@@ -1,10 +1,10 @@
 import React from 'react';
+import { useRhinoValue } from 'react-rhino';
 
 import './style.scss';
 import Logout from './logout';
 import NavList from './navList';
 import getNavListData from './navListData';
-import { useRhinoValue } from '../../../config/context';
 
 const SideNav = () => {
   const user = useRhinoValue('user');

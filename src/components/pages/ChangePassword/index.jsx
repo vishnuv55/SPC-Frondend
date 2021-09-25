@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import InputForm from './inputForm';
@@ -7,7 +8,6 @@ import useForm from '../../../hooks/useForm';
 import useApiError from '../../../hooks/useApiError';
 import img from '../../../assets/changePassword.svg';
 import { changePassword } from '../../../Services/user';
-import { useSetRhinoState } from '../../../config/context';
 
 const ChangePassword = ({ userType }) => {
   const { values, onChange, error, handleError } = useForm({

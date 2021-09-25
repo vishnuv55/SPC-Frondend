@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { FiUserPlus } from 'react-icons/fi';
+import { useSetRhinoState } from 'react-rhino';
 
 import Button from '../../../common/button';
 import useForm from '../../../../hooks/useForm';
@@ -10,7 +11,6 @@ import BranchInput from '../../../utils/branchInput';
 import NumberInput from '../../../utils/numberInput';
 import useApiError from '../../../../hooks/useApiError';
 import { createStudent } from '../../../../Services/admin';
-import { useSetRhinoState } from '../../../../config/context';
 
 const CreateStudent = () => {
   const { values, onChange, error, handleError } = useForm({

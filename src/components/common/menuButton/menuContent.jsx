@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import React from 'react';
+import { useRhinoState } from 'react-rhino';
 
 import { useHistory } from 'react-router-dom';
-
-import { useRhinoState } from '../../../config/context';
 
 const MenuContent = ({ darkMode, toggleDarkMode, toggleMenu }) => {
   const [installable, setInstallable] = useRhinoState('installable');

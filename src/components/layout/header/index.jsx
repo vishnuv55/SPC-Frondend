@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
+import { useRhinoValue } from 'react-rhino';
 
 import './style.scss';
 import Menu from './menu';
-import { useRhinoValue } from '../../../config/context';
 
 const Header = ({ darkMode, toggleDarkMode }) => {
   const title = useRhinoValue('pageTitle');

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import ViewDrives from '../../../common/viewDrives';
-import { useSetRhinoState } from '../../../../config/context';
 
 const ExecomViewDrives = () => {
   const setPageTitle = useSetRhinoState('pageTitle');

@@ -1,13 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/button-has-type */
 import React from 'react';
+import { useRhinoValue } from 'react-rhino';
 
 import { FiBriefcase } from 'react-icons/fi';
 
 import DriveDate from './driveDate';
 import MoreDetails from '../DriveMoreDetails';
 import RegisterForDrive from './registerForDrive';
-import { useRhinoValue } from '../../../config/context';
 
 const Drive = ({ drive, registeredDrives }) => {
   const user = useRhinoValue('user');

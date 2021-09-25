@@ -1,3 +1,4 @@
+import { useSetRhinoState } from 'react-rhino';
 import React, { useEffect, useState } from 'react';
 
 import './style.scss';
@@ -11,7 +12,6 @@ import PlacementDetails from './placement-details';
 import EducationalDetails from './EducationalDetails';
 import useApiError from '../../../../hooks/useApiError';
 import { convertDateFormate } from '../../../../helpers/date';
-import { useSetRhinoState } from '../../../../config/context';
 import { getStudentDetails, editStudentProfile } from '../../../../Services/student';
 
 const Profile = () => {

@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import Loading from '../../../common/loading';
 import CompleteProfile from './completeProfile';
 import ViewDrives from '../../../common/viewDrives';
 import useApiError from '../../../../hooks/useApiError';
-import { useSetRhinoState } from '../../../../config/context';
 import { getStudentDetails } from '../../../../Services/student';
 
 const StudentHome = () => {

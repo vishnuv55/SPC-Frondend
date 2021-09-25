@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-import { useSetRhinoState } from '../../../../../config/context';
+import { useSetRhinoState } from 'react-rhino';
 
 import Modal from '../../../../utils/modal';
 import useApiError from '../../../../../hooks/useApiError';

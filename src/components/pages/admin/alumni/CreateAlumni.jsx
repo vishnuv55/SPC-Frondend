@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { FiUpload } from 'react-icons/fi';
+import { useSetRhinoState } from 'react-rhino';
 
 import './createAlumni.scss';
 import Button from '../../../common/button';
@@ -8,7 +9,6 @@ import useForm from '../../../../hooks/useForm';
 import NumberInput from '../../../utils/numberInput';
 import useApiError from '../../../../hooks/useApiError';
 import { createAlumni } from '../../../../Services/admin';
-import { useSetRhinoState } from '../../../../config/context';
 
 const CreateAlumni = () => {
   const { handleApiError } = useApiError();

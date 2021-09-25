@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import Papa from 'papaparse';
 import { useDropzone } from 'react-dropzone';
@@ -7,7 +8,6 @@ import { FiUploadCloud } from 'react-icons/fi';
 
 import Button from '../../../../common/button';
 import { createStudents } from '../../../../../Services/admin';
-import { useSetRhinoState } from '../../../../../config/context';
 
 const FileUpload = () => {
   const setToastMessage = useSetRhinoState('toastMessage');

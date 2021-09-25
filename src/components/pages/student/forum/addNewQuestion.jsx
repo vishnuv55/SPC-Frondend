@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import { FiPlus } from 'react-icons/fi';
 
@@ -8,7 +9,6 @@ import useForm from '../../../../hooks/useForm';
 import TextInput from '../../../utils/textInput';
 import useApiError from '../../../../hooks/useApiError';
 import { askQuestion } from '../../../../Services/student';
-import { useSetRhinoState } from '../../../../config/context';
 
 const AddNewQuestion = ({ getForumQueries }) => {
   const { values, onChange, error, handleError } = useForm({

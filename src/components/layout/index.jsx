@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useRhinoState } from 'react-rhino';
 
 import './style.scss';
 import Header from './header';
 import SideNav from './sideNav';
 import Loading from '../common/loading';
 import useApiError from '../../hooks/useApiError';
-import { useRhinoState } from '../../config/context';
 import { isUserLoggedIn } from '../../Services/user';
 
 const Layout = ({ children, darkMode, toggleDarkMode }) => {

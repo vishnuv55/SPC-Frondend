@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import Forum from './forum';
-import { useSetRhinoState } from '../../../../config/context';
 
 const StudentForum = () => {
   const setPageTitle = useSetRhinoState('pageTitle');

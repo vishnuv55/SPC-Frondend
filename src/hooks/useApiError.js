@@ -1,4 +1,4 @@
-import { useRhinoState } from '../config/context';
+import { useRhinoState } from 'react-rhino';
 
 /**
  *

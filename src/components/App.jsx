@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 
-import { ThemeProvider } from '@material-ui/styles';
+import { useSetRhinoState } from 'react-rhino';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/styles';
 
 import '../config/index.scss';
 import Layout from './layout';
@@ -10,7 +11,6 @@ import Routes from './routes';
 import Toast from './utils/toast';
 import getMuiTheme from '../config/theme';
 import useDarkMode from '../hooks/useDarkMode';
-import { useSetRhinoState } from '../config/context';
 
 function App() {
   const [darkMode, toggleDarkMode] = useDarkMode('dark');

@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Route as DefaultRoute, Redirect } from 'react-router-dom';
-
-import { useRhinoValue } from '../../config/context';
+import { useRhinoValue } from 'react-rhino';
 
 const Route = ({ children, ...rest }) => {
   const user = useRhinoValue('user');

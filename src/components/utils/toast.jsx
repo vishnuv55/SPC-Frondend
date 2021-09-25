@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
+import { useRhinoValue } from 'react-rhino';
 import { Alert, AlertTitle } from '@material-ui/lab';
 
 import Snackbar from '@material-ui/core/Snackbar';
-import { useRhinoValue } from '../../config/context';
 
 const Toast = () => {
   const [open, setOpen] = useState(false);
