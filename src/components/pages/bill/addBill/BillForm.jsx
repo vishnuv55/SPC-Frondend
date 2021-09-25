@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './billForm.scss';
 import Button from '../../../common/button';
@@ -9,7 +10,6 @@ import DateInput from '../../../utils/dateInput';
 import NumberInput from '../../../utils/numberInput';
 import { createBill } from '../../../../Services/user';
 import useApiError from '../../../../hooks/useApiError';
-import { useSetRhinoState } from '../../../../config/context';
 
 const BillForm = ({ handleClose, userType, fetchBills }) => {
   const setToastMessage = useSetRhinoState('toastMessage');

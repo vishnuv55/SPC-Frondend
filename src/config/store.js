@@ -1,6 +1,4 @@
-import createRhinoState from 'react-rhino';
-
-const { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState } = createRhinoState({
+const store = {
   user: { is_user_logged_in: false },
   pageTitle: '',
   toastMessage: {
@@ -13,6 +11,6 @@ const { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState } = create
     installable: false,
     deferredPrompt: null,
   },
-});
+};
 
-export { RhinoProvider, useRhinoState, useRhinoValue, useSetRhinoState };
+export default store;

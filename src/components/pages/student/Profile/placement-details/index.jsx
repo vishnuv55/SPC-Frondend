@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import { FiAward } from 'react-icons/fi';
 import Button from '../../../../common/button';
 import TextInput from '../../../../utils/textInput';
 import NumberInput from '../../../../utils/numberInput';
 import useApiError from '../../../../../hooks/useApiError';
-import { useSetRhinoState } from '../../../../../config/context';
 import { updatePlacementDetails } from '../../../../../Services/student';
 
 const PlacementDetails = ({ values, onChange, error, handleError }) => {

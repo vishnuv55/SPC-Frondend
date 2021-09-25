@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
-
 import { FiAward } from 'react-icons/fi';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import Button from '../../../../common/button';
@@ -11,7 +11,6 @@ import BranchInput from '../../../../utils/branchInput';
 import StudentDetailsTable from './StudentDetailsTable';
 import useApiError from '../../../../../hooks/useApiError';
 import { getStudentsData } from '../../../../../Services/admin';
-import { useSetRhinoState } from '../../../../../config/context';
 
 const ViewStudents = () => {
   const { values, onChange, error, handleError } = useForm({

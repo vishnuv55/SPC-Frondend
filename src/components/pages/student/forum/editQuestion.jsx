@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import { FiEdit } from 'react-icons/fi';
 
@@ -9,7 +10,6 @@ import useForm from '../../../../hooks/useForm';
 import TextInput from '../../../utils/textInput';
 import useApiError from '../../../../hooks/useApiError';
 import { editQuestion } from '../../../../Services/student';
-import { useSetRhinoState } from '../../../../config/context';
 
 const EditQuestion = ({ studentId, query, getForumQueries }) => {
   const { values, setValues, onChange, error, handleError } = useForm({

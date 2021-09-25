@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import Button from '../../button';
 import useApiError from '../../../../hooks/useApiError';
-import { useSetRhinoState } from '../../../../config/context';
 import { registerForDrive } from '../../../../Services/student';
 
 const RegisterModel = ({ id, handleClose, setIsRegistered }) => {
