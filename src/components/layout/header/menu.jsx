@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import { useRhinoState } from 'react-rhino';
 
 import { FiMoreVertical } from 'react-icons/fi';
 import { MenuItem, Menu as MaterialMenu, withStyles } from '@material-ui/core';
 
 import { logout } from '../../../Services/user';
 import useApiError from '../../../hooks/useApiError';
-import { useRhinoState } from '../../../config/context';
 
 const StyledMenu = withStyles({
   paper: {

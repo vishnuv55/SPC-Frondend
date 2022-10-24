@@ -1,8 +1,7 @@
 import React from 'react';
 
+import { useRhinoValue } from 'react-rhino';
 import { Route, Redirect } from 'react-router-dom';
-
-import { useRhinoValue } from '../../config/context';
 
 const ProtectedRoute = ({ children, ...rest }) => {
   const user = useRhinoValue('user');

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import SendMail from './sendMail';
-import { useSetRhinoState } from '../../../config/context';
 
 const Mail = ({ userType }) => {
   const setPageTitle = useSetRhinoState('pageTitle');

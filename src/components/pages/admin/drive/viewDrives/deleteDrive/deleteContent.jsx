@@ -1,10 +1,10 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
+import { useSetRhinoState } from 'react-rhino';
 
 import './style.scss';
 import useApiError from '../../../../../../hooks/useApiError';
 import { deleteDrive } from '../../../../../../Services/admin';
-import { useSetRhinoState } from '../../../../../../config/context';
 
 const DeleteContent = ({ id, handleClose }) => {
   const setToastMessage = useSetRhinoState('toastMessage');
